@@ -1,0 +1,12 @@
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\RWPLDataService.dll.config
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\RWPLDataService.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\RWPLDataService.pdb
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\EntityFramework.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\EntityFramework.SqlServer.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\RWPLEntityModel.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\RWPLEntityModel.pdb
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\EntityFramework.xml
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\bin\Debug\EntityFramework.SqlServer.xml
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\obj\Debug\RWPLDataService.csprojResolveAssemblyReference.cache
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\obj\Debug\RWPLDataService.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLDataService\obj\Debug\RWPLDataService.pdb
