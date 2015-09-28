@@ -1,0 +1,5 @@
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLEntityModel\bin\Release\RWPLEntityModel.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLEntityModel\bin\Release\RWPLEntityModel.pdb
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLEntityModel\obj\Release\RWPLEntityModel.csprojResolveAssemblyReference.cache
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLEntityModel\obj\Release\RWPLEntityModel.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLEntityModel\obj\Release\RWPLEntityModel.pdb

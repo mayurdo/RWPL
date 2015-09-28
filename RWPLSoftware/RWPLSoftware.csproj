@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB452161-6E7D-41BF-852D-69845EC98641}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RWPLSoftware</RootNamespace>
+    <AssemblyName>RWPLSoftware</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmAutoStichingPin\FrmAutoStichingPinEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAutoStichingPin\FrmAutoStichingPinEntry.Designer.cs">
+      <DependentUpon>FrmAutoStichingPinEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAutoStichingPin\FrmAutoStichingPinReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAutoStichingPin\FrmAutoStichingPinReport.Designer.cs">
+      <DependentUpon>FrmAutoStichingPinReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBundlingM1\FrmBundlingM1Entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBundlingM1\FrmBundlingM1Entry.Designer.cs">
+      <DependentUpon>FrmBundlingM1Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBundlingM1\FrmBundlingM1Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBundlingM1\FrmBundlingM1Report.Designer.cs">
+      <DependentUpon>FrmBundlingM1Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerMaster\FrmCustomerMasterEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerMaster\FrmCustomerMasterEntry.Designer.cs">
+      <DependentUpon>FrmCustomerMasterEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerMaster\FrmCustomerMasterReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerMaster\FrmCustomerMasterReport.Designer.cs">
+      <DependentUpon>FrmCustomerMasterReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDispatch\FrmDispatchEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDispatch\FrmDispatchEntry.Designer.cs">
+      <DependentUpon>FrmDispatchEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDispatch\FrmDispatchReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDispatch\FrmDispatchReport.Designer.cs">
+      <DependentUpon>FrmDispatchReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPaperReelConsumption\FrmPaperReelConsumptionEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaperReelConsumption\FrmPaperReelConsumptionEntry.Designer.cs">
+      <DependentUpon>FrmPaperReelConsumptionEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPaperReelConsumption\FrmPaperReelConsumptionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaperReelConsumption\FrmPaperReelConsumptionReport.Designer.cs">
+      <DependentUpon>FrmPaperReelConsumptionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRotary\FrmRotaryEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRotary\FrmRotaryEntry.Designer.cs">
+      <DependentUpon>FrmRotaryEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRotary\FrmRotaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRotary\FrmRotaryReport.Designer.cs">
+      <DependentUpon>FrmRotaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmItemMaster\FrmItemMasterEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmItemMaster\FrmItemMasterEntry.Designer.cs">
+      <DependentUpon>FrmItemMasterEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmItemMaster\FrmItemMasterReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmItemMaster\FrmItemMasterReport.Designer.cs">
+      <DependentUpon>FrmItemMasterReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RWPLPageHelper.cs" />
+    <EmbeddedResource Include="FrmAutoStichingPin\FrmAutoStichingPinEntry.resx">
+      <DependentUpon>FrmAutoStichingPinEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAutoStichingPin\FrmAutoStichingPinReport.resx">
+      <DependentUpon>FrmAutoStichingPinReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBundlingM1\FrmBundlingM1Entry.resx">
+      <DependentUpon>FrmBundlingM1Entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBundlingM1\FrmBundlingM1Report.resx">
+      <DependentUpon>FrmBundlingM1Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerMaster\FrmCustomerMasterEntry.resx">
+      <DependentUpon>FrmCustomerMasterEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerMaster\FrmCustomerMasterReport.resx">
+      <DependentUpon>FrmCustomerMasterReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDispatch\FrmDispatchEntry.resx">
+      <DependentUpon>FrmDispatchEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDispatch\FrmDispatchReport.resx">
+      <DependentUpon>FrmDispatchReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPaperReelConsumption\FrmPaperReelConsumptionEntry.resx">
+      <DependentUpon>FrmPaperReelConsumptionEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPaperReelConsumption\FrmPaperReelConsumptionReport.resx">
+      <DependentUpon>FrmPaperReelConsumptionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRotary\FrmRotaryEntry.resx">
+      <DependentUpon>FrmRotaryEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRotary\FrmRotaryReport.resx">
+      <DependentUpon>FrmRotaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmItemMaster\FrmItemMasterEntry.resx">
+      <DependentUpon>FrmItemMasterEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmItemMaster\FrmItemMasterReport.resx">
+      <DependentUpon>FrmItemMasterReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Base.Software\Base.Software.csproj">
+      <Project>{17806ff4-7076-4455-b4d3-242ae1064d6e}</Project>
+      <Name>Base.Software</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RWPLEntityModel\RWPLEntityModel.csproj">
+      <Project>{0c97edfd-72ca-4ffd-810d-92a3dec4246f}</Project>
+      <Name>RWPLEntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RWPLLinqDataService\RWPLLinqDataService.csproj">
+      <Project>{3ad09231-16d3-48ec-86ab-ef4f52eb947a}</Project>
+      <Name>RWPLLinqDataService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bannerimg.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

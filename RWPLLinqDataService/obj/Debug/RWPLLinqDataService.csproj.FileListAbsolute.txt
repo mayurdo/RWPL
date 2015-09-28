@@ -1,0 +1,8 @@
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLLinqDataService\obj\Debug\RWPLLinqDataService.csprojResolveAssemblyReference.cache
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLLinqDataService\bin\Debug\RWPLLinqDataService.dll.config
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLLinqDataService\bin\Debug\RWPLLinqDataService.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLLinqDataService\bin\Debug\RWPLLinqDataService.pdb
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLLinqDataService\bin\Debug\RWPLEntityModel.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLLinqDataService\bin\Debug\RWPLEntityModel.pdb
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLLinqDataService\obj\Debug\RWPLLinqDataService.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\RWPLLinqDataService\obj\Debug\RWPLLinqDataService.pdb
