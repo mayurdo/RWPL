@@ -1,0 +1,14 @@
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\bin\Debug\Base.Software.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\bin\Debug\Base.Software.pdb
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\bin\Debug\RWPLEntityModel.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\bin\Debug\RWPLEntityModel.pdb
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\obj\Debug\Base.Software.csprojResolveAssemblyReference.cache
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\obj\Debug\Base.Software.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\obj\Debug\Base.Software.pdb
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\obj\Debug\Base.Software.Properties.Resources.resources
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\obj\Debug\Base.Software.csproj.GenerateResource.Cache
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\obj\Debug\Base.Software.FrmUserAccessEntry.resources
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\obj\Debug\Base.Software.FrmUserAccessReport.resources
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\obj\Debug\Base.Software.Login.resources
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\bin\Debug\RWPLLinqDataService.dll
+E:\Mayur Data\Mayur_Data\RWPL\RWPLSoftware\Base.Software\bin\Debug\RWPLLinqDataService.pdb
