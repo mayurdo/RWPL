@@ -22,5 +22,25 @@ namespace RWPLLinqDataService.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\EXPRESS;Initial Catalog=RWPLData;User ID=sa;Password=da")]
+        public string RWPLDataConnectionString {
+            get {
+                return ((string)(this["RWPLDataConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\EXPRESS;Initial Catalog=RWPLData;User ID=sa;Password=da")]
+        public string RWPLDataConnectionString1 {
+            get {
+                return ((string)(this["RWPLDataConnectionString1"]));
+            }
+        }
     }
 }

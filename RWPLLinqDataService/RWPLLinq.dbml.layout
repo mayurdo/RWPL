@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 13.75" name="RWPLLinq">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 32.375" name="RWPLLinq">
   <DataContextMoniker Name="/RWPLLinqDataContext" />
   <nestedChildShapes>
     <classShape Id="83cd6674-b0ad-4430-bef7-aa9b6d131361" absoluteBounds="3.5, 4.875, 2, 4.4631168619791666">
@@ -52,28 +52,72 @@
         <elementListCompartment Id="ec6052e3-9c49-44fe-9757-4abbc1efcb49" absoluteBounds="0.51500000000000012, 5.335, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8ebf2d09-f11a-4b7c-b794-38df3111913a" absoluteBounds="6.25, 4.875, 2, 5.2323225911458326">
-      <DataClassMoniker Name="/RWPLLinqDataContext/PaperReelConsumption" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4dc406b0-cb27-450e-bad8-3b9fba227b6c" absoluteBounds="6.265, 5.335, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="13ac0db0-bd85-4eaf-9bef-a0e03f0fe213" absoluteBounds="8.875, 4.875, 2, 4.4631168619791666">
       <DataClassMoniker Name="/RWPLLinqDataContext/Rotary" />
       <nestedChildShapes>
         <elementListCompartment Id="0fcabeca-264f-4ec2-a244-607d10b23628" absoluteBounds="8.89, 5.335, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cfee1f3c-0095-4acb-95a8-001b4f85dd20" absoluteBounds="0.5, 10.25, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/RWPLLinqDataContext/ItemMaster" />
-      <nestedChildShapes>
-        <elementListCompartment Id="53d0aa96-d1e9-428b-915d-ef1211076edf" absoluteBounds="0.51499999999999968, 10.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="74604a3c-3332-41e3-afb5-047e6842fd20" absoluteBounds="2.875, 10.25, 2, 2.9247054036458331">
+    <classShape Id="ce5b53d7-b380-4d29-b408-c179e6279353" absoluteBounds="3.25, 10.25, 2, 3.3093082682291666">
       <DataClassMoniker Name="/RWPLLinqDataContext/CustomerMaster" />
       <nestedChildShapes>
-        <elementListCompartment Id="729188e6-c84e-40ee-a5da-0ba2adfb1ab8" absoluteBounds="2.8899999999999997, 10.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ac7d6bfd-334b-48be-b432-e0e1661ce0e6" absoluteBounds="3.265, 10.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18ae1cba-7df5-48ad-9f5c-6731d573090c" absoluteBounds="3.25, 14.125, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/RWPLLinqDataContext/DeliveryChallanItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f849eda8-263f-408a-8898-b8d87484aeda" absoluteBounds="3.265, 14.585, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a44b9e52-c8ed-49d0-957c-37d2a0a66eb5" absoluteBounds="0.5, 14.125, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/RWPLLinqDataContext/DeliveryChallan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ebb78eaa-2dcd-4696-8200-f3f0ef9f7c7a" absoluteBounds="0.51499999999999968, 14.585, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 15.9719555664062); (3.25 : 15.9719555664062)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RWPLLinqDataContext/DeliveryChallan/DeliveryChallan_DeliveryChallanItem" />
+      <nodes>
+        <classShapeMoniker Id="a44b9e52-c8ed-49d0-957c-37d2a0a66eb5" />
+        <classShapeMoniker Id="18ae1cba-7df5-48ad-9f5c-6731d573090c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.20923076923077 : 19.7419254557292); (1.20923076923077 : 19.9919254557292); (1.80461538461538 : 19.9919254557292); (1.80461538461538 : 19.7419254557292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RWPLLinqDataContext/DeliveryChallan/DeliveryChallan_DeliveryChallan" />
+      <nodes>
+        <classShapeMoniker Id="a44b9e52-c8ed-49d0-957c-37d2a0a66eb5" />
+        <classShapeMoniker Id="a44b9e52-c8ed-49d0-957c-37d2a0a66eb5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="21ebdaf0-4438-4582-ae6e-566401ab1a5e" absoluteBounds="5.875, 11, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/RWPLLinqDataContext/DuplexPrintedPaper" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb3c4baa-702f-4c59-a883-9e3ed0632c5b" absoluteBounds="5.89, 11.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fbe8345f-edf1-4eab-8a60-b25d94363bda" absoluteBounds="6, 15.5, 2, 4.2708154296875">
+      <DataClassMoniker Name="/RWPLLinqDataContext/StockMaster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="351b6916-c0cc-4e25-9cb0-473279a1734f" absoluteBounds="6.015, 15.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48064818-a111-4bed-be0f-afd152c204a1" absoluteBounds="8.875, 15.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/RWPLLinqDataContext/StockMasterView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa507b0d-5f29-4257-8c4d-1d1e2ebb1aea" absoluteBounds="8.89, 15.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="765b14e8-cc86-4cb1-a363-cf3c24916daf" absoluteBounds="6.25, 4.875, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/RWPLLinqDataContext/PaperReelConsumption" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5653f1cd-f433-4baa-8de4-a10c7591a343" absoluteBounds="6.265, 5.335, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fead960c-3c8d-49ee-9c13-8ff988ea459f" absoluteBounds="0.5, 20.875, 2, 11.1936669921875">
+      <DataClassMoniker Name="/RWPLLinqDataContext/ItemMaster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a1e1110-4515-4c7c-9b0f-00c825fdf59e" absoluteBounds="0.51500000000000012, 21.335, 1.9700000000000002, 10.6336669921875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

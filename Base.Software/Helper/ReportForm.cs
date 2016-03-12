@@ -12,7 +12,7 @@ using RWPLLinqDataService;
 
 namespace Base.Software.Helper
 {
-    public class ReportForm<TReport, TSearch,TEntity>
+    public class ReportForm<TReport, TSearch, TEntity>
         where TSearch : ReportRequest, new()
         where TEntity : IEntity
     {
@@ -34,7 +34,7 @@ namespace Base.Software.Helper
 
         public UserAccessPage UserAccessPage
         {
-            get { return PageHelper.UserDetail.UserAccessPages.Single(x => x.PageName == typeof (TEntity).Name); }
+            get { return PageHelper.UserDetail.UserAccessPages.Single(x => x.PageName == typeof(TEntity).Name); }
         }
 
 
@@ -43,6 +43,7 @@ namespace Base.Software.Helper
             Label labelReportStatus, Label lblReportSummary)
         {
             bindingSource1 = new BindingSource();
+
             bindingNavigator1 = bindingNavigator;
             dataGridView1 = dataGridView;
             bindingNavigatorPositionItem = txtPageNo;
@@ -50,13 +51,45 @@ namespace Base.Software.Helper
             _lblReportSummary = lblReportSummary;
             _form = form;
 
-            _services = new WinServices(typeof (TEntity).Name);
+            _services = new WinServices(typeof(TEntity).Name);
 
             PrimaryKeyName = "SrNo";
 
             _searchRequest = new TSearch();
+
+            bindingNavigator.MoveNextItem.Click += bindingNavigatorMoveNextItem_Click;
+            bindingNavigator.MovePreviousItem.Click += bindingNavigatorMovePreviousItem_Click;
+            bindingNavigator.MoveFirstItem.Click += bindingNavigatorMoveFirstItem_Click;
+            bindingNavigator.MoveLastItem.Click += bindingNavigatorMoveLastItem_Click;
         }
 
+        #region pagination
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            _searchRequest.PageNo = 1;
+            BindGridView();
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            _searchRequest.PageNo--;
+            BindGridView();
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            _searchRequest.PageNo++;
+            BindGridView();
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            _searchRequest.PageNo = _totalPage;
+            BindGridView();
+        }
+
+        #endregion
 
         #region Report
 
@@ -129,7 +162,7 @@ namespace Base.Software.Helper
             _lblReportSummary.Text = string.Format("Report Summary :-   {0}", _response.ReportSummary);
         }
 
-       
+
 
         public void FillDropDownAndAutoComplete<TPageDataRequest>()
         {
@@ -152,7 +185,7 @@ namespace Base.Software.Helper
                 if (propertyInfo == null)
                     continue;
 
-                var dataList = propertyInfo.GetValue(pageData,null); // .net 3.5
+                var dataList = propertyInfo.GetValue(pageData, null); // .net 3.5
 
                 if (control is TextBox)
                 {
@@ -228,7 +261,7 @@ namespace Base.Software.Helper
             var dialogResult = MessageBox.Show(string.Format("Do you want to delete selected data with SrNo : {0}", srNo),
                 @"Confirmation Message", MessageBoxButtons.YesNo);
 
-            if(dialogResult==DialogResult.No)
+            if (dialogResult == DialogResult.No)
                 return;
 
             var deletedBy = PageHelper.UserDetail.UserName;
@@ -245,5 +278,29 @@ namespace Base.Software.Helper
 
         }
 
+        public void ExportToExcel()
+        {
+            _searchRequest.ShowAllData = true;
+            _response = _services.GetServiceResponse<TReport>(_searchRequest);
+            _searchRequest.ShowAllData = false;
+            if (!_response.IsSuccess)
+            {
+                MessageBox.Show(_response.Exception.Message, @"Error Message");
+                return;
+            }
+
+            try
+            {
+                MethodHelper.ExportToExcel(dataGridView1.Columns,_response.PageData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Couldn't create Excel file.\r\nException: " + ex.Message);
+                return;
+            }   
+        }
+
+
+      
     }
 }

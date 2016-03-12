@@ -29,7 +29,7 @@ namespace RWPLLinqDataService
             return response;
         }
 
-        public ResultResponse<TEntity> Save(TEntity entity)
+        public virtual ResultResponse<TEntity> Save(TEntity entity)
         {
             var response = new ResultResponse<TEntity>();
             try

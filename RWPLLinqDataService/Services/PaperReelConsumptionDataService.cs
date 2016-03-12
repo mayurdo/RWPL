@@ -15,7 +15,7 @@ namespace RWPLLinqDataService.Services
             var response = new ResultResponse<PaperReelConsumption>();
             try
             {
-                var bfList = ServiceHelper.GetLongFromString(request.BF);
+                //var bfList = ServiceHelper.GetLongFromString(request.BF);
                 var gsmList = ServiceHelper.GetLongFromString(request.GSM);
 
                 using (var rwplDb = new RWPLLinqDataContext())
@@ -23,19 +23,38 @@ namespace RWPLLinqDataService.Services
                     var queryable = rwplDb.GetTable<PaperReelConsumption>()
                         .Where(x => x.ReelNo.Contains(request.ReelNo)
                                     && x.Mill.Contains(request.Mill)
-                                    && ((request.BF=="") || bfList.Contains(x.BF))
+                                    && x.BF.Contains(request.BF)
+                                    //&& ((request.BF=="") || bfList.Contains(x.BF))
                                     && ((request.GSM=="") || gsmList.Contains(x.GSM))
                                     && x.Machine.Contains(request.Machine)
                                     && (!request.IsSearchByDate ||
-                                        (x.Date >= request.FromDate && x.Date <= request.ToDate))
+                                        (x.Date >= request.FromDate.Date && x.Date <= request.ToDate.Date))
                                     && !x.IsDeleted
                         )
-                        .OrderBy(x => x.SrNo);
+                        .OrderBy(x => x.Date);
+
+                    if (request.ShowAllData)
+                    {
+                        response.PageData = queryable.ToList();
+                        response.IsSuccess = true;
+                        return response;
+                    }
 
                     var skipRecord = ((request.PageNo > 0) ? (request.PageNo - 1) * request.PageSize : 0);
-
                     response.PageData = queryable.Skip(skipRecord).Take(request.PageSize).ToList();
                     response.TotalItem = queryable.Count();
+
+                    if (response.TotalItem > 0)
+                    {
+                        var totalReel = queryable.Select(x => x.ReelNo).Distinct().Count();
+                        var totalWeight = queryable.Select(x => x.Weight).Sum();
+                        var totalConsumption = queryable.Select(x => x.Consumption).Sum();
+                        var totalBalance = queryable.Select(x => x.Balance).Sum();
+
+                        response.ReportSummary = string.Format("Total Reel : {0}, Total Weight : {1}, Total Consumption : {2}, Total Balance: {3}",
+                                                                                                totalReel, totalWeight, totalConsumption,totalBalance);
+                    }
+
                     response.IsSuccess = true;
                 }
             }

@@ -25,7 +25,7 @@ namespace RWPLLinqDataService.Services
                                     && x.BoxName.Contains(request.BoxName)
                                     && x.Operator.Contains(request.Operator)
                                     && (!request.IsSearchByDate ||
-                                        (x.Date >= request.FromDate && x.Date <= request.ToDate))
+                                        (x.Date >= request.FromDate.Date && x.Date <= request.ToDate.Date))
                                     && !x.IsDeleted
                         )
                         .OrderBy(x => x.SrNo);

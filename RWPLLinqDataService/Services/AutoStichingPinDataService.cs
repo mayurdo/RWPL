@@ -23,7 +23,7 @@ namespace RWPLLinqDataService.Services
                                                     && x.BoxName.Contains(request.BoxName)
                                                     && x.Operator.Contains(request.Operator)
                                                     && (!request.IsSearchByDate ||
-                                                        (x.Date >= request.FromDate && x.Date <= request.ToDate))
+                                                        (x.Date >= request.FromDate.Date && x.Date <= request.ToDate.Date))
                                                     && !x.IsDeleted
                         )
                         .OrderBy(x => x.SrNo);
@@ -33,12 +33,15 @@ namespace RWPLLinqDataService.Services
                     response.PageData = queryable.Skip(skipRecord).Take(request.PageSize).ToList();
                     response.TotalItem = queryable.Count();
 
-                    var totalClient = queryable.Select(x => x.Client).Distinct().Count();
-                    var totalQty = queryable.Select(x => x.BoxQty).Sum();
-                    var totalPins = queryable.Select(x => x.TotalPins).Sum();
+                    if (response.TotalItem > 0)
+                    {
+                        var totalClient = queryable.Select(x => x.Client).Distinct().Count();
+                        var totalQty = queryable.Select(x => x.BoxQty).Sum();
+                        var totalPins = queryable.Select(x => x.TotalPins).Sum();
 
-                    response.ReportSummary = string.Format("Total Client : {0}, Total Box Qty : {1}, Total Pins : {2}",
-                                                                            totalClient, totalQty, totalPins);
+                        response.ReportSummary = string.Format("Total Client : {0}, Total Box Qty : {1}, Total Pins : {2}",
+                                                                                totalClient, totalQty, totalPins);
+                    }
 
                     response.IsSuccess = true;
                 }

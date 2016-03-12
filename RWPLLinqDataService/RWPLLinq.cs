@@ -33,6 +33,10 @@ namespace RWPLLinqDataService
     {
     }
 
+    partial class DuplexPrintedPaper : IEntity
+    {
+    }
+
     partial class AutoStichingPin : IEntity
     {
     }
@@ -46,6 +50,18 @@ namespace RWPLLinqDataService
     }
 
     partial class CustomerMaster : IEntity
+    {
+    }
+
+    partial class DeliveryChallan : IEntity
+    {
+    }
+
+    partial class DeliveryChallanItem : IEntity
+    {
+    }
+
+    partial class StockMaster : IEntity
     {
     }
 

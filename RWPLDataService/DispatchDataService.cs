@@ -146,11 +146,11 @@ namespace RWPLDataService
                     response.Object = new DispatchEntryPageRequest()
                     {
                         ItemType = new List<string>() { "Box", "Insertion", "Plate" },
-                        Client = queryableDispatch.Select(x => x.Client).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
+                        //Client = queryableDispatch.Select(x => x.Client).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
                         VehicalNo = queryableDispatch.Select(x => x.VehicalNo).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
                         DriverName = queryableDispatch.Select(x => x.VehicalNo).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
-                        ItemCode = queryableDispatchItem.Select(x => x.ItemCode).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
-                        ItemName = queryableDispatchItem.Select(x => x.ItemName).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
+                        //ItemCode = queryableDispatchItem.Select(x => x.ItemCode).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
+                        //ItemName = queryableDispatchItem.Select(x => x.ItemName).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
                     };
 
                     response.IsSuccess = true;

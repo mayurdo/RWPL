@@ -34,7 +34,7 @@ namespace RWPLLinqDataService.Services
                                            && dispatchItem.ItemName.Contains(request.ItemName)
                                            && dispatch.VehicalNo.Contains(request.VehicalNo)
                                            && (!request.IsSearchByDate ||
-                                               (dispatch.Date >= request.FromDate && dispatch.Date <= request.ToDate))
+                                               (dispatch.Date >= request.FromDate.Date && dispatch.Date <= request.ToDate.Date))
                                            && !dispatch.IsDeleted
                                            && !dispatchItem.IsDeleted
                                      orderby dispatch.SrNo
@@ -52,37 +52,38 @@ namespace RWPLLinqDataService.Services
                                          dispatchItem.ItemName,
                                          dispatchItem.TotalBundles,
                                          dispatchItem.TotalQty
-                                     })
-                        .Skip(skipRecord)
-                        .Take(request.PageSize)
-                        .AsEnumerable()
-                        .Select(x => new DispatchReportView
-                        {
-                            SrNo = x.SrNo,
-                            Date = x.Date,
-                            InTime = x.InTime,
-                            OutTime = x.OutTime,
-                            Client = x.Client,
-                            VehicalNo = x.VehicalNo,
-                            DriverName = x.DriverName,
-                            Type = x.ItemType,
-                            Code = x.ItemCode,
-                            Name = x.ItemName,
-                            TotalBundles = x.TotalBundles,
-                            TotalQty = x.TotalQty
-                        });
+                                     });
 
-                    var viewDispatches = queryable as DispatchReportView[] ?? queryable.ToArray();
+                    response.PageData = queryable.Skip(skipRecord)
+                                                    .Take(request.PageSize)
+                                                    .AsEnumerable()
+                                                    .Select(x => new DispatchReportView
+                                                    {
+                                                        SrNo = x.SrNo,
+                                                        Date = x.Date,
+                                                        InTime = x.InTime,
+                                                        OutTime = x.OutTime,
+                                                        Client = x.Client,
+                                                        VehicalNo = x.VehicalNo,
+                                                        DriverName = x.DriverName,
+                                                        Type = x.ItemType,
+                                                        Code = x.ItemCode,
+                                                        Name = x.ItemName,
+                                                        TotalBundles = x.TotalBundles,
+                                                        TotalQty = x.TotalQty
+                                                    }).ToList();
 
-                    response.PageData = viewDispatches.ToList();
-                    response.TotalItem = viewDispatches.Count();
+                    response.TotalItem = queryable.Count();
 
-                    var totalClient = viewDispatches.Select(x => x.Client).Distinct().Count();
-                    var totalQty = viewDispatches.Select(x => x.TotalQty).Sum();
-                    var totalBunddle = viewDispatches.Select(x => x.TotalBundles).Sum();
+                    if (response.TotalItem > 0)
+                    {
+                        var totalClient = queryable.Select(x => x.Client).Distinct().Count();
+                        var totalQty = queryable.Select(x => x.TotalQty).Sum();
+                        var totalBunddle = queryable.Select(x => x.TotalBundles).Sum();
 
-                    response.ReportSummary = string.Format("Total Client : {0}, Total Qty : {1}, Total Bunddle : {2}",
-                                                                            totalClient, totalQty, totalBunddle);
+                        response.ReportSummary = string.Format("Total Client : {0}, Total Qty : {1}, Total Bunddle : {2}",
+                                                                                totalClient, totalQty, totalBunddle);
+                    }
 
                     response.IsSuccess = true;
                 }
@@ -140,17 +141,12 @@ namespace RWPLLinqDataService.Services
                 using (var rwplDb = new RWPLLinqDataContext())
                 {
                     var queryableDispatch = rwplDb.GetTable<Dispatch>();
-
-                    var queryableDispatchItem = rwplDb.GetTable<DispatchItem>();
-
+                    
                     response.Object = new DispatchEntryPageRequest()
                     {
                         ItemType = new List<string>() { "Box", "Insertion", "Plate" },
-                        Client = queryableDispatch.Select(x => x.Client).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
                         VehicalNo = queryableDispatch.Select(x => x.VehicalNo).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
                         DriverName = queryableDispatch.Select(x => x.VehicalNo).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
-                        ItemCode = queryableDispatchItem.Select(x => x.ItemCode).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
-                        ItemName = queryableDispatchItem.Select(x => x.ItemName).Distinct().Where(x => x != string.Empty).OrderBy(x => x).ToList(),
                     };
 
                     response.IsSuccess = true;
@@ -173,7 +169,7 @@ namespace RWPLLinqDataService.Services
                 using (var rwplDb = new RWPLLinqDataContext())
                 {
                     response.Object = rwplDb.GetTable<Dispatch>()
-                                            .IncludeTable(x=>x.DispatchItems)
+                                            .IncludeTable(x => x.DispatchItems)
                                             .SingleOrDefault(x => x.SrNo == srNo);
                     response.IsSuccess = true;
                 }
@@ -187,7 +183,7 @@ namespace RWPLLinqDataService.Services
             return response;
         }
 
-       
+
 
         public override ResultResponse<Dispatch> Edit(Dispatch entity)
         {

@@ -63,12 +63,15 @@
       <DependentUpon>RWPLLinq.dbml</DependentUpon>
     </Compile>
     <Compile Include="Services\CustomerMasterDataService.cs" />
+    <Compile Include="Services\DeliveryChallanDataService.cs" />
     <Compile Include="Services\DispatchDataService.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\DuplexPrintedPaperDataService.cs" />
     <Compile Include="Services\ItemMasterDataService.cs" />
     <Compile Include="Services\PaperReelConsumptionDataService.cs" />
     <Compile Include="Services\RotaryDataService.cs" />
+    <Compile Include="Services\StockMasterDataService.cs" />
     <Compile Include="Services\UserDataService.cs" />
   </ItemGroup>
   <ItemGroup>

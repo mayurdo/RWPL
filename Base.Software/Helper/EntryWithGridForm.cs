@@ -14,33 +14,32 @@ namespace Base.Software.Helper
         where TEntity : IEntity, new()
         where TGridEntity : IEntity, new()
     {
-        private IServices _services;
-        private TEntity _entity;
 
         private List<TGridEntity> _gridEntities;
 
-        private readonly Control _form;
-
         private DataGridView _dataGridView;
 
-        private readonly List<Control> _bindControls;
-
-        private readonly List<Control> _bindGridControls;
+       
 
         public EntryWithGridForm(Control form, long srNo = 0)
+            : base(form, srNo)
         {
-            var grpGridControlName = @"grpGridBindR" + typeof(TGridEntity).Name + "s";
+            HasGridForm = true;
 
-            _services = new WinServices(typeof(TEntity).Name);
-            _form = form;
+            var grpGridControlName = @"grpGridBind" + typeof(TGridEntity).Name + "s";
+
             _dataGridView = (DataGridView)form.Controls[grpGridControlName].Controls[@"dataGridView1"];
-
-            _bindControls = GetBindControls(form);
 
             _bindGridControls = GetBindControls(form.Controls[grpGridControlName]);
 
+            BindEvents(form.Controls[grpGridControlName]);
 
-            _entity = GetEntityById(srNo);
+            var appDataControls = _bindGridControls.Where(x => !string.IsNullOrEmpty(x.AccessibleDescription) && x.AccessibleDescription.Contains(AccDescription.AppData.ToString())).ToList();
+
+            if (appDataControls.Count > 0)
+            {
+                FillDropDownAndAutoCompleteByApplicationData(appDataControls);
+            }
 
             _gridEntities = new List<TGridEntity>();
 
@@ -48,27 +47,10 @@ namespace Base.Software.Helper
                 BindControlsWithEntityModel(_bindControls, _entity);
         }
 
-        private TEntity GetEntityById(long srNo = 0)
-        {
-            if (srNo == 0)
-            {
-                return new TEntity();
-            }
 
-            var response = _services.GetEntityByIdServiceResponse<TEntity>(srNo);
+        #region Add Delete Grid Item
 
-            if (response.IsSuccess)
-                return response.Object;
-
-            MessageBox.Show(response.Exception.Message, @"Error Message");
-            ((Form)_form).Close();
-
-            return new TEntity();
-        }
-
-        #region Add Grid Item
-
-        public void AddGridItem()
+        private void AddGridItem(object sender, EventArgs e)
         {
             if (!ValidateControls(_bindGridControls))
             {
@@ -87,7 +69,7 @@ namespace Base.Software.Helper
             ResetBindingControls(_bindGridControls);
         }
 
-        public void DeleteGridItem()
+        private void DeleteGridItem(object sender, EventArgs e)
         {
             if (_dataGridView.SelectedRows.Count <= 0)
             {
@@ -110,12 +92,10 @@ namespace Base.Software.Helper
         {
             _dataGridView.DataSource = _gridEntities.ToList();
             PageHelper.ColumnFormating(_dataGridView);
-            _dataGridView.Columns["SrNo"].Visible = false;
-            _dataGridView.Columns[typeof(TEntity).Name].Visible = false;
-            _dataGridView.Columns[typeof(TEntity).Name + "_SrNo"].Visible = false;
+            HideGridColumn("SrNo");
+            HideGridColumn(typeof(TEntity).Name);
+            HideGridColumn(typeof(TEntity).Name + "_SrNo");
 
-            //var currencyManager1 = (CurrencyManager)BindingContext[_dataGridView.DataSource];
-            //currencyManager1.SuspendBinding();
             foreach (DataGridViewRow row in _dataGridView.Rows)
             {
                 if (Convert.ToBoolean(row.Cells["IsDeleted"].Value))
@@ -124,70 +104,38 @@ namespace Base.Software.Helper
                     row.Visible = false;
                 }
             }
-            //currencyManager1.ResumeBinding();
         }
 
-        #endregion
-
-        #region Save
-
-        public void SavePageData()
+        private void HideGridColumn(string columnName)
         {
-            if (!ValidateControls(_bindControls))
-            {
-                return;
-            }
+            var dataGridViewColumn = _dataGridView.Columns[columnName];
 
-            BindEntityModelWithControls(_bindControls, ref _entity);
-
-
-            ResultResponse<TEntity> response;
-
-            if (_entity.SrNo == 0)
-            {
-                _entity.CreatedBy = PageHelper.UserDetail.UserName;
-                _entity.CreatedDate = DateTime.Now;
-                response = _services.SaveServiceResponse(_entity);
-            }
-            else
-            {
-                _entity.UpdatedBy = PageHelper.UserDetail.UserName;
-                _entity.UpdatedDate = DateTime.Now;
-                response = _services.EditServiceResponse(_entity);
-            }
-
-            if (!response.IsSuccess)
-            {
-                MessageBox.Show(response.Exception.Message, @"Error Message");
-                return;
-            }
-
-            ResetBindingControls(_bindControls);
+            if (dataGridViewColumn != null)
+                dataGridViewColumn.Visible = false;
         }
 
         #endregion
+
+
+        #region Override methods
 
         protected override void SetGridDataFromEntity(Control control, object value)
         {
-            _gridEntities = ((ICollection<TGridEntity>)value).Where(x=> !x.IsDeleted).ToList();
+            _gridEntities = ((ICollection<TGridEntity>)value).Where(x => !x.IsDeleted).ToList();
 
             BindItemDataGridView();
         }
 
-        public void FillDropDownAndAutoComplete<TPageDataRequest>()
+        protected override void BindAditionalEvent(Control control, string[] accDescriptionList)
         {
-            var pageDataResponse = _services.GetEntryPageDataServiceResponse<TPageDataRequest>();
+            if (accDescriptionList.Contains(AccDescription.AddItem.ToString()))
+                control.Click += AddGridItem;
 
-            if (!pageDataResponse.IsSuccess)
-            {
-                MessageBox.Show(pageDataResponse.Exception.Message, @"Error Message On Page Data Request");
-                return;
-            }
-
-            var pageData = pageDataResponse.Object;
-
-            FillDropDownAndAutoComplete(pageData,_bindControls);
-            FillDropDownAndAutoComplete(pageData, _bindGridControls);
+            if (accDescriptionList.Contains(AccDescription.DeleteItem.ToString()))
+                control.Click += DeleteGridItem;
         }
+
+        #endregion
+
     }
 }

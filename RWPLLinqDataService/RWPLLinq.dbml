@@ -129,33 +129,6 @@
       <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PaperReelConsumptions" Member="PaperReelConsumptions">
-    <Type Name="PaperReelConsumption">
-      <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="BF" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="GSM" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="Size" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="LF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ReelNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Mill" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Grade" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Machine" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Weight" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="Consumption" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="UpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DeleteReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Rotary" Member="Rotaries">
     <Type Name="Rotary">
       <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -179,12 +152,12 @@
       <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ItemMasters" Member="ItemMasters">
-    <Type Name="ItemMaster">
+  <Table Name="dbo.CustomerMasters" Member="CustomerMasters">
+    <Type Name="CustomerMaster">
       <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ItemType" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="ItemName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -196,10 +169,197 @@
       <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CustomerMasters" Member="CustomerMasters">
-    <Type Name="CustomerMaster">
+  <Table Name="dbo.DeliveryChallanItems" Member="DeliveryChallanItems">
+    <Type Name="DeliveryChallanItem">
       <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Qty" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliveryChallan_SrNo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeleteReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="DeliveryChallan_DeliveryChallanItem" Member="DeliveryChallan" ThisKey="DeliveryChallan_SrNo" OtherKey="SrNo" Type="DeliveryChallan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeliveryChallans" Member="DeliveryChallans">
+    <Type Name="DeliveryChallan">
+      <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FinacialYear" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeliveryChallanNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DeliveryChallanDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="OrderNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PONo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PODate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CustomerCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CustomerName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModeOfTransport" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TermsOfDelivery" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="VehicleNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RRGCNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeleteReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="DeliveryChallan_DeliveryChallanItem" Member="DeliveryChallanItems" ThisKey="SrNo" OtherKey="DeliveryChallan_SrNo" Type="DeliveryChallanItem" />
+      <Association Name="DeliveryChallan_DeliveryChallan" Member="DeliveryChallan2" ThisKey="SrNo" OtherKey="SrNo" Type="DeliveryChallan" Cardinality="One" />
+      <Association Name="DeliveryChallan_DeliveryChallan" Member="DeliveryChallan1" ThisKey="SrNo" OtherKey="SrNo" Type="DeliveryChallan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DuplexPrintedPaper" Member="DuplexPrintedPapers">
+    <Type Name="DuplexPrintedPaper">
+      <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PaperSizeDeckle" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="PaperSizeCutting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="StockInMM" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPaperQty" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeleteReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StockMaster" Member="StockMasters">
+    <Type Name="StockMaster">
+      <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InvoiceNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BF" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="GSM" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ReelNo" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Mill" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeleteReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StockMasterView" Member="StockMasterViews">
+    <Type Name="StockMasterView">
+      <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InvoiceNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BF" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="GSM" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ReelNo" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Consumption" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Mill" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaperReelConsumptions" Member="PaperReelConsumptions">
+    <Type Name="PaperReelConsumption">
+      <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TIMEConsume" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BF" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GSM" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LTF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReelNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mill" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Machine" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Consumption" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RunningMeter" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Wastage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GumUse" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BreakDownReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeleteReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ItemMasters" Member="ItemMasters">
+    <Type Name="ItemMaster">
+      <Column Name="SrNo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ItemType" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Width" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoofPly" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SheetSizeDeckle" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SheetSizeCutting" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TopBF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TopGSM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TopWeight" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="TopBursting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Flute1BF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Flute1GSM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Flute1Weight" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Flute1Bursting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Line1BF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Line1GSM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Line1Weight" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Line1Bursting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Flute2BF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Flute2GSM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Flute2Weight" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Flute2Bursting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Line2BF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Line2GSM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Line2Weight" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Line2Bursting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Flute3BF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Flute3GSM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Flute3Weight" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Flute3Bursting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Line3BF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Line3GSM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Line3Weight" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Line3Bursting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="TotalWeight" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="TotalBursting" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="PinQty" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FitmentDetails" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DrawingNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />

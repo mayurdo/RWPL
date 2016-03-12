@@ -14,6 +14,10 @@ namespace RWPLEntityModel
         BundlingM1,
         Rotary,
         ItemMaster,
-        CustomerMaster
+        CustomerMaster,
+        DeliveryChallan,
+        DuplexPrintedPaper,
+        AppConfig,
+        StockMaster
     }
 }

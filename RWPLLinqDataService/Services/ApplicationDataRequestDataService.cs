@@ -23,10 +23,15 @@ namespace RWPLLinqDataService.Services
                         .Where(x => !x.IsDeleted)
                         .OrderBy(x => x.CustomerName);
 
+                    var queryableReelNo = rwplDb.GetTable<StockMaster>()
+                        .Where(x => !x.IsDeleted)
+                        .OrderBy(x => x.ReelNo);
+
                     response.Object = new ApplicationDataRequest()
                     {
                         Items = queryableItems.ToList(),
-                        Customers = queryableCustomers.ToList()
+                        Customers = queryableCustomers.ToList(),
+                        Stocks = queryableReelNo.ToList()
                     };
 
                     response.IsSuccess = true;

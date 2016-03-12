@@ -23,11 +23,33 @@ namespace Base.Software.Helper
             var response = services.CustomServiceResponse<ApplicationDataRequest>("Get");
             if (!response.IsSuccess)
             {
-                MessageBox.Show(@"Application Data not loaded", @"Error Message", MessageBoxButtons.OK);
+                MessageBox.Show(@"Application Data not loaded : "+response.Exception.ToString(), @"Error Message", MessageBoxButtons.OK);
                 return;
             }
 
             ApplicationData = response.Object;
+        }
+
+        public static void GoToPage<TForm>(AccessPages accessPage,params object[] paramList) where TForm : Form, new()
+        {
+            var access = UserDetail.UserAccessPages.SingleOrDefault(x => x.PageName == accessPage.ToString());
+
+            if (access == null || !access.View)
+            {
+                MessageBox.Show(@"You don't have access to this page, please contact administrator", @"Accesss Message", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (paramList.Length > 0)
+            {
+                var frm = (TForm)Activator.CreateInstance(typeof(TForm), paramList);;
+                frm.ShowDialog();
+            }
+            else
+            {
+                var frm = new TForm();
+                frm.ShowDialog();
+            }
         }
 
         public static void AcceptOnlyNumber(KeyPressEventArgs e)
@@ -86,40 +108,40 @@ namespace Base.Software.Helper
 
         public static void CalculateQtyXAny(string qtyXBundlesValue, TextBox totalQtyTextBox = null, TextBox totalBundlesTextBox = null)
         {
-            var commaSeperated = qtyXBundlesValue.Split(',');
-
-            long totalQty = 0;
-            long totalBundles = 0;
-            foreach (var multiplyValue in commaSeperated)
+            try
             {
-                if (string.IsNullOrEmpty(multiplyValue))
-                    continue;
+                var commaSeperated = qtyXBundlesValue.Split(',');
 
-                var multiplySeperater = multiplyValue.Split('*');
-                var qtyPerBundle = (multiplySeperater.Length < 1 || string.IsNullOrEmpty(multiplySeperater[0]))
-                                ? 0
-                                : Convert.ToInt64(multiplySeperater[0]);
-                var bundles = (multiplySeperater.Length < 2 || string.IsNullOrEmpty(multiplySeperater[1]))
-                                ? 0
-                                : Convert.ToInt64(multiplySeperater[1]);
+                long totalQty = 0;
+                long totalBundles = 0;
+                foreach (var multiplyValue in commaSeperated)
+                {
+                    if (string.IsNullOrEmpty(multiplyValue))
+                        continue;
 
-                totalQty += (qtyPerBundle * bundles);
-                totalBundles += bundles;
+                    var multiplySeperater = multiplyValue.Split('*');
+                    var qtyPerBundle = (multiplySeperater.Length < 1 || string.IsNullOrEmpty(multiplySeperater[0]))
+                        ? 0
+                        : Convert.ToInt64(multiplySeperater[0]);
+                    var bundles = (multiplySeperater.Length < 2 || string.IsNullOrEmpty(multiplySeperater[1]))
+                        ? 0
+                        : Convert.ToInt64(multiplySeperater[1]);
+
+                    totalQty += (qtyPerBundle*bundles);
+                    totalBundles += bundles;
+                }
+
+                if (totalQtyTextBox != null)
+                    totalQtyTextBox.Text = totalQty.ToString(CultureInfo.InvariantCulture);
+
+                if (totalBundlesTextBox != null)
+                    totalBundlesTextBox.Text = totalBundles.ToString(CultureInfo.InvariantCulture);
             }
-
-            if (totalQtyTextBox != null)
-                totalQtyTextBox.Text = totalQty.ToString(CultureInfo.InvariantCulture);
-
-            if (totalBundlesTextBox != null)
-                totalBundlesTextBox.Text = totalBundles.ToString(CultureInfo.InvariantCulture);
+            catch (Exception ex)
+            {
+                return;
+            }
         }
 
-        public static void ExportToExcel()
-        {
-            //var dataTable = new DataTable();
-            // CreateExcelFile.CreateExcelDocument(dataTable, "C:\\Sample.xlsx");
-            //DocumentFormat
-
-        }
     }
 }
