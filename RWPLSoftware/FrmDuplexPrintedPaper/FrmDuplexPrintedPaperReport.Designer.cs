@@ -1,6 +1,6 @@
-﻿namespace RWPLSoftware.FrmItemMaster
+﻿namespace RWPLSoftware.FrmDuplexPrintedPaper
 {
-    partial class FrmItemMasterReport
+    partial class FrmDuplexPrintedPaperReport
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItemMasterReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDuplexPrintedPaperReport));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.lblReportSummary = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblReportStatus = new System.Windows.Forms.Label();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -51,22 +52,18 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblReportSummary = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBindNoofPly = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtBindDrawingNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBindCustomerName = new System.Windows.Forms.TextBox();
-            this.cmbBindItemType = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBindItemCode = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtBindItemName = new System.Windows.Forms.TextBox();
+            this.dtpBindToDate = new System.Windows.Forms.DateTimePicker();
+            this.cbBindIsSearchByDate = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtBindCustomerName = new System.Windows.Forms.TextBox();
+            this.dtpBindFromDate = new System.Windows.Forms.DateTimePicker();
+            this.label26 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.toolStripButtonExportToExcel = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -74,16 +71,29 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // lblReportSummary
+            // 
+            this.lblReportSummary.BackColor = System.Drawing.SystemColors.Control;
+            this.lblReportSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblReportSummary.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lblReportSummary.ForeColor = System.Drawing.Color.Black;
+            this.lblReportSummary.Location = new System.Drawing.Point(7, 150);
+            this.lblReportSummary.Name = "lblReportSummary";
+            this.lblReportSummary.Size = new System.Drawing.Size(959, 33);
+            this.lblReportSummary.TabIndex = 180;
+            this.lblReportSummary.Text = "Dispatch Report";
+            this.lblReportSummary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblReportStatus);
             this.panel1.Controls.Add(this.bindingNavigator1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(5, 188);
+            this.panel1.Location = new System.Drawing.Point(7, 186);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(960, 516);
-            this.panel1.TabIndex = 186;
+            this.panel1.Size = new System.Drawing.Size(960, 502);
+            this.panel1.TabIndex = 179;
             // 
             // lblReportStatus
             // 
@@ -118,7 +128,8 @@
             this.toolStripSeparator2,
             this.bindingNavigatorEditItem,
             this.toolStripSeparator1,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.toolStripButtonExportToExcel});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -252,218 +263,174 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 483);
+            this.dataGridView1.Size = new System.Drawing.Size(960, 485);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // lblReportSummary
-            // 
-            this.lblReportSummary.BackColor = System.Drawing.SystemColors.Control;
-            this.lblReportSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblReportSummary.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblReportSummary.ForeColor = System.Drawing.Color.Black;
-            this.lblReportSummary.Location = new System.Drawing.Point(5, 152);
-            this.lblReportSummary.Name = "lblReportSummary";
-            this.lblReportSummary.Size = new System.Drawing.Size(976, 33);
-            this.lblReportSummary.TabIndex = 185;
-            this.lblReportSummary.Text = "Dispatch Report";
-            this.lblReportSummary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtBindNoofPly);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtBindDrawingNo);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtBindCustomerName);
-            this.groupBox1.Controls.Add(this.cmbBindItemType);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtBindItemCode);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtBindItemName);
+            this.groupBox1.Controls.Add(this.dtpBindToDate);
+            this.groupBox1.Controls.Add(this.cbBindIsSearchByDate);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtBindCustomerName);
+            this.groupBox1.Controls.Add(this.dtpBindFromDate);
+            this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(5, 39);
+            this.groupBox1.Location = new System.Drawing.Point(7, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1030, 110);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(976, 110);
+            this.groupBox1.TabIndex = 177;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(897, 43);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(91, 34);
-            this.btnSearch.TabIndex = 119;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(753, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 15);
-            this.label6.TabIndex = 118;
-            this.label6.Text = "No of Ply";
-            // 
-            // txtBindNoofPly
-            // 
-            this.txtBindNoofPly.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNoofPly.Location = new System.Drawing.Point(738, 49);
-            this.txtBindNoofPly.Name = "txtBindNoofPly";
-            this.txtBindNoofPly.Size = new System.Drawing.Size(127, 26);
-            this.txtBindNoofPly.TabIndex = 117;
-            this.txtBindNoofPly.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindCompanyName_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(609, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 15);
-            this.label4.TabIndex = 116;
-            this.label4.Text = "Drawing No";
-            // 
-            // txtBindDrawingNo
-            // 
-            this.txtBindDrawingNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindDrawingNo.Location = new System.Drawing.Point(594, 49);
-            this.txtBindDrawingNo.Name = "txtBindDrawingNo";
-            this.txtBindDrawingNo.Size = new System.Drawing.Size(127, 26);
-            this.txtBindDrawingNo.TabIndex = 115;
-            this.txtBindDrawingNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindCompanyName_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(184, 31);
+            this.label1.Location = new System.Drawing.Point(308, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 15);
-            this.label1.TabIndex = 114;
-            this.label1.Text = "Customer Name";
+            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.TabIndex = 202;
+            this.label1.Text = "Item Name";
             // 
-            // txtBindCustomerName
+            // txtBindItemName
             // 
-            this.txtBindCustomerName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindCustomerName.Location = new System.Drawing.Point(169, 49);
-            this.txtBindCustomerName.Name = "txtBindCustomerName";
-            this.txtBindCustomerName.Size = new System.Drawing.Size(127, 26);
-            this.txtBindCustomerName.TabIndex = 113;
-            this.txtBindCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindCompanyName_KeyPress);
+            this.txtBindItemName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindItemName.Location = new System.Drawing.Point(257, 44);
+            this.txtBindItemName.Name = "txtBindItemName";
+            this.txtBindItemName.Size = new System.Drawing.Size(162, 26);
+            this.txtBindItemName.TabIndex = 201;
+            this.txtBindItemName.TextChanged += new System.EventHandler(this.txtBindCustomerName_TextChanged);
             // 
-            // cmbBindItemType
+            // dtpBindToDate
             // 
-            this.cmbBindItemType.Font = new System.Drawing.Font("Arial", 12F);
-            this.cmbBindItemType.FormattingEnabled = true;
-            this.cmbBindItemType.Items.AddRange(new object[] {
-            "UNIVERSAL"});
-            this.cmbBindItemType.Location = new System.Drawing.Point(24, 49);
-            this.cmbBindItemType.Name = "cmbBindItemType";
-            this.cmbBindItemType.Size = new System.Drawing.Size(128, 26);
-            this.cmbBindItemType.TabIndex = 0;
-            this.cmbBindItemType.TextChanged += new System.EventHandler(this.btnSearch_Click);
+            this.dtpBindToDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpBindToDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindToDate.Location = new System.Drawing.Point(631, 44);
+            this.dtpBindToDate.Name = "dtpBindToDate";
+            this.dtpBindToDate.Size = new System.Drawing.Size(135, 26);
+            this.dtpBindToDate.TabIndex = 5;
+            this.dtpBindToDate.ValueChanged += new System.EventHandler(this.txtBindCustomerName_TextChanged);
             // 
-            // label5
+            // cbBindIsSearchByDate
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(61, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 15);
-            this.label5.TabIndex = 112;
-            this.label5.Text = "Box Type";
+            this.cbBindIsSearchByDate.AutoSize = true;
+            this.cbBindIsSearchByDate.BackColor = System.Drawing.Color.Transparent;
+            this.cbBindIsSearchByDate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.cbBindIsSearchByDate.Location = new System.Drawing.Point(476, 79);
+            this.cbBindIsSearchByDate.Name = "cbBindIsSearchByDate";
+            this.cbBindIsSearchByDate.Size = new System.Drawing.Size(112, 19);
+            this.cbBindIsSearchByDate.TabIndex = 108;
+            this.cbBindIsSearchByDate.Text = "Search by Date";
+            this.cbBindIsSearchByDate.UseVisualStyleBackColor = false;
+            this.cbBindIsSearchByDate.CheckedChanged += new System.EventHandler(this.txtBindCustomerName_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(328, 31);
+            this.label2.Location = new System.Drawing.Point(93, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.Size = new System.Drawing.Size(99, 15);
             this.label2.TabIndex = 90;
-            this.label2.Text = "Item Code";
+            this.label2.Text = "Customer Name";
             // 
-            // txtBindItemCode
+            // label9
             // 
-            this.txtBindItemCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindItemCode.Location = new System.Drawing.Point(313, 49);
-            this.txtBindItemCode.Name = "txtBindItemCode";
-            this.txtBindItemCode.Size = new System.Drawing.Size(127, 26);
-            this.txtBindItemCode.TabIndex = 1;
-            this.txtBindItemCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindCompanyName_KeyPress);
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(664, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(20, 15);
+            this.label9.TabIndex = 107;
+            this.label9.Text = "To";
             // 
-            // label3
+            // txtBindCustomerName
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(467, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 15);
-            this.label3.TabIndex = 92;
-            this.label3.Text = "Item Name";
+            this.txtBindCustomerName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindCustomerName.Location = new System.Drawing.Point(62, 44);
+            this.txtBindCustomerName.Name = "txtBindCustomerName";
+            this.txtBindCustomerName.Size = new System.Drawing.Size(162, 26);
+            this.txtBindCustomerName.TabIndex = 3;
+            this.txtBindCustomerName.TextChanged += new System.EventHandler(this.txtBindCustomerName_TextChanged);
             // 
-            // txtBindItemName
+            // dtpBindFromDate
             // 
-            this.txtBindItemName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindItemName.Location = new System.Drawing.Point(452, 49);
-            this.txtBindItemName.Name = "txtBindItemName";
-            this.txtBindItemName.Size = new System.Drawing.Size(127, 26);
-            this.txtBindItemName.TabIndex = 2;
-            this.txtBindItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindCompanyName_KeyPress);
+            this.dtpBindFromDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpBindFromDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindFromDate.Location = new System.Drawing.Point(476, 44);
+            this.dtpBindFromDate.Name = "dtpBindFromDate";
+            this.dtpBindFromDate.Size = new System.Drawing.Size(135, 26);
+            this.dtpBindFromDate.TabIndex = 4;
+            this.dtpBindFromDate.ValueChanged += new System.EventHandler(this.txtBindCustomerName_TextChanged);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(506, 26);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(65, 15);
+            this.label26.TabIndex = 104;
+            this.label26.Text = "Date From";
             // 
             // lblHeader
             // 
             this.lblHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblHeader.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.White;
-            this.lblHeader.Location = new System.Drawing.Point(0, 0);
+            this.lblHeader.Location = new System.Drawing.Point(2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(1035, 33);
-            this.lblHeader.TabIndex = 184;
-            this.lblHeader.Text = "Item Master Report";
+            this.lblHeader.Size = new System.Drawing.Size(981, 33);
+            this.lblHeader.TabIndex = 178;
+            this.lblHeader.Text = "Duplex Printed Paper Report";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FrmItemMasterReport
+            // toolStripButtonExportToExcel
+            // 
+            this.toolStripButtonExportToExcel.Image = global::RWPLSoftware.Properties.Resources.excelIcon;
+            this.toolStripButtonExportToExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExportToExcel.Name = "toolStripButtonExportToExcel";
+            this.toolStripButtonExportToExcel.Size = new System.Drawing.Size(145, 22);
+            this.toolStripButtonExportToExcel.Text = "Export to Excel              ";
+            this.toolStripButtonExportToExcel.Click += new System.EventHandler(this.toolStripButtonExportToExcel_Click);
+            // 
+            // FrmDuplexPrintedPaperReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 716);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(983, 520);
             this.Controls.Add(this.lblReportSummary);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblHeader);
-            this.Name = "FrmItemMasterReport";
+            this.Name = "FrmDuplexPrintedPaperReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmItemMasterReport";
+            this.Text = "FrmDuplexPrintedPaperReport";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmItemMasterReport_Load);
+            this.Load += new System.EventHandler(this.FrmDuplexPrintedPaperReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -478,6 +445,7 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lblReportSummary;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblReportStatus;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
@@ -498,21 +466,17 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblReportSummary;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBindItemCode;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBindItemName;
-        private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.ComboBox cmbBindItemType;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBindNoofPly;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBindDrawingNo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBindItemName;
+        private System.Windows.Forms.DateTimePicker dtpBindToDate;
+        private System.Windows.Forms.CheckBox cbBindIsSearchByDate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBindCustomerName;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DateTimePicker dtpBindFromDate;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblHeader;
+        private System.Windows.Forms.ToolStripButton toolStripButtonExportToExcel;
     }
 }

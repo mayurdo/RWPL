@@ -90,6 +90,12 @@
     <Compile Include="FrmDeliveryChallan\FrmDeliveryChallanEntry.Designer.cs">
       <DependentUpon>FrmDeliveryChallanEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDispatch\FrmDispatchAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDispatch\FrmDispatchAnalysis.Designer.cs">
+      <DependentUpon>FrmDispatchAnalysis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDispatch\FrmDispatchEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmItemMaster\FrmCustomerSummaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmItemMaster\FrmCustomerSummaryReport.Designer.cs">
+      <DependentUpon>FrmCustomerSummaryReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPaperReelConsumption\FrmPaperReelConsumptionEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,12 @@
     </Compile>
     <Compile Include="FrmPaperReelConsumption\FrmPaperReelConsumptionReport.Designer.cs">
       <DependentUpon>FrmPaperReelConsumptionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPaperReelConsumption\FrmPaperReelConsumtionAnalysisReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaperReelConsumption\FrmPaperReelConsumtionAnalysisReport.Designer.cs">
+      <DependentUpon>FrmPaperReelConsumtionAnalysisReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRotary\FrmRotaryEntry.cs">
       <SubType>Form</SubType>
@@ -155,6 +173,12 @@
     </Compile>
     <Compile Include="FrmItemMaster\FrmItemMasterReport.Designer.cs">
       <DependentUpon>FrmItemMasterReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockMaster\FrmStockMasterAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockMaster\FrmStockMasterAnalysis.Designer.cs">
+      <DependentUpon>FrmStockMasterAnalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockMaster\FrmStockMasterEntry.cs">
       <SubType>Form</SubType>
@@ -192,6 +216,9 @@
     <EmbeddedResource Include="FrmDeliveryChallan\FrmDeliveryChallanEntry.resx">
       <DependentUpon>FrmDeliveryChallanEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDispatch\FrmDispatchAnalysis.resx">
+      <DependentUpon>FrmDispatchAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDispatch\FrmDispatchEntry.resx">
       <DependentUpon>FrmDispatchEntry.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,11 +234,17 @@
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmItemMaster\FrmCustomerSummaryReport.resx">
+      <DependentUpon>FrmCustomerSummaryReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPaperReelConsumption\FrmPaperReelConsumptionEntry.resx">
       <DependentUpon>FrmPaperReelConsumptionEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPaperReelConsumption\FrmPaperReelConsumptionReport.resx">
       <DependentUpon>FrmPaperReelConsumptionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPaperReelConsumption\FrmPaperReelConsumtionAnalysisReport.resx">
+      <DependentUpon>FrmPaperReelConsumtionAnalysisReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRotary\FrmRotaryEntry.resx">
       <DependentUpon>FrmRotaryEntry.cs</DependentUpon>
@@ -224,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmItemMaster\FrmItemMasterReport.resx">
       <DependentUpon>FrmItemMasterReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockMaster\FrmStockMasterAnalysis.resx">
+      <DependentUpon>FrmStockMasterAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStockMaster\FrmStockMasterEntry.resx">
       <DependentUpon>FrmStockMasterEntry.cs</DependentUpon>

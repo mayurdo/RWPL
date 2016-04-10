@@ -4,11 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using RWPLDataService;
-using RWPLDataService.Model;
 using RWPLEntityModel;
 using RWPLEntityModel.PageDataRequest;
 using RWPLEntityModel.SearchRequest;
+using RWPLLinqDataService;
 
 namespace RWPLWebApiService.Controllers
 {

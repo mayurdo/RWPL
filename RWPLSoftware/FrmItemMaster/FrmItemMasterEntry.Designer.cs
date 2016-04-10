@@ -40,7 +40,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBindCompanyName = new System.Windows.Forms.TextBox();
+            this.txtBindCustomerName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBindDrawingNo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -112,7 +112,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.txtBindLength = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBindItemType = new System.Windows.Forms.TextBox();
+            this.txtBindBoxType = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.txtBindTotalWeight = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
@@ -279,26 +279,26 @@
             this.label3.TabIndex = 290;
             this.label3.Text = "*";
             // 
-            // txtBindCompanyName
+            // txtBindCustomerName
             // 
-            this.txtBindCompanyName.AccessibleDescription = "Req";
-            this.txtBindCompanyName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBindCompanyName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindCompanyName.Location = new System.Drawing.Point(138, 109);
-            this.txtBindCompanyName.Name = "txtBindCompanyName";
-            this.txtBindCompanyName.Size = new System.Drawing.Size(209, 26);
-            this.txtBindCompanyName.TabIndex = 0;
+            this.txtBindCustomerName.AccessibleDescription = "Req";
+            this.txtBindCustomerName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBindCustomerName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindCustomerName.Location = new System.Drawing.Point(138, 109);
+            this.txtBindCustomerName.Name = "txtBindCustomerName";
+            this.txtBindCustomerName.Size = new System.Drawing.Size(209, 26);
+            this.txtBindCustomerName.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 115);
+            this.label7.Location = new System.Drawing.Point(24, 115);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 15);
+            this.label7.Size = new System.Drawing.Size(105, 15);
             this.label7.TabIndex = 289;
-            this.label7.Text = "Company Name :";
+            this.label7.Text = "Customer Name :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtBindDrawingNo
@@ -1101,16 +1101,16 @@
             this.label6.Text = "Paper Combination";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtBindItemType
+            // txtBindBoxType
             // 
-            this.txtBindItemType.AccessibleDescription = "";
-            this.txtBindItemType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindItemType.Location = new System.Drawing.Point(138, 669);
-            this.txtBindItemType.Name = "txtBindItemType";
-            this.txtBindItemType.Size = new System.Drawing.Size(209, 26);
-            this.txtBindItemType.TabIndex = 366;
-            this.txtBindItemType.Text = "BOXES";
-            this.txtBindItemType.Visible = false;
+            this.txtBindBoxType.AccessibleDescription = "";
+            this.txtBindBoxType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindBoxType.Location = new System.Drawing.Point(138, 669);
+            this.txtBindBoxType.Name = "txtBindBoxType";
+            this.txtBindBoxType.Size = new System.Drawing.Size(209, 26);
+            this.txtBindBoxType.TabIndex = 366;
+            this.txtBindBoxType.Text = "BOXES";
+            this.txtBindBoxType.Visible = false;
             // 
             // label51
             // 
@@ -1119,9 +1119,9 @@
             this.label51.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.Location = new System.Drawing.Point(65, 675);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(67, 15);
+            this.label51.Size = new System.Drawing.Size(64, 15);
             this.label51.TabIndex = 367;
-            this.label51.Text = "Item Type :";
+            this.label51.Text = "Box Type :";
             this.label51.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.label51.Visible = false;
             // 
@@ -1389,7 +1389,7 @@
             this.Controls.Add(this.txtBindTopBursting);
             this.Controls.Add(this.txtBindTotalWeight);
             this.Controls.Add(this.label52);
-            this.Controls.Add(this.txtBindItemType);
+            this.Controls.Add(this.txtBindBoxType);
             this.Controls.Add(this.label51);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label46);
@@ -1462,7 +1462,7 @@
             this.Controls.Add(this.txtBindDrawingNo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtBindCompanyName);
+            this.Controls.Add(this.txtBindCustomerName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBindItemName);
@@ -1498,7 +1498,7 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBindCompanyName;
+        private System.Windows.Forms.TextBox txtBindCustomerName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBindDrawingNo;
         private System.Windows.Forms.Label label9;
@@ -1570,7 +1570,7 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox txtBindLength;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBindItemType;
+        private System.Windows.Forms.TextBox txtBindBoxType;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.TextBox txtBindTotalWeight;
         private System.Windows.Forms.Label label52;

@@ -37,14 +37,18 @@
             this.rotaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deliveryChallanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.duplexPrintedPaperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.appConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paperReelConsumtionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dispatchAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +58,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.masterToolStripMenuItem,
-            this.settingToolStripMenuItem});
+            this.settingToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(884, 24);
@@ -124,6 +129,37 @@
             this.duplexPrintedPaperToolStripMenuItem.Text = "Duplex Printed Paper";
             this.duplexPrintedPaperToolStripMenuItem.Click += new System.EventHandler(this.duplexPrintedPaperToolStripMenuItem_Click);
             // 
+            // masterToolStripMenuItem
+            // 
+            this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemMasterToolStripMenuItem,
+            this.customerMasterToolStripMenuItem,
+            this.stockMasterToolStripMenuItem});
+            this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
+            this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.masterToolStripMenuItem.Text = "Master";
+            // 
+            // itemMasterToolStripMenuItem
+            // 
+            this.itemMasterToolStripMenuItem.Name = "itemMasterToolStripMenuItem";
+            this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.itemMasterToolStripMenuItem.Text = "Item Master";
+            this.itemMasterToolStripMenuItem.Click += new System.EventHandler(this.itemMasterToolStripMenuItem_Click);
+            // 
+            // customerMasterToolStripMenuItem
+            // 
+            this.customerMasterToolStripMenuItem.Name = "customerMasterToolStripMenuItem";
+            this.customerMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.customerMasterToolStripMenuItem.Text = "Customer Master";
+            this.customerMasterToolStripMenuItem.Click += new System.EventHandler(this.customerMasterToolStripMenuItem_Click);
+            // 
+            // stockMasterToolStripMenuItem
+            // 
+            this.stockMasterToolStripMenuItem.Name = "stockMasterToolStripMenuItem";
+            this.stockMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.stockMasterToolStripMenuItem.Text = "Inward Master";
+            this.stockMasterToolStripMenuItem.Click += new System.EventHandler(this.stockMasterToolStripMenuItem_Click);
+            // 
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -154,36 +190,36 @@
             this.appConfigToolStripMenuItem.Text = "App Config";
             this.appConfigToolStripMenuItem.Click += new System.EventHandler(this.appConfigToolStripMenuItem_Click);
             // 
-            // masterToolStripMenuItem
+            // reportsToolStripMenuItem
             // 
-            this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itemMasterToolStripMenuItem,
-            this.customerMasterToolStripMenuItem,
-            this.stockMasterToolStripMenuItem});
-            this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
-            this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.masterToolStripMenuItem.Text = "Master";
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.paperReelConsumtionToolStripMenuItem,
+            this.dispatchAnalysisToolStripMenuItem,
+            this.stockReportToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
             // 
-            // itemMasterToolStripMenuItem
+            // paperReelConsumtionToolStripMenuItem
             // 
-            this.itemMasterToolStripMenuItem.Name = "itemMasterToolStripMenuItem";
-            this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.itemMasterToolStripMenuItem.Text = "Item Master";
-            this.itemMasterToolStripMenuItem.Click += new System.EventHandler(this.itemMasterToolStripMenuItem_Click);
+            this.paperReelConsumtionToolStripMenuItem.Name = "paperReelConsumtionToolStripMenuItem";
+            this.paperReelConsumtionToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.paperReelConsumtionToolStripMenuItem.Text = "Carogation Production Report";
+            this.paperReelConsumtionToolStripMenuItem.Click += new System.EventHandler(this.paperReelConsumtionToolStripMenuItem_Click);
             // 
-            // customerMasterToolStripMenuItem
+            // dispatchAnalysisToolStripMenuItem
             // 
-            this.customerMasterToolStripMenuItem.Name = "customerMasterToolStripMenuItem";
-            this.customerMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.customerMasterToolStripMenuItem.Text = "Customer Master";
-            this.customerMasterToolStripMenuItem.Click += new System.EventHandler(this.customerMasterToolStripMenuItem_Click);
+            this.dispatchAnalysisToolStripMenuItem.Name = "dispatchAnalysisToolStripMenuItem";
+            this.dispatchAnalysisToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.dispatchAnalysisToolStripMenuItem.Text = "Dispatch Summary Report";
+            this.dispatchAnalysisToolStripMenuItem.Click += new System.EventHandler(this.dispatchAnalysisToolStripMenuItem_Click);
             // 
-            // stockMasterToolStripMenuItem
+            // stockReportToolStripMenuItem
             // 
-            this.stockMasterToolStripMenuItem.Name = "stockMasterToolStripMenuItem";
-            this.stockMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.stockMasterToolStripMenuItem.Text = "Stock Master";
-            this.stockMasterToolStripMenuItem.Click += new System.EventHandler(this.stockMasterToolStripMenuItem_Click);
+            this.stockReportToolStripMenuItem.Name = "stockReportToolStripMenuItem";
+            this.stockReportToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.stockReportToolStripMenuItem.Text = "Stock Report";
+            this.stockReportToolStripMenuItem.Click += new System.EventHandler(this.stockReportToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -234,5 +270,9 @@
         private System.Windows.Forms.ToolStripMenuItem duplexPrintedPaperToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem appConfigToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockMasterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paperReelConsumtionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dispatchAnalysisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockReportToolStripMenuItem;
     }
 }

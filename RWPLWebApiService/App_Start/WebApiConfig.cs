@@ -11,7 +11,8 @@ namespace RWPLWebApiService
         {
             config.Routes.MapHttpRoute(
                 name: "RwplApi",
-                routeTemplate: "api/{controller}/{action}"
+                routeTemplate: "api/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional }
             );
 
             config.Routes.MapHttpRoute(

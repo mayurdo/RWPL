@@ -131,6 +131,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DispatchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PaperReelConsumptionAnalysisController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -246,13 +247,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RWPLDataService\RWPLDataService.csproj">
-      <Project>{5222a87a-c1f2-4eeb-93d8-ccb3ca9e70bc}</Project>
-      <Name>RWPLDataService</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RWPLEntityModel\RWPLEntityModel.csproj">
       <Project>{0c97edfd-72ca-4ffd-810d-92a3dec4246f}</Project>
       <Name>RWPLEntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RWPLLinqDataService\RWPLLinqDataService.csproj">
+      <Project>{3ad09231-16d3-48ec-86ab-ef4f52eb947a}</Project>
+      <Name>RWPLLinqDataService</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -14,12 +14,24 @@ namespace RWPLSoftware.FrmItemMaster
 {
     public partial class FrmItemMasterReport : Form
     {
+        private readonly string _companyName;
+
         private readonly ReportForm<RWPLLinqDataService.ItemMaster, ItemMasterSearchRequest, RWPLLinqDataService.ItemMaster> _reportForm;
 
         public FrmItemMasterReport()
         {
             InitializeComponent();
 
+            _companyName = string.Empty;
+            _reportForm = new ReportForm<RWPLLinqDataService.ItemMaster, ItemMasterSearchRequest, RWPLLinqDataService.ItemMaster>(groupBox1, bindingNavigator1, dataGridView1,
+                                                                                          bindingNavigatorPositionItem.TextBox, lblReportStatus, lblReportSummary);
+        }
+
+        public FrmItemMasterReport(string companyName)
+        {
+            InitializeComponent();
+
+            _companyName = companyName;
             _reportForm = new ReportForm<RWPLLinqDataService.ItemMaster, ItemMasterSearchRequest, RWPLLinqDataService.ItemMaster>(groupBox1, bindingNavigator1, dataGridView1,
                                                                                           bindingNavigatorPositionItem.TextBox, lblReportStatus, lblReportSummary);
         }
@@ -31,6 +43,7 @@ namespace RWPLSoftware.FrmItemMaster
             panel1.Width = this.Width - 40;
             dataGridView1.Width = panel1.Width;
             bindingNavigatorPositionItem.Text = @"1";
+            txtBindCustomerName.Text = _companyName;
 
             //_reportForm.FillDropDownAndAutoComplete<ItemMasterReportPageRequest>();
             _reportForm.BindGridViewWithFilter();
@@ -51,7 +64,15 @@ namespace RWPLSoftware.FrmItemMaster
             _reportForm.DeleteSelectedData();
         }
 
-        private void cmbBindItemType_TextChanged(object sender, EventArgs e)
+        private void txtBindCompanyName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                _reportForm.BindGridViewWithFilter();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             _reportForm.BindGridViewWithFilter();
         }

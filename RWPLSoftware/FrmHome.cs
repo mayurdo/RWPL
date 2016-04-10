@@ -10,6 +10,9 @@ using Base.Software;
 using Base.Software.Helper;
 using RWPLEntityModel;
 using RWPLLinqDataService;
+using RWPLSoftware.FrmDispatch;
+using RWPLSoftware.FrmPaperReelConsumption;
+using RWPLSoftware.FrmStockMaster;
 
 namespace RWPLSoftware
 {
@@ -28,7 +31,7 @@ namespace RWPLSoftware
             if (!frm.IsSuccessLogin)
                 this.Close();
 
-            PageHelper.LoadApplicationData();
+            //PageHelper.LoadApplicationData();
         } 
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,7 +71,7 @@ namespace RWPLSoftware
 
         private void customerMasterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PageHelper.GoToPage<FrmCustomerMaster.FrmCustomerMasterReport>(AccessPages.CustomerMaster);
+            PageHelper.GoToPage<FrmItemMaster.FrmCustomerSummaryReport>(AccessPages.CustomerMaster);
         }
 
         private void deliveryChallanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,6 +92,21 @@ namespace RWPLSoftware
         private void stockMasterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PageHelper.GoToPage<FrmStockMaster.FrmStockMasterReport>(AccessPages.StockMaster);
+        }
+
+        private void paperReelConsumtionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PageHelper.GoToPage<FrmPaperReelConsumtionAnalysisReport>(AccessPages.CarogationProductionAnalysis);
+        }
+
+        private void dispatchAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PageHelper.GoToPage<FrmDispatchAnalysis>(AccessPages.DispatchAnalysis);
+        }
+
+        private void stockReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PageHelper.GoToPage<FrmStockMasterAnalysis>(AccessPages.StockMaster);
         }
 
         

@@ -78,5 +78,10 @@ namespace RWPLSoftware.FrmPaperReelConsumption
         {
             _reportForm.ExportToExcel();
         }
+
+        private void toolStripButtonImportFromExcel_Click(object sender, EventArgs e)
+        {
+            _reportForm.ImportFromExcel<PaperReelConsumption>();
+        }
     }
 }
