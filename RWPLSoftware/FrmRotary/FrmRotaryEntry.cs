@@ -31,17 +31,6 @@ namespace RWPLSoftware.FrmRotary
 
         private void FrmRotaryEntry_Load(object sender, EventArgs e)
         {
-            _entryForm.FillDropDownAndAutoCompleteByApplicationData();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            _entryForm.SavePageData();
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void txtBindRQty_KeyPress(object sender, KeyPressEventArgs e)

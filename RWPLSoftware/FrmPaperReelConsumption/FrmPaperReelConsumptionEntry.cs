@@ -24,7 +24,7 @@ namespace RWPLSoftware.FrmPaperReelConsumption
             _entryForm = new EntryForm<PaperReelConsumption>(this);
         }
 
-        public FrmPaperReelConsumptionEntry(long srNo=0)
+        public FrmPaperReelConsumptionEntry(long srNo = 0)
         {
             InitializeComponent();
 
@@ -33,35 +33,26 @@ namespace RWPLSoftware.FrmPaperReelConsumption
 
         private void PaperReelConsumption_Load(object sender, EventArgs e)
         {
-            _entryForm.FillDropDownAndAutoComplete<PaperReelConsumptionEntryPageRequest>();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            _entryForm.SavePageData();
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void txtBindBF_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            PageHelper.AcceptOnlyNumber(e);
-        }
-
-        private void txtBindSize_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            PageHelper.AcceptOnlyDecimal(e, ((TextBox)sender).Text);
+            //_entryForm.FillDropDownAndAutoComplete<PaperReelConsumptionEntryPageRequest>();
         }
 
         private void txtBindRConsumption_TextChanged(object sender, EventArgs e)
         {
-            var weight = string.IsNullOrEmpty(txtBindRWeight.Text) ? 0 : Convert.ToDecimal(txtBindRWeight.Text);
-            var consumtion = string.IsNullOrEmpty(txtBindRConsumption.Text) ? 0 : Convert.ToDecimal(txtBindRConsumption.Text);
+            var weight = string.IsNullOrEmpty(txtBindWeight.Text) ? 0 : Convert.ToDecimal(txtBindWeight.Text);
+            var consumtion = string.IsNullOrEmpty(txtBindConsumption.Text) ? 0 : Convert.ToDecimal(txtBindConsumption.Text);
             var balance = weight - consumtion;
-            txtBindRBalance.Text = balance.ToString(CultureInfo.InvariantCulture);
+            txtBindBalance.Text = balance.ToString(CultureInfo.InvariantCulture);
+        }
+
+        private void dtpBindStartTime_ValueChanged(object sender, EventArgs e)
+        {
+            var startTime = new DateTime(dtpBindStartTime.Value.Year, dtpBindStartTime.Value.Month, dtpBindStartTime.Value.Day,
+                      dtpBindStartTime.Value.Hour, dtpBindStartTime.Value.Minute, 0);
+
+            var endTime = new DateTime(dtpBindEndTime.Value.Year, dtpBindEndTime.Value.Month, dtpBindEndTime.Value.Day,
+                      dtpBindEndTime.Value.Hour, dtpBindEndTime.Value.Minute, 0);
+
+            txtBindTIMEConsume.Text = ((int)(endTime - startTime).TotalMinutes).ToString(CultureInfo.InvariantCulture);
         }
     }
 }

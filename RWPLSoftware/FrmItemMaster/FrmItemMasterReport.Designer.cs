@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItemMasterReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblReportStatus = new System.Windows.Forms.Label();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -53,13 +53,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblReportSummary = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbBindItemType = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBindItemCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBindItemName = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.cmbBindItemType = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -75,7 +75,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(5, 188);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(960, 425);
+            this.panel1.Size = new System.Drawing.Size(960, 516);
             this.panel1.TabIndex = 186;
             // 
             // lblReportStatus
@@ -245,21 +245,21 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 442);
+            this.dataGridView1.Size = new System.Drawing.Size(960, 483);
             this.dataGridView1.TabIndex = 1;
             // 
             // lblReportSummary
@@ -290,6 +290,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
+            // 
+            // cmbBindItemType
+            // 
+            this.cmbBindItemType.Font = new System.Drawing.Font("Arial", 12F);
+            this.cmbBindItemType.FormattingEnabled = true;
+            this.cmbBindItemType.Items.AddRange(new object[] {
+            "Box",
+            "Plate"});
+            this.cmbBindItemType.Location = new System.Drawing.Point(24, 49);
+            this.cmbBindItemType.Name = "cmbBindItemType";
+            this.cmbBindItemType.Size = new System.Drawing.Size(128, 26);
+            this.cmbBindItemType.TabIndex = 0;
+            this.cmbBindItemType.TextChanged += new System.EventHandler(this.cmbBindItemType_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(61, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 15);
+            this.label5.TabIndex = 112;
+            this.label5.Text = "Item Type";
             // 
             // label2
             // 
@@ -343,35 +367,11 @@
             this.lblHeader.Text = "Item Master Report";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbBindItemType
-            // 
-            this.cmbBindItemType.Font = new System.Drawing.Font("Arial", 12F);
-            this.cmbBindItemType.FormattingEnabled = true;
-            this.cmbBindItemType.Items.AddRange(new object[] {
-            "Box",
-            "Plate"});
-            this.cmbBindItemType.Location = new System.Drawing.Point(24, 49);
-            this.cmbBindItemType.Name = "cmbBindItemType";
-            this.cmbBindItemType.Size = new System.Drawing.Size(128, 26);
-            this.cmbBindItemType.TabIndex = 0;
-            this.cmbBindItemType.TextChanged += new System.EventHandler(this.cmbBindItemType_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(61, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 15);
-            this.label5.TabIndex = 112;
-            this.label5.Text = "Item Type";
-            // 
             // FrmItemMasterReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 575);
+            this.ClientSize = new System.Drawing.Size(1251, 716);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblReportSummary);
             this.Controls.Add(this.groupBox1);

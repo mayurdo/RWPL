@@ -7,40 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Base.Software.Helper;
+using RWPLLinqDataService;
 
 namespace RWPLSoftware.FrmCustomerMaster
 {
     public partial class FrmCustomerMasterEntry : Form
     {
-        private readonly EntryForm<RWPLLinqDataService.CustomerMaster> _entryForm;
+        private readonly EntryForm<CustomerMaster> _entryForm;
 
         public FrmCustomerMasterEntry()
         {
             InitializeComponent();
 
-            _entryForm = new EntryForm<RWPLLinqDataService.CustomerMaster>(this);
+            _entryForm = new EntryForm<CustomerMaster>(this);
         }
 
         public FrmCustomerMasterEntry(long srNo = 0)
         {
             InitializeComponent();
 
-            _entryForm = new EntryForm<RWPLLinqDataService.CustomerMaster>(this,srNo);
+            _entryForm = new EntryForm<CustomerMaster>(this,srNo);
         }
 
         private void FrmCustomerMasterEntry_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            _entryForm.SavePageData();
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -7,8 +7,8 @@ using RWPLEntityModel.SearchRequest;
 namespace RWPLLinqDataService.Services
 {
     public class AutoStichingPinDataService : BaseDataService<AutoStichingPin>,
-       IDataService<AutoStichingPin, AutoStichingPin, AutoStichingPinSearchRequest,
-       AutoStichingPinReportPageRequest, AutoStichingPinEntryPageRequest>
+        IReportService<AutoStichingPin, AutoStichingPinSearchRequest, AutoStichingPinReportPageRequest>,
+        IEntryService<AutoStichingPin, AutoStichingPinEntryPageRequest>
     {
         public ResultResponse<AutoStichingPin> Get(AutoStichingPinSearchRequest request)
         {

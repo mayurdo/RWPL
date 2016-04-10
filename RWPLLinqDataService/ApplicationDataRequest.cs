@@ -11,7 +11,7 @@ namespace RWPLLinqDataService
 
         public List<CustomerMaster> Customers { get; set; }
 
-        public List<StockMaster> Stocks { get; set; }
+        public List<InwardMaster> Stocks { get; set; }
 
     }
 }

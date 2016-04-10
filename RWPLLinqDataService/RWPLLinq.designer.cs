@@ -63,15 +63,15 @@ namespace RWPLLinqDataService
     partial void InsertDuplexPrintedPaper(DuplexPrintedPaper instance);
     partial void UpdateDuplexPrintedPaper(DuplexPrintedPaper instance);
     partial void DeleteDuplexPrintedPaper(DuplexPrintedPaper instance);
-    partial void InsertStockMaster(StockMaster instance);
-    partial void UpdateStockMaster(StockMaster instance);
-    partial void DeleteStockMaster(StockMaster instance);
     partial void InsertPaperReelConsumption(PaperReelConsumption instance);
     partial void UpdatePaperReelConsumption(PaperReelConsumption instance);
     partial void DeletePaperReelConsumption(PaperReelConsumption instance);
     partial void InsertItemMaster(ItemMaster instance);
     partial void UpdateItemMaster(ItemMaster instance);
     partial void DeleteItemMaster(ItemMaster instance);
+    partial void InsertInwardMaster(InwardMaster instance);
+    partial void UpdateInwardMaster(InwardMaster instance);
+    partial void DeleteInwardMaster(InwardMaster instance);
     #endregion
 		
 		public RWPLLinqDataContext() : 
@@ -192,19 +192,19 @@ namespace RWPLLinqDataService
 			}
 		}
 		
-		public System.Data.Linq.Table<StockMaster> StockMasters
+		public System.Data.Linq.Table<DispatchAnalysi> DispatchAnalysis
 		{
 			get
 			{
-				return this.GetTable<StockMaster>();
+				return this.GetTable<DispatchAnalysi>();
 			}
 		}
 		
-		public System.Data.Linq.Table<StockMasterView> StockMasterViews
+		public System.Data.Linq.Table<CustomerSummary> CustomerSummaries
 		{
 			get
 			{
-				return this.GetTable<StockMasterView>();
+				return this.GetTable<CustomerSummary>();
 			}
 		}
 		
@@ -216,11 +216,43 @@ namespace RWPLLinqDataService
 			}
 		}
 		
+		public System.Data.Linq.Table<PaperReelConsumptionAnalysi> PaperReelConsumptionAnalysis
+		{
+			get
+			{
+				return this.GetTable<PaperReelConsumptionAnalysi>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ItemMaster> ItemMasters
 		{
 			get
 			{
 				return this.GetTable<ItemMaster>();
+			}
+		}
+		
+		public System.Data.Linq.Table<InwardMaster> InwardMasters
+		{
+			get
+			{
+				return this.GetTable<InwardMaster>();
+			}
+		}
+		
+		public System.Data.Linq.Table<InwardMasterView> InwardMasterViews
+		{
+			get
+			{
+				return this.GetTable<InwardMasterView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<StockMasterReport> StockMasterReports
+		{
+			get
+			{
+				return this.GetTable<StockMasterReport>();
 			}
 		}
 	}
@@ -5483,510 +5515,141 @@ namespace RWPLLinqDataService
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockMaster")]
-	public partial class StockMaster : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DispatchAnalysis")]
+	public partial class DispatchAnalysi
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		private int _Year;
 		
-		private long _SrNo;
+		private int _Month;
 		
-		private string _InvoiceNo;
+		private string _Client;
 		
-		private System.DateTime _Date;
+		private string _ItemCode;
 		
-		private long _BF;
+		private string _ItemName;
 		
-		private long _GSM;
+		private System.Nullable<long> _TotalDispatchQty;
 		
-		private decimal _Size;
-		
-		private string _ReelNo;
-		
-		private decimal _Weight;
-		
-		private string _Mill;
-		
-		private string _CreatedBy;
-		
-		private System.DateTime _CreatedDate;
-		
-		private string _UpdatedBy;
-		
-		private System.Nullable<System.DateTime> _UpdatedDate;
-		
-		private bool _IsDeleted;
-		
-		private string _DeletedBy;
-		
-		private System.Nullable<System.DateTime> _DeletedDate;
-		
-		private string _DeleteReason;
-		
-		private System.Data.Linq.Binary _TimeStamp;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSrNoChanging(long value);
-    partial void OnSrNoChanged();
-    partial void OnInvoiceNoChanging(string value);
-    partial void OnInvoiceNoChanged();
-    partial void OnDateChanging(System.DateTime value);
-    partial void OnDateChanged();
-    partial void OnBFChanging(long value);
-    partial void OnBFChanged();
-    partial void OnGSMChanging(long value);
-    partial void OnGSMChanged();
-    partial void OnSizeChanging(decimal value);
-    partial void OnSizeChanged();
-    partial void OnReelNoChanging(string value);
-    partial void OnReelNoChanged();
-    partial void OnWeightChanging(decimal value);
-    partial void OnWeightChanged();
-    partial void OnMillChanging(string value);
-    partial void OnMillChanged();
-    partial void OnCreatedByChanging(string value);
-    partial void OnCreatedByChanged();
-    partial void OnCreatedDateChanging(System.DateTime value);
-    partial void OnCreatedDateChanged();
-    partial void OnUpdatedByChanging(string value);
-    partial void OnUpdatedByChanged();
-    partial void OnUpdatedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdatedDateChanged();
-    partial void OnIsDeletedChanging(bool value);
-    partial void OnIsDeletedChanged();
-    partial void OnDeletedByChanging(string value);
-    partial void OnDeletedByChanged();
-    partial void OnDeletedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDeletedDateChanged();
-    partial void OnDeleteReasonChanging(string value);
-    partial void OnDeleteReasonChanged();
-    partial void OnTimeStampChanging(System.Data.Linq.Binary value);
-    partial void OnTimeStampChanged();
-    #endregion
-		
-		public StockMaster()
+		public DispatchAnalysi()
 		{
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SrNo", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public long SrNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="Int NOT NULL")]
+		public int Year
 		{
 			get
 			{
-				return this._SrNo;
+				return this._Year;
 			}
 			set
 			{
-				if ((this._SrNo != value))
+				if ((this._Year != value))
 				{
-					this.OnSrNoChanging(value);
-					this.SendPropertyChanging();
-					this._SrNo = value;
-					this.SendPropertyChanged("SrNo");
-					this.OnSrNoChanged();
+					this._Year = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public string InvoiceNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Month", DbType="Int NOT NULL")]
+		public int Month
 		{
 			get
 			{
-				return this._InvoiceNo;
+				return this._Month;
 			}
 			set
 			{
-				if ((this._InvoiceNo != value))
+				if ((this._Month != value))
 				{
-					this.OnInvoiceNoChanging(value);
-					this.SendPropertyChanging();
-					this._InvoiceNo = value;
-					this.SendPropertyChanged("InvoiceNo");
-					this.OnInvoiceNoChanged();
+					this._Month = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Client", DbType="NVarChar(MAX)")]
+		public string Client
 		{
 			get
 			{
-				return this._Date;
+				return this._Client;
 			}
 			set
 			{
-				if ((this._Date != value))
+				if ((this._Client != value))
 				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
+					this._Client = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BF", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public long BF
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemCode", DbType="NVarChar(MAX)")]
+		public string ItemCode
 		{
 			get
 			{
-				return this._BF;
+				return this._ItemCode;
 			}
 			set
 			{
-				if ((this._BF != value))
+				if ((this._ItemCode != value))
 				{
-					this.OnBFChanging(value);
-					this.SendPropertyChanging();
-					this._BF = value;
-					this.SendPropertyChanged("BF");
-					this.OnBFChanged();
+					this._ItemCode = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GSM", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public long GSM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(MAX)")]
+		public string ItemName
 		{
 			get
 			{
-				return this._GSM;
+				return this._ItemName;
 			}
 			set
 			{
-				if ((this._GSM != value))
+				if ((this._ItemName != value))
 				{
-					this.OnGSMChanging(value);
-					this.SendPropertyChanging();
-					this._GSM = value;
-					this.SendPropertyChanged("GSM");
-					this.OnGSMChanged();
+					this._ItemName = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="Decimal(18,2) NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public decimal Size
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDispatchQty", DbType="BigInt")]
+		public System.Nullable<long> TotalDispatchQty
 		{
 			get
 			{
-				return this._Size;
+				return this._TotalDispatchQty;
 			}
 			set
 			{
-				if ((this._Size != value))
+				if ((this._TotalDispatchQty != value))
 				{
-					this.OnSizeChanging(value);
-					this.SendPropertyChanging();
-					this._Size = value;
-					this.SendPropertyChanged("Size");
-					this.OnSizeChanged();
+					this._TotalDispatchQty = value;
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReelNo", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string ReelNo
-		{
-			get
-			{
-				return this._ReelNo;
-			}
-			set
-			{
-				if ((this._ReelNo != value))
-				{
-					this.OnReelNoChanging(value);
-					this.SendPropertyChanging();
-					this._ReelNo = value;
-					this.SendPropertyChanged("ReelNo");
-					this.OnReelNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="Decimal(18,2) NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public decimal Weight
-		{
-			get
-			{
-				return this._Weight;
-			}
-			set
-			{
-				if ((this._Weight != value))
-				{
-					this.OnWeightChanging(value);
-					this.SendPropertyChanging();
-					this._Weight = value;
-					this.SendPropertyChanged("Weight");
-					this.OnWeightChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mill", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public string Mill
-		{
-			get
-			{
-				return this._Mill;
-			}
-			set
-			{
-				if ((this._Mill != value))
-				{
-					this.OnMillChanging(value);
-					this.SendPropertyChanging();
-					this._Mill = value;
-					this.SendPropertyChanged("Mill");
-					this.OnMillChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public string CreatedBy
-		{
-			get
-			{
-				return this._CreatedBy;
-			}
-			set
-			{
-				if ((this._CreatedBy != value))
-				{
-					this.OnCreatedByChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedBy = value;
-					this.SendPropertyChanged("CreatedBy");
-					this.OnCreatedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime CreatedDate
-		{
-			get
-			{
-				return this._CreatedDate;
-			}
-			set
-			{
-				if ((this._CreatedDate != value))
-				{
-					this.OnCreatedDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedDate = value;
-					this.SendPropertyChanged("CreatedDate");
-					this.OnCreatedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedBy", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public string UpdatedBy
-		{
-			get
-			{
-				return this._UpdatedBy;
-			}
-			set
-			{
-				if ((this._UpdatedBy != value))
-				{
-					this.OnUpdatedByChanging(value);
-					this.SendPropertyChanging();
-					this._UpdatedBy = value;
-					this.SendPropertyChanged("UpdatedBy");
-					this.OnUpdatedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedDate", DbType="DateTime", UpdateCheck=UpdateCheck.Never)]
-		public System.Nullable<System.DateTime> UpdatedDate
-		{
-			get
-			{
-				return this._UpdatedDate;
-			}
-			set
-			{
-				if ((this._UpdatedDate != value))
-				{
-					this.OnUpdatedDateChanging(value);
-					this.SendPropertyChanging();
-					this._UpdatedDate = value;
-					this.SendPropertyChanged("UpdatedDate");
-					this.OnUpdatedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDeleted", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public bool IsDeleted
-		{
-			get
-			{
-				return this._IsDeleted;
-			}
-			set
-			{
-				if ((this._IsDeleted != value))
-				{
-					this.OnIsDeletedChanging(value);
-					this.SendPropertyChanging();
-					this._IsDeleted = value;
-					this.SendPropertyChanged("IsDeleted");
-					this.OnIsDeletedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeletedBy", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public string DeletedBy
-		{
-			get
-			{
-				return this._DeletedBy;
-			}
-			set
-			{
-				if ((this._DeletedBy != value))
-				{
-					this.OnDeletedByChanging(value);
-					this.SendPropertyChanging();
-					this._DeletedBy = value;
-					this.SendPropertyChanged("DeletedBy");
-					this.OnDeletedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeletedDate", DbType="DateTime", UpdateCheck=UpdateCheck.Never)]
-		public System.Nullable<System.DateTime> DeletedDate
-		{
-			get
-			{
-				return this._DeletedDate;
-			}
-			set
-			{
-				if ((this._DeletedDate != value))
-				{
-					this.OnDeletedDateChanging(value);
-					this.SendPropertyChanging();
-					this._DeletedDate = value;
-					this.SendPropertyChanged("DeletedDate");
-					this.OnDeletedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeleteReason", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public string DeleteReason
-		{
-			get
-			{
-				return this._DeleteReason;
-			}
-			set
-			{
-				if ((this._DeleteReason != value))
-				{
-					this.OnDeleteReasonChanging(value);
-					this.SendPropertyChanging();
-					this._DeleteReason = value;
-					this.SendPropertyChanged("DeleteReason");
-					this.OnDeleteReasonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary TimeStamp
-		{
-			get
-			{
-				return this._TimeStamp;
-			}
-			set
-			{
-				if ((this._TimeStamp != value))
-				{
-					this.OnTimeStampChanging(value);
-					this.SendPropertyChanging();
-					this._TimeStamp = value;
-					this.SendPropertyChanged("TimeStamp");
-					this.OnTimeStampChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockMasterView")]
-	public partial class StockMasterView
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CustomerSummary")]
+	public partial class CustomerSummary
 	{
 		
-		private long _SrNo;
+		private System.Nullable<long> _SrNo;
 		
-		private string _InvoiceNo;
+		private string _CompanyName;
 		
-		private System.DateTime _Date;
+		private System.Nullable<int> _Items;
 		
-		private long _BF;
+		private System.Nullable<long> _TotalDispatch;
 		
-		private long _GSM;
-		
-		private decimal _Size;
-		
-		private string _ReelNo;
-		
-		private decimal _Weight;
-		
-		private System.Nullable<decimal> _Consumption;
-		
-		private System.Nullable<decimal> _Balance;
-		
-		private string _Mill;
-		
-		private bool _IsDeleted;
-		
-		public StockMasterView()
+		public CustomerSummary()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SrNo", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
-		public long SrNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SrNo", DbType="BigInt")]
+		public System.Nullable<long> SrNo
 		{
 			get
 			{
@@ -6001,178 +5664,50 @@ namespace RWPLLinqDataService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="NVarChar(MAX)")]
-		public string InvoiceNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(MAX)")]
+		public string CompanyName
 		{
 			get
 			{
-				return this._InvoiceNo;
+				return this._CompanyName;
 			}
 			set
 			{
-				if ((this._InvoiceNo != value))
+				if ((this._CompanyName != value))
 				{
-					this._InvoiceNo = value;
+					this._CompanyName = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
-		public System.DateTime Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Items", DbType="Int")]
+		public System.Nullable<int> Items
 		{
 			get
 			{
-				return this._Date;
+				return this._Items;
 			}
 			set
 			{
-				if ((this._Date != value))
+				if ((this._Items != value))
 				{
-					this._Date = value;
+					this._Items = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BF", DbType="BigInt NOT NULL")]
-		public long BF
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDispatch", DbType="BigInt")]
+		public System.Nullable<long> TotalDispatch
 		{
 			get
 			{
-				return this._BF;
+				return this._TotalDispatch;
 			}
 			set
 			{
-				if ((this._BF != value))
+				if ((this._TotalDispatch != value))
 				{
-					this._BF = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GSM", DbType="BigInt NOT NULL")]
-		public long GSM
-		{
-			get
-			{
-				return this._GSM;
-			}
-			set
-			{
-				if ((this._GSM != value))
-				{
-					this._GSM = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Size
-		{
-			get
-			{
-				return this._Size;
-			}
-			set
-			{
-				if ((this._Size != value))
-				{
-					this._Size = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReelNo", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string ReelNo
-		{
-			get
-			{
-				return this._ReelNo;
-			}
-			set
-			{
-				if ((this._ReelNo != value))
-				{
-					this._ReelNo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Weight
-		{
-			get
-			{
-				return this._Weight;
-			}
-			set
-			{
-				if ((this._Weight != value))
-				{
-					this._Weight = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumption", DbType="Decimal(38,2)")]
-		public System.Nullable<decimal> Consumption
-		{
-			get
-			{
-				return this._Consumption;
-			}
-			set
-			{
-				if ((this._Consumption != value))
-				{
-					this._Consumption = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(38,2)")]
-		public System.Nullable<decimal> Balance
-		{
-			get
-			{
-				return this._Balance;
-			}
-			set
-			{
-				if ((this._Balance != value))
-				{
-					this._Balance = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mill", DbType="NVarChar(MAX)")]
-		public string Mill
-		{
-			get
-			{
-				return this._Mill;
-			}
-			set
-			{
-				if ((this._Mill != value))
-				{
-					this._Mill = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDeleted", DbType="Bit NOT NULL")]
-		public bool IsDeleted
-		{
-			get
-			{
-				return this._IsDeleted;
-			}
-			set
-			{
-				if ((this._IsDeleted != value))
-				{
-					this._IsDeleted = value;
+					this._TotalDispatch = value;
 				}
 			}
 		}
@@ -6218,7 +5753,7 @@ namespace RWPLLinqDataService
 		
 		private System.Nullable<long> _RunningMeter;
 		
-		private string _Wastage;
+		private System.Nullable<decimal> _Wastage;
 		
 		private System.Nullable<long> _GumUse;
 		
@@ -6280,7 +5815,7 @@ namespace RWPLLinqDataService
     partial void OnBalanceChanged();
     partial void OnRunningMeterChanging(System.Nullable<long> value);
     partial void OnRunningMeterChanged();
-    partial void OnWastageChanging(string value);
+    partial void OnWastageChanging(System.Nullable<decimal> value);
     partial void OnWastageChanged();
     partial void OnGumUseChanging(System.Nullable<long> value);
     partial void OnGumUseChanged();
@@ -6571,7 +6106,7 @@ namespace RWPLLinqDataService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="Decimal(18,2) NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="Decimal(18,3) NOT NULL", UpdateCheck=UpdateCheck.Never)]
 		public decimal Weight
 		{
 			get
@@ -6591,7 +6126,7 @@ namespace RWPLLinqDataService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumption", DbType="Decimal(18,2) NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumption", DbType="Decimal(18,3) NOT NULL", UpdateCheck=UpdateCheck.Never)]
 		public decimal Consumption
 		{
 			get
@@ -6611,7 +6146,7 @@ namespace RWPLLinqDataService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(18,2) NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(18,3) NOT NULL", UpdateCheck=UpdateCheck.Never)]
 		public decimal Balance
 		{
 			get
@@ -6651,8 +6186,8 @@ namespace RWPLLinqDataService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Wastage", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public string Wastage
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Wastage", DbType="Decimal(18,3)", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<decimal> Wastage
 		{
 			get
 			{
@@ -6912,6 +6447,195 @@ namespace RWPLLinqDataService
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PaperReelConsumptionAnalysis")]
+	public partial class PaperReelConsumptionAnalysi
+	{
+		
+		private System.DateTime _Date;
+		
+		private string _Machine;
+		
+		private System.Nullable<decimal> _timeConsume_Hr;
+		
+		private decimal _Production_Kg;
+		
+		private System.Nullable<decimal> _AvgProduction_KgPerHr;
+		
+		private long _GumUse_kg;
+		
+		private System.Nullable<decimal> _AvgGumUse_KgPerTon;
+		
+		private decimal _Wastage_kg;
+		
+		private System.Nullable<decimal> _AvgWastage_KgPerTon;
+		
+		private System.Nullable<int> _NoOfReel;
+		
+		public PaperReelConsumptionAnalysi()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Machine", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Machine
+		{
+			get
+			{
+				return this._Machine;
+			}
+			set
+			{
+				if ((this._Machine != value))
+				{
+					this._Machine = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timeConsume_Hr", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> timeConsume_Hr
+		{
+			get
+			{
+				return this._timeConsume_Hr;
+			}
+			set
+			{
+				if ((this._timeConsume_Hr != value))
+				{
+					this._timeConsume_Hr = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Production_Kg", DbType="Decimal(38,2) NOT NULL")]
+		public decimal Production_Kg
+		{
+			get
+			{
+				return this._Production_Kg;
+			}
+			set
+			{
+				if ((this._Production_Kg != value))
+				{
+					this._Production_Kg = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvgProduction_KgPerHr", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> AvgProduction_KgPerHr
+		{
+			get
+			{
+				return this._AvgProduction_KgPerHr;
+			}
+			set
+			{
+				if ((this._AvgProduction_KgPerHr != value))
+				{
+					this._AvgProduction_KgPerHr = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GumUse_kg", DbType="BigInt NOT NULL")]
+		public long GumUse_kg
+		{
+			get
+			{
+				return this._GumUse_kg;
+			}
+			set
+			{
+				if ((this._GumUse_kg != value))
+				{
+					this._GumUse_kg = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvgGumUse_KgPerTon", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> AvgGumUse_KgPerTon
+		{
+			get
+			{
+				return this._AvgGumUse_KgPerTon;
+			}
+			set
+			{
+				if ((this._AvgGumUse_KgPerTon != value))
+				{
+					this._AvgGumUse_KgPerTon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Wastage_kg", DbType="Decimal(38,2) NOT NULL")]
+		public decimal Wastage_kg
+		{
+			get
+			{
+				return this._Wastage_kg;
+			}
+			set
+			{
+				if ((this._Wastage_kg != value))
+				{
+					this._Wastage_kg = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvgWastage_KgPerTon", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> AvgWastage_KgPerTon
+		{
+			get
+			{
+				return this._AvgWastage_KgPerTon;
+			}
+			set
+			{
+				if ((this._AvgWastage_KgPerTon != value))
+				{
+					this._AvgWastage_KgPerTon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoOfReel", DbType="Int")]
+		public System.Nullable<int> NoOfReel
+		{
+			get
+			{
+				return this._NoOfReel;
+			}
+			set
+			{
+				if ((this._NoOfReel != value))
+				{
+					this._NoOfReel = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ItemMasters")]
 	public partial class ItemMaster : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6920,9 +6644,9 @@ namespace RWPLLinqDataService
 		
 		private long _SrNo;
 		
-		private string _CompanyName;
+		private string _CustomerName;
 		
-		private string _ItemType;
+		private string _BoxType;
 		
 		private string _ItemCode;
 		
@@ -7032,10 +6756,10 @@ namespace RWPLLinqDataService
     partial void OnCreated();
     partial void OnSrNoChanging(long value);
     partial void OnSrNoChanged();
-    partial void OnCompanyNameChanging(string value);
-    partial void OnCompanyNameChanged();
-    partial void OnItemTypeChanging(string value);
-    partial void OnItemTypeChanged();
+    partial void OnCustomerNameChanging(string value);
+    partial void OnCustomerNameChanged();
+    partial void OnBoxTypeChanging(string value);
+    partial void OnBoxTypeChanged();
     partial void OnItemCodeChanging(string value);
     partial void OnItemCodeChanged();
     partial void OnItemNameChanging(string value);
@@ -7165,42 +6889,42 @@ namespace RWPLLinqDataService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public string CompanyName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public string CustomerName
 		{
 			get
 			{
-				return this._CompanyName;
+				return this._CustomerName;
 			}
 			set
 			{
-				if ((this._CompanyName != value))
+				if ((this._CustomerName != value))
 				{
-					this.OnCompanyNameChanging(value);
+					this.OnCustomerNameChanging(value);
 					this.SendPropertyChanging();
-					this._CompanyName = value;
-					this.SendPropertyChanged("CompanyName");
-					this.OnCompanyNameChanged();
+					this._CustomerName = value;
+					this.SendPropertyChanged("CustomerName");
+					this.OnCustomerNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemType", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string ItemType
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoxType", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string BoxType
 		{
 			get
 			{
-				return this._ItemType;
+				return this._BoxType;
 			}
 			set
 			{
-				if ((this._ItemType != value))
+				if ((this._BoxType != value))
 				{
-					this.OnItemTypeChanging(value);
+					this.OnBoxTypeChanging(value);
 					this.SendPropertyChanging();
-					this._ItemType = value;
-					this.SendPropertyChanged("ItemType");
-					this.OnItemTypeChanged();
+					this._BoxType = value;
+					this.SendPropertyChanged("BoxType");
+					this.OnBoxTypeChanged();
 				}
 			}
 		}
@@ -8242,6 +7966,854 @@ namespace RWPLLinqDataService
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InwardMaster")]
+	public partial class InwardMaster : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _SrNo;
+		
+		private System.DateTime _Date;
+		
+		private string _InvoiceNo;
+		
+		private string _Mill;
+		
+		private string _ReelNo;
+		
+		private string _BF;
+		
+		private long _GSM;
+		
+		private decimal _Size;
+		
+		private decimal _Weight;
+		
+		private string _CreatedBy;
+		
+		private System.DateTime _CreatedDate;
+		
+		private string _UpdatedBy;
+		
+		private System.Nullable<System.DateTime> _UpdatedDate;
+		
+		private bool _IsDeleted;
+		
+		private string _DeletedBy;
+		
+		private System.Nullable<System.DateTime> _DeletedDate;
+		
+		private string _DeleteReason;
+		
+		private System.Data.Linq.Binary _TimeStamp;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSrNoChanging(long value);
+    partial void OnSrNoChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnInvoiceNoChanging(string value);
+    partial void OnInvoiceNoChanged();
+    partial void OnMillChanging(string value);
+    partial void OnMillChanged();
+    partial void OnReelNoChanging(string value);
+    partial void OnReelNoChanged();
+    partial void OnBFChanging(string value);
+    partial void OnBFChanged();
+    partial void OnGSMChanging(long value);
+    partial void OnGSMChanged();
+    partial void OnSizeChanging(decimal value);
+    partial void OnSizeChanged();
+    partial void OnWeightChanging(decimal value);
+    partial void OnWeightChanged();
+    partial void OnCreatedByChanging(string value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.DateTime value);
+    partial void OnCreatedDateChanged();
+    partial void OnUpdatedByChanging(string value);
+    partial void OnUpdatedByChanged();
+    partial void OnUpdatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnUpdatedDateChanged();
+    partial void OnIsDeletedChanging(bool value);
+    partial void OnIsDeletedChanged();
+    partial void OnDeletedByChanging(string value);
+    partial void OnDeletedByChanged();
+    partial void OnDeletedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDeletedDateChanged();
+    partial void OnDeleteReasonChanging(string value);
+    partial void OnDeleteReasonChanged();
+    partial void OnTimeStampChanging(System.Data.Linq.Binary value);
+    partial void OnTimeStampChanged();
+    #endregion
+		
+		public InwardMaster()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SrNo", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public long SrNo
+		{
+			get
+			{
+				return this._SrNo;
+			}
+			set
+			{
+				if ((this._SrNo != value))
+				{
+					this.OnSrNoChanging(value);
+					this.SendPropertyChanging();
+					this._SrNo = value;
+					this.SendPropertyChanged("SrNo");
+					this.OnSrNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public string InvoiceNo
+		{
+			get
+			{
+				return this._InvoiceNo;
+			}
+			set
+			{
+				if ((this._InvoiceNo != value))
+				{
+					this.OnInvoiceNoChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceNo = value;
+					this.SendPropertyChanged("InvoiceNo");
+					this.OnInvoiceNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mill", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public string Mill
+		{
+			get
+			{
+				return this._Mill;
+			}
+			set
+			{
+				if ((this._Mill != value))
+				{
+					this.OnMillChanging(value);
+					this.SendPropertyChanging();
+					this._Mill = value;
+					this.SendPropertyChanged("Mill");
+					this.OnMillChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReelNo", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string ReelNo
+		{
+			get
+			{
+				return this._ReelNo;
+			}
+			set
+			{
+				if ((this._ReelNo != value))
+				{
+					this.OnReelNoChanging(value);
+					this.SendPropertyChanging();
+					this._ReelNo = value;
+					this.SendPropertyChanged("ReelNo");
+					this.OnReelNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BF", DbType="NVarChar(50) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string BF
+		{
+			get
+			{
+				return this._BF;
+			}
+			set
+			{
+				if ((this._BF != value))
+				{
+					this.OnBFChanging(value);
+					this.SendPropertyChanging();
+					this._BF = value;
+					this.SendPropertyChanged("BF");
+					this.OnBFChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GSM", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long GSM
+		{
+			get
+			{
+				return this._GSM;
+			}
+			set
+			{
+				if ((this._GSM != value))
+				{
+					this.OnGSMChanging(value);
+					this.SendPropertyChanging();
+					this._GSM = value;
+					this.SendPropertyChanged("GSM");
+					this.OnGSMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="Decimal(18,1) NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public decimal Size
+		{
+			get
+			{
+				return this._Size;
+			}
+			set
+			{
+				if ((this._Size != value))
+				{
+					this.OnSizeChanging(value);
+					this.SendPropertyChanging();
+					this._Size = value;
+					this.SendPropertyChanged("Size");
+					this.OnSizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="Decimal(18,3) NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public decimal Weight
+		{
+			get
+			{
+				return this._Weight;
+			}
+			set
+			{
+				if ((this._Weight != value))
+				{
+					this.OnWeightChanging(value);
+					this.SendPropertyChanging();
+					this._Weight = value;
+					this.SendPropertyChanged("Weight");
+					this.OnWeightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedBy", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public string UpdatedBy
+		{
+			get
+			{
+				return this._UpdatedBy;
+			}
+			set
+			{
+				if ((this._UpdatedBy != value))
+				{
+					this.OnUpdatedByChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedBy = value;
+					this.SendPropertyChanged("UpdatedBy");
+					this.OnUpdatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedDate", DbType="DateTime", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<System.DateTime> UpdatedDate
+		{
+			get
+			{
+				return this._UpdatedDate;
+			}
+			set
+			{
+				if ((this._UpdatedDate != value))
+				{
+					this.OnUpdatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedDate = value;
+					this.SendPropertyChanged("UpdatedDate");
+					this.OnUpdatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDeleted", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool IsDeleted
+		{
+			get
+			{
+				return this._IsDeleted;
+			}
+			set
+			{
+				if ((this._IsDeleted != value))
+				{
+					this.OnIsDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._IsDeleted = value;
+					this.SendPropertyChanged("IsDeleted");
+					this.OnIsDeletedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeletedBy", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public string DeletedBy
+		{
+			get
+			{
+				return this._DeletedBy;
+			}
+			set
+			{
+				if ((this._DeletedBy != value))
+				{
+					this.OnDeletedByChanging(value);
+					this.SendPropertyChanging();
+					this._DeletedBy = value;
+					this.SendPropertyChanged("DeletedBy");
+					this.OnDeletedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeletedDate", DbType="DateTime", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<System.DateTime> DeletedDate
+		{
+			get
+			{
+				return this._DeletedDate;
+			}
+			set
+			{
+				if ((this._DeletedDate != value))
+				{
+					this.OnDeletedDateChanging(value);
+					this.SendPropertyChanging();
+					this._DeletedDate = value;
+					this.SendPropertyChanged("DeletedDate");
+					this.OnDeletedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeleteReason", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public string DeleteReason
+		{
+			get
+			{
+				return this._DeleteReason;
+			}
+			set
+			{
+				if ((this._DeleteReason != value))
+				{
+					this.OnDeleteReasonChanging(value);
+					this.SendPropertyChanging();
+					this._DeleteReason = value;
+					this.SendPropertyChanged("DeleteReason");
+					this.OnDeleteReasonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary TimeStamp
+		{
+			get
+			{
+				return this._TimeStamp;
+			}
+			set
+			{
+				if ((this._TimeStamp != value))
+				{
+					this.OnTimeStampChanging(value);
+					this.SendPropertyChanging();
+					this._TimeStamp = value;
+					this.SendPropertyChanged("TimeStamp");
+					this.OnTimeStampChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InwardMasterView")]
+	public partial class InwardMasterView
+	{
+		
+		private long _SrNo;
+		
+		private System.DateTime _Date;
+		
+		private string _InvoiceNo;
+		
+		private string _Mill;
+		
+		private string _ReelNo;
+		
+		private string _BF;
+		
+		private long _GSM;
+		
+		private decimal _Size;
+		
+		private decimal _Received;
+		
+		private System.Nullable<decimal> _Consumption;
+		
+		private System.Nullable<decimal> _Balance;
+		
+		private bool _IsDeleted;
+		
+		public InwardMasterView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SrNo", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long SrNo
+		{
+			get
+			{
+				return this._SrNo;
+			}
+			set
+			{
+				if ((this._SrNo != value))
+				{
+					this._SrNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="NVarChar(MAX)")]
+		public string InvoiceNo
+		{
+			get
+			{
+				return this._InvoiceNo;
+			}
+			set
+			{
+				if ((this._InvoiceNo != value))
+				{
+					this._InvoiceNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mill", DbType="NVarChar(MAX)")]
+		public string Mill
+		{
+			get
+			{
+				return this._Mill;
+			}
+			set
+			{
+				if ((this._Mill != value))
+				{
+					this._Mill = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReelNo", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ReelNo
+		{
+			get
+			{
+				return this._ReelNo;
+			}
+			set
+			{
+				if ((this._ReelNo != value))
+				{
+					this._ReelNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BF", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string BF
+		{
+			get
+			{
+				return this._BF;
+			}
+			set
+			{
+				if ((this._BF != value))
+				{
+					this._BF = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GSM", DbType="BigInt NOT NULL")]
+		public long GSM
+		{
+			get
+			{
+				return this._GSM;
+			}
+			set
+			{
+				if ((this._GSM != value))
+				{
+					this._GSM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="Decimal(18,1) NOT NULL")]
+		public decimal Size
+		{
+			get
+			{
+				return this._Size;
+			}
+			set
+			{
+				if ((this._Size != value))
+				{
+					this._Size = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Received", DbType="Decimal(18,3) NOT NULL")]
+		public decimal Received
+		{
+			get
+			{
+				return this._Received;
+			}
+			set
+			{
+				if ((this._Received != value))
+				{
+					this._Received = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumption", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> Consumption
+		{
+			get
+			{
+				return this._Consumption;
+			}
+			set
+			{
+				if ((this._Consumption != value))
+				{
+					this._Consumption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDeleted", DbType="Bit NOT NULL")]
+		public bool IsDeleted
+		{
+			get
+			{
+				return this._IsDeleted;
+			}
+			set
+			{
+				if ((this._IsDeleted != value))
+				{
+					this._IsDeleted = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StockMasterReport")]
+	public partial class StockMasterReport
+	{
+		
+		private System.Nullable<long> _SrNo;
+		
+		private string _BF;
+		
+		private long _GSM;
+		
+		private decimal _Size;
+		
+		private System.Nullable<int> _NoOfReels;
+		
+		private System.Nullable<decimal> _Received;
+		
+		private System.Nullable<decimal> _Consumption;
+		
+		private System.Nullable<decimal> _Balance;
+		
+		public StockMasterReport()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SrNo", DbType="BigInt")]
+		public System.Nullable<long> SrNo
+		{
+			get
+			{
+				return this._SrNo;
+			}
+			set
+			{
+				if ((this._SrNo != value))
+				{
+					this._SrNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BF", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string BF
+		{
+			get
+			{
+				return this._BF;
+			}
+			set
+			{
+				if ((this._BF != value))
+				{
+					this._BF = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GSM", DbType="BigInt NOT NULL")]
+		public long GSM
+		{
+			get
+			{
+				return this._GSM;
+			}
+			set
+			{
+				if ((this._GSM != value))
+				{
+					this._GSM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="Decimal(18,1) NOT NULL")]
+		public decimal Size
+		{
+			get
+			{
+				return this._Size;
+			}
+			set
+			{
+				if ((this._Size != value))
+				{
+					this._Size = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoOfReels", DbType="Int")]
+		public System.Nullable<int> NoOfReels
+		{
+			get
+			{
+				return this._NoOfReels;
+			}
+			set
+			{
+				if ((this._NoOfReels != value))
+				{
+					this._NoOfReels = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Received", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> Received
+		{
+			get
+			{
+				return this._Received;
+			}
+			set
+			{
+				if ((this._Received != value))
+				{
+					this._Received = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumption", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> Consumption
+		{
+			get
+			{
+				return this._Consumption;
+			}
+			set
+			{
+				if ((this._Consumption != value))
+				{
+					this._Consumption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
+				}
 			}
 		}
 	}

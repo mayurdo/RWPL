@@ -7,8 +7,8 @@ using RWPLEntityModel.SearchRequest;
 namespace RWPLLinqDataService.Services
 {
     public class PaperReelConsumptionDataService : BaseDataService<PaperReelConsumption>,
-        IDataService<PaperReelConsumption, PaperReelConsumption, PaperReelConsumptionSearchRequest,
-        PaperReelConsumptionReportPageRequest, PaperReelConsumptionEntryPageRequest>
+        IReportService<PaperReelConsumption, PaperReelConsumptionSearchRequest, PaperReelConsumptionReportPageRequest>,
+        IEntryService<PaperReelConsumption, PaperReelConsumptionEntryPageRequest>
     {
         public ResultResponse<PaperReelConsumption> Get(PaperReelConsumptionSearchRequest request)
         {
@@ -24,8 +24,8 @@ namespace RWPLLinqDataService.Services
                         .Where(x => x.ReelNo.Contains(request.ReelNo)
                                     && x.Mill.Contains(request.Mill)
                                     && x.BF.Contains(request.BF)
-                                    //&& ((request.BF=="") || bfList.Contains(x.BF))
-                                    && ((request.GSM=="") || gsmList.Contains(x.GSM))
+                            //&& ((request.BF=="") || bfList.Contains(x.BF))
+                                    && ((request.GSM == "") || gsmList.Contains(x.GSM))
                                     && x.Machine.Contains(request.Machine)
                                     && (!request.IsSearchByDate ||
                                         (x.Date >= request.FromDate.Date && x.Date <= request.ToDate.Date))
@@ -52,7 +52,7 @@ namespace RWPLLinqDataService.Services
                         var totalBalance = queryable.Select(x => x.Balance).Sum();
 
                         response.ReportSummary = string.Format("Total Reel : {0}, Total Weight : {1}, Total Consumption : {2}, Total Balance: {3}",
-                                                                                                totalReel, totalWeight, totalConsumption,totalBalance);
+                                                                                                totalReel, totalWeight, totalConsumption, totalBalance);
                     }
 
                     response.IsSuccess = true;

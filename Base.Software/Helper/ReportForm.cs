@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -12,9 +13,9 @@ using RWPLLinqDataService;
 
 namespace Base.Software.Helper
 {
-    public class ReportForm<TReport, TSearch, TEntity>
+    public class ReportForm<TReport, TSearch, TPageServiceName>
         where TSearch : ReportRequest, new()
-        where TEntity : IEntity
+        where TPageServiceName : IPageServiceName
     {
         private IServices _services;
         private ResultResponse<TReport> _response;
@@ -34,7 +35,7 @@ namespace Base.Software.Helper
 
         public UserAccessPage UserAccessPage
         {
-            get { return PageHelper.UserDetail.UserAccessPages.Single(x => x.PageName == typeof(TEntity).Name); }
+            get { return PageHelper.UserDetail.UserAccessPages.Single(x => x.PageName == typeof(TPageServiceName).Name); }
         }
 
 
@@ -51,11 +52,13 @@ namespace Base.Software.Helper
             _lblReportSummary = lblReportSummary;
             _form = form;
 
-            _services = new WinServices(typeof(TEntity).Name);
+            _services = new WinServices(typeof(TPageServiceName).Name);
 
             PrimaryKeyName = "SrNo";
 
             _searchRequest = new TSearch();
+
+            _searchRequest.PageSize = 99999;
 
             bindingNavigator.MoveNextItem.Click += bindingNavigatorMoveNextItem_Click;
             bindingNavigator.MovePreviousItem.Click += bindingNavigatorMovePreviousItem_Click;
@@ -161,9 +164,7 @@ namespace Base.Software.Helper
             _lblReportStatus.Text = string.Format("Total : {0}", _response.TotalItem);
             _lblReportSummary.Text = string.Format("Report Summary :-   {0}", _response.ReportSummary);
         }
-
-
-
+        
         public void FillDropDownAndAutoComplete<TPageDataRequest>()
         {
             var pageDataResponse = _services.GetReportPageDataServiceResponse<TPageDataRequest>();
@@ -266,7 +267,7 @@ namespace Base.Software.Helper
 
             var deletedBy = PageHelper.UserDetail.UserName;
             var deleteReason = "";
-            var pageDataResponse = _services.DeleteServiceResponse<TEntity>(srNo, deletedBy, deleteReason);
+            var pageDataResponse = _services.DeleteServiceResponse<TPageServiceName>(srNo, deletedBy, deleteReason);
 
             if (!pageDataResponse.IsSuccess)
             {
@@ -291,16 +292,51 @@ namespace Base.Software.Helper
 
             try
             {
-                MethodHelper.ExportToExcel(dataGridView1.Columns,_response.PageData);
+                MethodHelper.ExportToExcel(dataGridView1.Columns, _response.PageData);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(@"Couldn't create Excel file.\r\nException: " + ex.Message);
                 return;
-            }   
+            }
+        }
+
+        public void ImportFromExcel<TEntity>()
+            where TEntity : IEntity, new()
+        {
+            var openFileDialog1 = new OpenFileDialog();
+
+            var result = openFileDialog1.ShowDialog();
+            if (result != DialogResult.OK)
+            {
+                return;
+            }
+
+            var filePath = openFileDialog1.InitialDirectory + openFileDialog1.FileName;
+
+            _response = _services.GetMaxIdServiceResponse<TReport>();
+            var maxId = Convert.ToInt64(_response.ReportSummary);
+
+            try
+            {
+                var dataList = MethodHelper.Import_From_Excel<TEntity>(dataGridView1.Columns, maxId, filePath);
+                
+                var response = _services.SaveListServiceResponse(dataList);
+                if (!response.IsSuccess)
+                    throw response.Exception;
+
+                MessageBox.Show(@"Data Uploaded");
+                BindGridViewWithFilter();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Couldn't create Excel file.\r\nException: " + ex.Message);
+                return;
+            }
+
         }
 
 
-      
+
     }
 }

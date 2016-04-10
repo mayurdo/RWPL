@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaperReelConsumptionReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbBindMachine = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBindReelNo = new System.Windows.Forms.TextBox();
             this.dtpBindToDate = new System.Windows.Forms.DateTimePicker();
@@ -65,10 +67,9 @@
             this.bindingNavigatorEditItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonExportToExcel = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblReportSummary = new System.Windows.Forms.Label();
-            this.cmbBindMachine = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -101,12 +102,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
+            // cmbBindMachine
+            // 
+            this.cmbBindMachine.Font = new System.Drawing.Font("Arial", 12F);
+            this.cmbBindMachine.FormattingEnabled = true;
+            this.cmbBindMachine.Items.AddRange(new object[] {
+            "Caru49",
+            "Caru52",
+            "Caru75"});
+            this.cmbBindMachine.Location = new System.Drawing.Point(338, 44);
+            this.cmbBindMachine.Name = "cmbBindMachine";
+            this.cmbBindMachine.Size = new System.Drawing.Size(128, 26);
+            this.cmbBindMachine.TabIndex = 199;
+            this.cmbBindMachine.TextChanged += new System.EventHandler(this.txtBindReelNo_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(372, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 15);
+            this.label5.TabIndex = 200;
+            this.label5.Text = "Machine";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(176, 29);
+            this.label4.Location = new System.Drawing.Point(617, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 15);
             this.label4.TabIndex = 110;
@@ -115,7 +141,7 @@
             // txtBindReelNo
             // 
             this.txtBindReelNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindReelNo.Location = new System.Drawing.Point(268, 47);
+            this.txtBindReelNo.Location = new System.Drawing.Point(709, 44);
             this.txtBindReelNo.Name = "txtBindReelNo";
             this.txtBindReelNo.Size = new System.Drawing.Size(127, 26);
             this.txtBindReelNo.TabIndex = 2;
@@ -126,7 +152,7 @@
             this.dtpBindToDate.CustomFormat = "dd-MMM-yyyy";
             this.dtpBindToDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBindToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindToDate.Location = new System.Drawing.Point(947, 47);
+            this.dtpBindToDate.Location = new System.Drawing.Point(174, 44);
             this.dtpBindToDate.Name = "dtpBindToDate";
             this.dtpBindToDate.Size = new System.Drawing.Size(135, 26);
             this.dtpBindToDate.TabIndex = 5;
@@ -135,7 +161,7 @@
             // txtBindGSM
             // 
             this.txtBindGSM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindGSM.Location = new System.Drawing.Point(142, 47);
+            this.txtBindGSM.Location = new System.Drawing.Point(583, 44);
             this.txtBindGSM.Name = "txtBindGSM";
             this.txtBindGSM.Size = new System.Drawing.Size(105, 26);
             this.txtBindGSM.TabIndex = 1;
@@ -146,7 +172,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 29);
+            this.label1.Location = new System.Drawing.Point(745, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 15);
             this.label1.TabIndex = 88;
@@ -157,7 +183,7 @@
             this.cbBindIsSearchByDate.AutoSize = true;
             this.cbBindIsSearchByDate.BackColor = System.Drawing.Color.Transparent;
             this.cbBindIsSearchByDate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.cbBindIsSearchByDate.Location = new System.Drawing.Point(792, 82);
+            this.cbBindIsSearchByDate.Location = new System.Drawing.Point(19, 79);
             this.cbBindIsSearchByDate.Name = "cbBindIsSearchByDate";
             this.cbBindIsSearchByDate.Size = new System.Drawing.Size(112, 19);
             this.cbBindIsSearchByDate.TabIndex = 108;
@@ -170,7 +196,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(481, 29);
+            this.label2.Location = new System.Drawing.Point(907, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 15);
             this.label2.TabIndex = 90;
@@ -181,7 +207,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(980, 29);
+            this.label9.Location = new System.Drawing.Point(207, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(20, 15);
             this.label9.TabIndex = 107;
@@ -190,9 +216,9 @@
             // txtBindBF
             // 
             this.txtBindBF.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindBF.Location = new System.Drawing.Point(19, 47);
+            this.txtBindBF.Location = new System.Drawing.Point(498, 44);
             this.txtBindBF.Name = "txtBindBF";
-            this.txtBindBF.Size = new System.Drawing.Size(105, 26);
+            this.txtBindBF.Size = new System.Drawing.Size(65, 26);
             this.txtBindBF.TabIndex = 0;
             this.txtBindBF.TextChanged += new System.EventHandler(this.txtBindReelNo_TextChanged);
             // 
@@ -201,7 +227,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 29);
+            this.label3.Location = new System.Drawing.Point(518, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 15);
             this.label3.TabIndex = 92;
@@ -210,7 +236,7 @@
             // txtBindMill
             // 
             this.txtBindMill.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindMill.Location = new System.Drawing.Point(416, 47);
+            this.txtBindMill.Location = new System.Drawing.Point(842, 44);
             this.txtBindMill.Name = "txtBindMill";
             this.txtBindMill.Size = new System.Drawing.Size(162, 26);
             this.txtBindMill.TabIndex = 3;
@@ -221,7 +247,7 @@
             this.dtpBindFromDate.CustomFormat = "dd-MMM-yyyy";
             this.dtpBindFromDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBindFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindFromDate.Location = new System.Drawing.Point(792, 47);
+            this.dtpBindFromDate.Location = new System.Drawing.Point(19, 44);
             this.dtpBindFromDate.Name = "dtpBindFromDate";
             this.dtpBindFromDate.Size = new System.Drawing.Size(135, 26);
             this.dtpBindFromDate.TabIndex = 4;
@@ -232,7 +258,7 @@
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(822, 29);
+            this.label26.Location = new System.Drawing.Point(49, 26);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(65, 15);
             this.label26.TabIndex = 104;
@@ -245,7 +271,7 @@
             this.lblHeader.ForeColor = System.Drawing.Color.White;
             this.lblHeader.Location = new System.Drawing.Point(0, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(981, 33);
+            this.lblHeader.Size = new System.Drawing.Size(1109, 33);
             this.lblHeader.TabIndex = 173;
             this.lblHeader.Text = "Paper Reel Consumption Report";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,7 +284,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(5, 186);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(960, 425);
+            this.panel1.Size = new System.Drawing.Size(1093, 502);
             this.panel1.TabIndex = 175;
             // 
             // lblReportStatus
@@ -266,7 +292,7 @@
             this.lblReportStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblReportStatus.BackColor = System.Drawing.SystemColors.Control;
             this.lblReportStatus.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportStatus.Location = new System.Drawing.Point(823, 0);
+            this.lblReportStatus.Location = new System.Drawing.Point(956, 0);
             this.lblReportStatus.Name = "lblReportStatus";
             this.lblReportStatus.Size = new System.Drawing.Size(132, 25);
             this.lblReportStatus.TabIndex = 84;
@@ -294,7 +320,8 @@
             this.toolStripSeparator2,
             this.bindingNavigatorEditItem,
             this.toolStripSeparator1,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.toolStripButtonExportToExcel});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -302,7 +329,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(958, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(1091, 25);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -421,28 +448,37 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(84, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete        ";
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(99, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete             ";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
+            // toolStripButtonExportToExcel
+            // 
+            this.toolStripButtonExportToExcel.Image = global::RWPLSoftware.Properties.Resources.excelIcon;
+            this.toolStripButtonExportToExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExportToExcel.Name = "toolStripButtonExportToExcel";
+            this.toolStripButtonExportToExcel.Size = new System.Drawing.Size(145, 22);
+            this.toolStripButtonExportToExcel.Text = "Export to Excel              ";
+            this.toolStripButtonExportToExcel.Click += new System.EventHandler(this.toolStripButtonExportToExcel_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 442);
+            this.dataGridView1.Size = new System.Drawing.Size(1091, 485);
             this.dataGridView1.TabIndex = 1;
             // 
             // lblReportSummary
@@ -453,42 +489,16 @@
             this.lblReportSummary.ForeColor = System.Drawing.Color.Black;
             this.lblReportSummary.Location = new System.Drawing.Point(5, 150);
             this.lblReportSummary.Name = "lblReportSummary";
-            this.lblReportSummary.Size = new System.Drawing.Size(959, 33);
+            this.lblReportSummary.Size = new System.Drawing.Size(1092, 33);
             this.lblReportSummary.TabIndex = 176;
             this.lblReportSummary.Text = "Dispatch Report";
             this.lblReportSummary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cmbBindMachine
-            // 
-            this.cmbBindMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBindMachine.Font = new System.Drawing.Font("Arial", 12F);
-            this.cmbBindMachine.FormattingEnabled = true;
-            this.cmbBindMachine.Items.AddRange(new object[] {
-            "Caru49",
-            "Caru52",
-            "Caru75"});
-            this.cmbBindMachine.Location = new System.Drawing.Point(604, 47);
-            this.cmbBindMachine.Name = "cmbBindMachine";
-            this.cmbBindMachine.Size = new System.Drawing.Size(128, 26);
-            this.cmbBindMachine.TabIndex = 199;
-            this.cmbBindMachine.TextChanged += new System.EventHandler(this.txtBindReelNo_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(638, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 15);
-            this.label5.TabIndex = 200;
-            this.label5.Text = "Machine";
             // 
             // FrmPaperReelConsumptionReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 685);
+            this.ClientSize = new System.Drawing.Size(1109, 712);
             this.Controls.Add(this.lblReportSummary);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -550,5 +560,6 @@
         private System.Windows.Forms.TextBox txtBindGSM;
         private System.Windows.Forms.ComboBox cmbBindMachine;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripButton toolStripButtonExportToExcel;
     }
 }

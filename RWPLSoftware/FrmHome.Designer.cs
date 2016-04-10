@@ -35,13 +35,17 @@
             this.autoStichingPinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bundlingM1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryChallanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.duplexPrintedPaperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.appConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,8 +53,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
-            this.settingToolStripMenuItem,
-            this.masterToolStripMenuItem});
+            this.masterToolStripMenuItem,
+            this.settingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(884, 24);
@@ -64,10 +68,12 @@
             this.paperReeLConsumptionToolStripMenuItem,
             this.autoStichingPinToolStripMenuItem,
             this.bundlingM1ToolStripMenuItem,
-            this.rotaryToolStripMenuItem});
+            this.rotaryToolStripMenuItem,
+            this.deliveryChallanToolStripMenuItem,
+            this.duplexPrintedPaperToolStripMenuItem});
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.homeToolStripMenuItem.Text = "Production";
             // 
             // dispatchToolStripMenuItem
             // 
@@ -104,11 +110,26 @@
             this.rotaryToolStripMenuItem.Text = "Rotary";
             this.rotaryToolStripMenuItem.Click += new System.EventHandler(this.rotaryToolStripMenuItem_Click);
             // 
+            // deliveryChallanToolStripMenuItem
+            // 
+            this.deliveryChallanToolStripMenuItem.Name = "deliveryChallanToolStripMenuItem";
+            this.deliveryChallanToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.deliveryChallanToolStripMenuItem.Text = "Delivery Challan";
+            this.deliveryChallanToolStripMenuItem.Click += new System.EventHandler(this.deliveryChallanToolStripMenuItem_Click);
+            // 
+            // duplexPrintedPaperToolStripMenuItem
+            // 
+            this.duplexPrintedPaperToolStripMenuItem.Name = "duplexPrintedPaperToolStripMenuItem";
+            this.duplexPrintedPaperToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.duplexPrintedPaperToolStripMenuItem.Text = "Duplex Printed Paper";
+            this.duplexPrintedPaperToolStripMenuItem.Click += new System.EventHandler(this.duplexPrintedPaperToolStripMenuItem_Click);
+            // 
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userToolStripMenuItem,
-            this.changePasswordToolStripMenuItem});
+            this.changePasswordToolStripMenuItem,
+            this.appConfigToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             this.settingToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.settingToolStripMenuItem.Text = "Setting";
@@ -126,20 +147,19 @@
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             // 
-            // panel1
+            // appConfigToolStripMenuItem
             // 
-            this.panel1.BackgroundImage = global::RWPLSoftware.Properties.Resources.bannerimg;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(0, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 434);
-            this.panel1.TabIndex = 1;
+            this.appConfigToolStripMenuItem.Name = "appConfigToolStripMenuItem";
+            this.appConfigToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.appConfigToolStripMenuItem.Text = "App Config";
+            this.appConfigToolStripMenuItem.Click += new System.EventHandler(this.appConfigToolStripMenuItem_Click);
             // 
             // masterToolStripMenuItem
             // 
             this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemMasterToolStripMenuItem,
-            this.customerMasterToolStripMenuItem});
+            this.customerMasterToolStripMenuItem,
+            this.stockMasterToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.masterToolStripMenuItem.Text = "Master";
@@ -157,6 +177,22 @@
             this.customerMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.customerMasterToolStripMenuItem.Text = "Customer Master";
             this.customerMasterToolStripMenuItem.Click += new System.EventHandler(this.customerMasterToolStripMenuItem_Click);
+            // 
+            // stockMasterToolStripMenuItem
+            // 
+            this.stockMasterToolStripMenuItem.Name = "stockMasterToolStripMenuItem";
+            this.stockMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.stockMasterToolStripMenuItem.Text = "Stock Master";
+            this.stockMasterToolStripMenuItem.Click += new System.EventHandler(this.stockMasterToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::RWPLSoftware.Properties.Resources.bannerimg;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(884, 434);
+            this.panel1.TabIndex = 1;
             // 
             // FrmHome
             // 
@@ -194,5 +230,9 @@
         private System.Windows.Forms.ToolStripMenuItem masterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemMasterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerMasterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deliveryChallanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem duplexPrintedPaperToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem appConfigToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockMasterToolStripMenuItem;
     }
 }

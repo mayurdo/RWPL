@@ -9,60 +9,82 @@ namespace RWPLLinqDataService
     {
     }
 
-    partial class User : IEntity
+    partial class User : IEntity, IPageServiceName
     {
     }
 
-    partial class UserAccessPage : IEntity
+    partial class UserAccessPage : IEntity, IPageServiceName
     {
     }
 
-    partial class Dispatch : IEntity
+    partial class Dispatch : IEntity, IPageServiceName
     {
     }
 
-    partial class DispatchItem : IEntity
+    partial class DispatchItem : IEntity, IPageServiceName
     {
     }
 
-    partial class BundlingM1 : IEntity
+    partial class BundlingM1 : IEntity, IPageServiceName
     {
     }
 
-    partial class PaperReelConsumption : IEntity
+    partial class PaperReelConsumption : IEntity, IPageServiceName
     {
     }
 
-    partial class DuplexPrintedPaper : IEntity
+    partial class DuplexPrintedPaper : IEntity, IPageServiceName
     {
     }
 
-    partial class AutoStichingPin : IEntity
+    partial class AutoStichingPin : IEntity, IPageServiceName
     {
     }
 
-    partial class Rotary : IEntity
+    partial class Rotary : IEntity, IPageServiceName
     {
     }
 
-    partial class ItemMaster : IEntity
+    partial class ItemMaster : IEntity, IPageServiceName
     {
     }
 
-    partial class CustomerMaster : IEntity
+    partial class CustomerMaster : IEntity, IPageServiceName
     {
     }
 
-    partial class DeliveryChallan : IEntity
+    partial class DeliveryChallan : IEntity, IPageServiceName
     {
     }
 
-    partial class DeliveryChallanItem : IEntity
+    partial class DeliveryChallanItem : IEntity, IPageServiceName
     {
     }
 
-    partial class StockMaster : IEntity
+    partial class InwardMaster : IEntity, IPageServiceName
     {
+    }
+
+
+    // Analysis Reports
+    partial class PaperReelConsumptionAnalysi : IPageServiceName
+    {
+        
+    }
+
+    partial class CustomerSummary : IPageServiceName
+    {
+        
+    }
+
+    partial class DispatchAnalysi: IPageServiceName
+    {
+         
+    }
+
+    partial class StockMasterReport: IPageServiceName
+    {
+         
     }
 
 }

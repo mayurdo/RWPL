@@ -14,8 +14,8 @@ using RWPLLinqDataService;
 namespace RWPLLinqDataService.Services
 {
     public class DispatchDataService : BaseDataService<Dispatch>,
-        IDataService<Dispatch, DispatchReportView, DispatchSearchRequest,
-        DispatchReportPageRequest, DispatchEntryPageRequest>
+        IReportService<DispatchReportView, DispatchSearchRequest,DispatchReportPageRequest>,
+        IEntryService<Dispatch,DispatchEntryPageRequest>
     {
         public ResultResponse<DispatchReportView> Get(DispatchSearchRequest request)
         {
@@ -141,7 +141,7 @@ namespace RWPLLinqDataService.Services
                 using (var rwplDb = new RWPLLinqDataContext())
                 {
                     var queryableDispatch = rwplDb.GetTable<Dispatch>();
-                    
+
                     response.Object = new DispatchEntryPageRequest()
                     {
                         ItemType = new List<string>() { "Box", "Insertion", "Plate" },

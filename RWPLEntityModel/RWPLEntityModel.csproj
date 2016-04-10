@@ -59,8 +59,8 @@
     <Compile Include="PageDataRequest\PaperReelConsumptionReportPageRequest.cs" />
     <Compile Include="PageDataRequest\RotaryEntryPageRequest.cs" />
     <Compile Include="PageDataRequest\RotaryReportPageRequest.cs" />
-    <Compile Include="PageDataRequest\StockMasterEntryPageRequest.cs" />
-    <Compile Include="PageDataRequest\StockMasterReportPageRequest.cs" />
+    <Compile Include="PageDataRequest\InwardMasterEntryPageRequest.cs" />
+    <Compile Include="PageDataRequest\InwardMasterReportPageRequest.cs" />
     <Compile Include="PageDataRequest\UserEntryPageRequest.cs" />
     <Compile Include="PageDataRequest\UserReportPageRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,12 +71,15 @@
     <Compile Include="SearchRequest\AutoStichingPinSearchRequest.cs" />
     <Compile Include="SearchRequest\BundlingM1SearchRequest.cs" />
     <Compile Include="SearchRequest\CustomerMasterSearchRequest.cs" />
+    <Compile Include="SearchRequest\CustomerSummarySearchRequest.cs" />
+    <Compile Include="SearchRequest\DispatchAnalysiSearchRequest.cs" />
     <Compile Include="SearchRequest\DispatchSearchRequest.cs" />
     <Compile Include="SearchRequest\DuplexPrintedPaperSearchRequest.cs" />
     <Compile Include="SearchRequest\ItemMasterSearchRequest.cs" />
+    <Compile Include="SearchRequest\PaperReelConsumptionAnalysiSearchRequest.cs" />
     <Compile Include="SearchRequest\PaperReelConsumptionSearchRequest.cs" />
     <Compile Include="SearchRequest\RotarySearchRequest.cs" />
-    <Compile Include="SearchRequest\StockMasterSearchRequest.cs" />
+    <Compile Include="SearchRequest\InwardMasterSearchRequest.cs" />
     <Compile Include="SearchRequest\UserSearchRequest.cs" />
   </ItemGroup>
   <ItemGroup />

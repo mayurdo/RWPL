@@ -14,7 +14,9 @@ namespace Base.Software
         ResultResponse<T> GetServiceResponse<T>(ReportRequest request);
         ResultResponse<T> GetReportPageDataServiceResponse<T>();
         ResultResponse<T> GetEntryPageDataServiceResponse<T>();
+        ResultResponse<T> GetMaxIdServiceResponse<T>();
         ResultResponse<T> GetEntityByIdServiceResponse<T>(long srNo);
+        ResultResponse<T> SaveListServiceResponse<T>(List<T> entityList);
         ResultResponse<T> SaveServiceResponse<T>(T entity);
         ResultResponse<T> EditServiceResponse<T>(T entity);
         ResultResponse<T> DeleteServiceResponse<T>(long srNo, string deletedBy, string deleteReason);
@@ -55,11 +57,26 @@ namespace Base.Software
             return (ResultResponse<T>)method.Invoke(_dataServiceInstance, null);
         }
 
+        public ResultResponse<T> GetMaxIdServiceResponse<T>()
+        {
+            var method = _dataServiceType.GetMethod("GetMaxId");
+
+            return (ResultResponse<T>)method.Invoke(_dataServiceInstance, null);
+        }
+
+
         public ResultResponse<T> GetEntityByIdServiceResponse<T>(long srNo)
         {
             var method = _dataServiceType.GetMethod("GetEntityById");
 
             return (ResultResponse<T>)method.Invoke(_dataServiceInstance, new object[] { srNo });
+        }
+
+        public ResultResponse<T> SaveListServiceResponse<T>(List<T> entityList)
+        {
+            var method = _dataServiceType.GetMethod("SaveList");
+
+            return (ResultResponse<T>)method.Invoke(_dataServiceInstance, new object[] { entityList });
         }
 
         public ResultResponse<T> SaveServiceResponse<T>(T entity)

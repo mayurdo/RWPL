@@ -9,9 +9,9 @@ using RWPLEntityModel.SearchRequest;
 namespace RWPLLinqDataService.Services
 {
    public class BundlingM1DataService : BaseDataService<BundlingM1>,
-       IDataService<BundlingM1, BundlingM1, BundlingM1SearchRequest,
-       BundlingM1ReportPageRequest, BundlingM1EntryPageRequest>
-    {
+       IReportService<BundlingM1, BundlingM1SearchRequest,BundlingM1ReportPageRequest>,
+       IEntryService<BundlingM1,BundlingM1EntryPageRequest>
+   {
         public ResultResponse<BundlingM1> Get(BundlingM1SearchRequest request)
         {
             var response = new ResultResponse<BundlingM1>();

@@ -151,6 +151,7 @@
             this.cbBindIsSearchByDate.TabIndex = 108;
             this.cbBindIsSearchByDate.Text = "Search by Date";
             this.cbBindIsSearchByDate.UseVisualStyleBackColor = false;
+            this.cbBindIsSearchByDate.CheckedChanged += new System.EventHandler(this.txtBindClient_TextChanged);
             // 
             // label2
             // 
@@ -264,7 +265,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(5, 188);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(960, 425);
+            this.panel1.Size = new System.Drawing.Size(960, 498);
             this.panel1.TabIndex = 182;
             // 
             // lblReportStatus
@@ -448,14 +449,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 442);
+            this.dataGridView1.Size = new System.Drawing.Size(960, 483);
             this.dataGridView1.TabIndex = 1;
             // 
             // FrmBundlingM1Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 685);
+            this.ClientSize = new System.Drawing.Size(1109, 712);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblReportSummary);
             this.Controls.Add(this.groupBox1);

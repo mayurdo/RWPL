@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(5, 185);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(960, 425);
+            this.panel1.Size = new System.Drawing.Size(960, 508);
             this.panel1.TabIndex = 6;
             // 
             // lblReportStatus
@@ -270,7 +270,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 442);
+            this.dataGridView1.Size = new System.Drawing.Size(960, 486);
             this.dataGridView1.TabIndex = 1;
             // 
             // lblHeader
@@ -485,7 +485,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 685);
+            this.ClientSize = new System.Drawing.Size(1198, 712);
             this.Controls.Add(this.lblReportSummary);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblHeader);

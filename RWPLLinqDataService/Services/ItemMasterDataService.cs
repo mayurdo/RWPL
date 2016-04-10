@@ -9,8 +9,8 @@ using RWPLEntityModel.SearchRequest;
 namespace RWPLLinqDataService.Services
 {
     public class ItemMasterDataService : BaseDataService<ItemMaster>,
-        IDataService<ItemMaster, ItemMaster, ItemMasterSearchRequest,
-            ItemMasterReportPageRequest, ItemMasterEntryPageRequest>
+        IReportService<ItemMaster, ItemMasterSearchRequest, ItemMasterReportPageRequest>,
+        IEntryService<ItemMaster, ItemMasterEntryPageRequest>
     {
         public ResultResponse<ItemMaster> Get(ItemMasterSearchRequest request)
         {
@@ -20,14 +20,17 @@ namespace RWPLLinqDataService.Services
                 using (var rwplDb = new RWPLLinqDataContext())
                 {
                     var queryable = rwplDb.GetTable<ItemMaster>()
-                        .Where(x => x.ItemType.Contains(request.ItemType)
+                        .Where(x => x.BoxType.Contains(request.ItemType)
                                     && x.ItemCode.Contains(request.ItemCode)
                                     && x.ItemName.Contains(request.ItemName)
+                                    && x.CustomerName.Contains(request.CustomerName)
+                                    && x.DrawingNo.Contains(request.DrawingNo)
+                                    && x.NoofPly.Contains(request.NoofPly)
                                     && !x.IsDeleted
                         )
                         .OrderBy(x => x.ItemName);
 
-                    var skipRecord = ((request.PageNo > 0) ? (request.PageNo - 1)*request.PageSize : 0);
+                    var skipRecord = ((request.PageNo > 0) ? (request.PageNo - 1) * request.PageSize : 0);
 
                     response.PageData = queryable.Skip(skipRecord).Take(request.PageSize).ToList();
                     response.TotalItem = queryable.Count();

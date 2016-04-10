@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.lblHeader = new System.Windows.Forms.Label();
-            this.txtBindNBoxName = new System.Windows.Forms.TextBox();
+            this.txtBindBoxName = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtBindNOperator = new System.Windows.Forms.TextBox();
+            this.txtBindOperator = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtBindRQty = new System.Windows.Forms.TextBox();
+            this.txtBindQty = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBindNSrNo = new System.Windows.Forms.TextBox();
+            this.txtBindSrNo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpBindNTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpBindTime = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtpBindNDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpBindDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBindRClient = new System.Windows.Forms.TextBox();
+            this.txtBindClient = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBindRBoxCode = new System.Windows.Forms.TextBox();
+            this.txtBindBoxCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.grpRadioBindNType = new System.Windows.Forms.Panel();
             this.rbRotary1 = new System.Windows.Forms.RadioButton();
             this.label22 = new System.Windows.Forms.Label();
             this.rbRotary2 = new System.Windows.Forms.RadioButton();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.txtBindNWastage = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtBindWastage = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.grpRadioBindNType.SuspendLayout();
             this.SuspendLayout();
@@ -70,14 +70,14 @@
             this.lblHeader.Text = "Rotary";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtBindNBoxName
+            // txtBindBoxName
             // 
-            this.txtBindNBoxName.AccessibleName = "ItemName";
-            this.txtBindNBoxName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNBoxName.Location = new System.Drawing.Point(101, 231);
-            this.txtBindNBoxName.Name = "txtBindNBoxName";
-            this.txtBindNBoxName.Size = new System.Drawing.Size(209, 26);
-            this.txtBindNBoxName.TabIndex = 4;
+            this.txtBindBoxName.AccessibleName = "ItemName";
+            this.txtBindBoxName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindBoxName.Location = new System.Drawing.Point(101, 231);
+            this.txtBindBoxName.Name = "txtBindBoxName";
+            this.txtBindBoxName.Size = new System.Drawing.Size(209, 26);
+            this.txtBindBoxName.TabIndex = 4;
             // 
             // label17
             // 
@@ -103,13 +103,13 @@
             this.label12.TabIndex = 283;
             this.label12.Text = "*";
             // 
-            // txtBindNOperator
+            // txtBindOperator
             // 
-            this.txtBindNOperator.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNOperator.Location = new System.Drawing.Point(441, 150);
-            this.txtBindNOperator.Name = "txtBindNOperator";
-            this.txtBindNOperator.Size = new System.Drawing.Size(144, 26);
-            this.txtBindNOperator.TabIndex = 9;
+            this.txtBindOperator.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindOperator.Location = new System.Drawing.Point(441, 150);
+            this.txtBindOperator.Name = "txtBindOperator";
+            this.txtBindOperator.Size = new System.Drawing.Size(144, 26);
+            this.txtBindOperator.TabIndex = 9;
             // 
             // label11
             // 
@@ -123,14 +123,15 @@
             this.label11.Text = "Operator :";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindRQty
+            // txtBindQty
             // 
-            this.txtBindRQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRQty.Location = new System.Drawing.Point(101, 276);
-            this.txtBindRQty.Name = "txtBindRQty";
-            this.txtBindRQty.Size = new System.Drawing.Size(209, 26);
-            this.txtBindRQty.TabIndex = 5;
-            this.txtBindRQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindRQty_KeyPress);
+            this.txtBindQty.AccessibleDescription = "Req";
+            this.txtBindQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindQty.Location = new System.Drawing.Point(101, 276);
+            this.txtBindQty.Name = "txtBindQty";
+            this.txtBindQty.Size = new System.Drawing.Size(209, 26);
+            this.txtBindQty.TabIndex = 5;
+            this.txtBindQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindRQty_KeyPress);
             // 
             // label9
             // 
@@ -156,14 +157,14 @@
             this.label1.Text = "Sr No :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindNSrNo
+            // txtBindSrNo
             // 
-            this.txtBindNSrNo.Enabled = false;
-            this.txtBindNSrNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNSrNo.Location = new System.Drawing.Point(101, 69);
-            this.txtBindNSrNo.Name = "txtBindNSrNo";
-            this.txtBindNSrNo.Size = new System.Drawing.Size(209, 26);
-            this.txtBindNSrNo.TabIndex = 0;
+            this.txtBindSrNo.Enabled = false;
+            this.txtBindSrNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindSrNo.Location = new System.Drawing.Point(101, 69);
+            this.txtBindSrNo.Name = "txtBindSrNo";
+            this.txtBindSrNo.Size = new System.Drawing.Size(209, 26);
+            this.txtBindSrNo.TabIndex = 0;
             // 
             // label4
             // 
@@ -177,16 +178,16 @@
             this.label4.TabIndex = 276;
             this.label4.Text = "*";
             // 
-            // dtpBindNTime
+            // dtpBindTime
             // 
-            this.dtpBindNTime.CustomFormat = "hh:mm tt";
-            this.dtpBindNTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBindNTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindNTime.Location = new System.Drawing.Point(441, 110);
-            this.dtpBindNTime.Name = "dtpBindNTime";
-            this.dtpBindNTime.ShowUpDown = true;
-            this.dtpBindNTime.Size = new System.Drawing.Size(103, 26);
-            this.dtpBindNTime.TabIndex = 8;
+            this.dtpBindTime.CustomFormat = "hh:mm tt";
+            this.dtpBindTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindTime.Location = new System.Drawing.Point(441, 110);
+            this.dtpBindTime.Name = "dtpBindTime";
+            this.dtpBindTime.ShowUpDown = true;
+            this.dtpBindTime.Size = new System.Drawing.Size(103, 26);
+            this.dtpBindTime.TabIndex = 8;
             // 
             // label2
             // 
@@ -200,15 +201,15 @@
             this.label2.Text = "Time :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // dtpBindNDate
+            // dtpBindDate
             // 
-            this.dtpBindNDate.CustomFormat = "dd-MMM-yyyy";
-            this.dtpBindNDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBindNDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindNDate.Location = new System.Drawing.Point(441, 69);
-            this.dtpBindNDate.Name = "dtpBindNDate";
-            this.dtpBindNDate.Size = new System.Drawing.Size(144, 26);
-            this.dtpBindNDate.TabIndex = 7;
+            this.dtpBindDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpBindDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindDate.Location = new System.Drawing.Point(441, 69);
+            this.dtpBindDate.Name = "dtpBindDate";
+            this.dtpBindDate.Size = new System.Drawing.Size(144, 26);
+            this.dtpBindDate.TabIndex = 7;
             // 
             // label3
             // 
@@ -222,14 +223,15 @@
             this.label3.Text = "Date :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindRClient
+            // txtBindClient
             // 
-            this.txtBindRClient.AccessibleName = "CustomerName";
-            this.txtBindRClient.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRClient.Location = new System.Drawing.Point(101, 151);
-            this.txtBindRClient.Name = "txtBindRClient";
-            this.txtBindRClient.Size = new System.Drawing.Size(209, 26);
-            this.txtBindRClient.TabIndex = 2;
+            this.txtBindClient.AccessibleDescription = "Req";
+            this.txtBindClient.AccessibleName = "CustomerName";
+            this.txtBindClient.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindClient.Location = new System.Drawing.Point(101, 151);
+            this.txtBindClient.Name = "txtBindClient";
+            this.txtBindClient.Size = new System.Drawing.Size(209, 26);
+            this.txtBindClient.TabIndex = 2;
             // 
             // label6
             // 
@@ -243,14 +245,15 @@
             this.label6.Text = "Client :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindRBoxCode
+            // txtBindBoxCode
             // 
-            this.txtBindRBoxCode.AccessibleName = "ItemCode";
-            this.txtBindRBoxCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRBoxCode.Location = new System.Drawing.Point(101, 191);
-            this.txtBindRBoxCode.Name = "txtBindRBoxCode";
-            this.txtBindRBoxCode.Size = new System.Drawing.Size(209, 26);
-            this.txtBindRBoxCode.TabIndex = 3;
+            this.txtBindBoxCode.AccessibleDescription = "Req";
+            this.txtBindBoxCode.AccessibleName = "ItemCode";
+            this.txtBindBoxCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindBoxCode.Location = new System.Drawing.Point(101, 191);
+            this.txtBindBoxCode.Name = "txtBindBoxCode";
+            this.txtBindBoxCode.Size = new System.Drawing.Size(209, 26);
+            this.txtBindBoxCode.TabIndex = 3;
             // 
             // label5
             // 
@@ -309,43 +312,43 @@
             this.rbRotary2.Text = "Rotary2";
             this.rbRotary2.UseVisualStyleBackColor = true;
             // 
-            // buttonBack
+            // btnBack
             // 
-            this.buttonBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonBack.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBack.BackgroundImage = global::RWPLSoftware.Properties.Resources.exit;
-            this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonBack.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.buttonBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonBack.Location = new System.Drawing.Point(506, 328);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(79, 66);
-            this.buttonBack.TabIndex = 11;
-            this.buttonBack.UseVisualStyleBackColor = false;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.btnBack.AccessibleDescription = "Back";
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::RWPLSoftware.Properties.Resources.exit;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(506, 328);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(79, 66);
+            this.btnBack.TabIndex = 11;
+            this.btnBack.UseVisualStyleBackColor = false;
             // 
-            // buttonSave
+            // btnSave
             // 
-            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonSave.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSave.BackgroundImage = global::RWPLSoftware.Properties.Resources.network_save;
-            this.buttonSave.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.buttonSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSave.Location = new System.Drawing.Point(399, 326);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(70, 70);
-            this.buttonSave.TabIndex = 10;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.btnSave.AccessibleDescription = "Save";
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::RWPLSoftware.Properties.Resources.network_save;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSave.Location = new System.Drawing.Point(399, 326);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(70, 70);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // txtBindNWastage
+            // txtBindWastage
             // 
-            this.txtBindNWastage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNWastage.Location = new System.Drawing.Point(101, 318);
-            this.txtBindNWastage.Name = "txtBindNWastage";
-            this.txtBindNWastage.Size = new System.Drawing.Size(209, 26);
-            this.txtBindNWastage.TabIndex = 6;
-            this.txtBindNWastage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindRQty_KeyPress);
+            this.txtBindWastage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindWastage.Location = new System.Drawing.Point(101, 318);
+            this.txtBindWastage.Name = "txtBindWastage";
+            this.txtBindWastage.Size = new System.Drawing.Size(209, 26);
+            this.txtBindWastage.TabIndex = 6;
+            this.txtBindWastage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindRQty_KeyPress);
             // 
             // label7
             // 
@@ -365,28 +368,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(638, 427);
-            this.Controls.Add(this.txtBindNWastage);
+            this.Controls.Add(this.txtBindWastage);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.grpRadioBindNType);
-            this.Controls.Add(this.txtBindNBoxName);
+            this.Controls.Add(this.txtBindBoxName);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.buttonBack);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.txtBindNOperator);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtBindOperator);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtBindRQty);
+            this.Controls.Add(this.txtBindQty);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBindNSrNo);
+            this.Controls.Add(this.txtBindSrNo);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtpBindNTime);
+            this.Controls.Add(this.dtpBindTime);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dtpBindNDate);
+            this.Controls.Add(this.dtpBindDate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtBindRClient);
+            this.Controls.Add(this.txtBindClient);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtBindRBoxCode);
+            this.Controls.Add(this.txtBindBoxCode);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblHeader);
             this.Name = "FrmRotaryEntry";
@@ -403,31 +406,31 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.TextBox txtBindNBoxName;
+        private System.Windows.Forms.TextBox txtBindBoxName;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.TextBox txtBindNOperator;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtBindOperator;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtBindRQty;
+        private System.Windows.Forms.TextBox txtBindQty;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBindNSrNo;
+        private System.Windows.Forms.TextBox txtBindSrNo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpBindNTime;
+        private System.Windows.Forms.DateTimePicker dtpBindTime;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpBindNDate;
+        private System.Windows.Forms.DateTimePicker dtpBindDate;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBindRClient;
+        private System.Windows.Forms.TextBox txtBindClient;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBindRBoxCode;
+        private System.Windows.Forms.TextBox txtBindBoxCode;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel grpRadioBindNType;
         private System.Windows.Forms.RadioButton rbRotary1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.RadioButton rbRotary2;
-        private System.Windows.Forms.TextBox txtBindNWastage;
+        private System.Windows.Forms.TextBox txtBindWastage;
         private System.Windows.Forms.Label label7;
     }
 }

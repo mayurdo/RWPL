@@ -11,8 +11,8 @@ using RWPLEntityModel.SearchRequest;
 namespace RWPLLinqDataService.Services
 {
     public class UserDataService : BaseDataService<User>,
-        IDataService<User, UserReportView, UserSearchRequest,
-        UserReportPageRequest, UserEntryPageRequest>
+        IReportService<UserReportView, UserSearchRequest, UserReportPageRequest>,
+        IEntryService<User, UserEntryPageRequest>
     {
         public ResultResponse<UserReportView> Get(UserSearchRequest request)
         {
@@ -159,7 +159,7 @@ namespace RWPLLinqDataService.Services
                     }
 
                     rwplDb.SubmitChanges();
-                    
+
                     response.Object = entity;
                     response.IsSuccess = true;
                 }

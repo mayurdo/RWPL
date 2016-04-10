@@ -29,30 +29,13 @@ namespace RWPLSoftware.FrmBundlingM1
             _entryForm = new EntryForm<BundlingM1>(this,srNo);
         }
 
-        private void txtBindRBundleUnit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            PageHelper.AcceptOnlyNumberWithMultiplyAndCommas(e,((TextBox)sender).Text);
-        }
-
         private void txtBindRBundleUnit_TextChanged(object sender, EventArgs e)
         {
-            PageHelper.CalculateQtyXAny(txtBindRBundleUnit.Text,txtBindNBoxQty,txtBindNBundleQty);
+            PageHelper.CalculateQtyXAny(txtBindBundleUnit.Text,txtBindBoxQty,txtBindBundleQty);
         }
 
         private void FrmBundlingM1Entry_Load(object sender, EventArgs e)
         {
-            //_entryForm.FillDropDownAndAutoComplete<BundlingM1>();
-            _entryForm.FillDropDownAndAutoCompleteByApplicationData();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            _entryForm.SavePageData();
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

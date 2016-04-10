@@ -9,8 +9,8 @@ using RWPLEntityModel.SearchRequest;
 namespace RWPLLinqDataService.Services
 {
     class RotaryDataService : BaseDataService<Rotary>,
-       IDataService<Rotary, Rotary, RotarySearchRequest,
-       RotaryReportPageRequest, RotaryEntryPageRequest>
+        IReportService<Rotary, RotarySearchRequest, RotaryReportPageRequest>,
+        IEntryService<Rotary, RotaryEntryPageRequest>
     {
         public ResultResponse<Rotary> Get(RotarySearchRequest request)
         {

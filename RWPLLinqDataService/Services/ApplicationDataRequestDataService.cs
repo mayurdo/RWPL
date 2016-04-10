@@ -23,7 +23,7 @@ namespace RWPLLinqDataService.Services
                         .Where(x => !x.IsDeleted)
                         .OrderBy(x => x.CustomerName);
 
-                    var queryableReelNo = rwplDb.GetTable<StockMaster>()
+                    var queryableReelNo = rwplDb.GetTable<InwardMaster>()
                         .Where(x => !x.IsDeleted)
                         .OrderBy(x => x.ReelNo);
 

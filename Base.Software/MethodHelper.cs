@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -99,7 +100,7 @@ namespace Base.Software
             }
         }
 
-        public static void ExportToExcel<T>(DataGridViewColumnCollection datagridViewColumns,List<T> dataList)
+        public static void ExportToExcel<T>(DataGridViewColumnCollection datagridViewColumns, List<T> dataList)
         {
             Application.UseWaitCursor = true;
 
@@ -133,7 +134,7 @@ namespace Base.Software
                 colIndex = 1;
                 foreach (var property in properties)
                 {
-                    if(!columns.Contains(property.Name))
+                    if (!columns.Contains(property.Name))
                         continue;
 
                     string cellValue = Convert.ToString(typeof(T).GetProperty(property.Name).GetValue(data, null));
@@ -156,6 +157,7 @@ namespace Base.Software
 
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
             DialogResult result = saveFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -190,6 +192,141 @@ namespace Base.Software
             {
                 GC.Collect();
             }
+        }
+
+
+        public static List<T> Import_From_Excel<T>(DataGridViewColumnCollection datagridViewColumns, long maxSrNo, string excelPath)
+           where T : IEntity, new()
+        {
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+
+            xlApp = new Excel.ApplicationClass();
+            xlWorkBook = xlApp.Workbooks.Open(excelPath);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Sheets[1];
+            var lastRow = xlWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
+            int rowIndex = 1;
+            int colIndex = 1;
+
+            var columns = new List<string>();
+            foreach (DataGridViewColumn column in datagridViewColumns)
+            {
+                if (!column.Visible)
+                    continue;
+
+                columns.Add(column.Name);
+                //xlWorkSheet.Cells[rowIndex, colIndex] = column.Name;
+                colIndex++;
+            }
+
+
+            var dataList = new List<T>();
+            var propertyInfos = typeof(T).GetProperties();
+
+            for (rowIndex = 2; rowIndex <= lastRow; rowIndex++)
+            {
+                var obj = new T();
+
+                var rowValues = (Array)xlWorkSheet.Range[xlWorkSheet.Cells[rowIndex, 1], xlWorkSheet.Cells[rowIndex, columns.Count]].Cells.Value;
+
+                for (var col = 0; col < columns.Count; col++)
+                {
+                    var propertyInfo = propertyInfos.SingleOrDefault(x => x.Name == columns[col]);
+                    if (propertyInfo == null)
+                        continue;
+
+                    object value = null;
+                    object cellValue = rowValues.GetValue(1, col + 1);
+                    if (propertyInfo.PropertyType == typeof(bool))
+                    {
+                        value = (cellValue == "Y");
+                    }
+                    else
+                    {
+                        try
+                        {
+                            Type type = Nullable.GetUnderlyingType(propertyInfo.PropertyType) ?? propertyInfo.PropertyType;
+
+                            if (cellValue == null || string.IsNullOrEmpty(cellValue.ToString()))
+                            {
+                                value = SetDefaultValue(propertyInfo.PropertyType);
+                            }
+                            else if (type == typeof(DateTime))
+                            {
+                                try
+                                {
+                                    var cellFormat = ((Excel.Range)xlWorkSheet.Cells[rowIndex, col + 1]).NumberFormat;
+
+                                    value = ((string)cellFormat == "hh:mm AM/PM")
+                                                ? DateTime.FromOADate((double)cellValue)
+                                                : (DateTime)cellValue;
+                                }
+                                catch (Exception ex)
+                                {
+                                    throw ex;
+                                }
+                            }
+                            else
+                            {
+                                value = Convert.ChangeType(cellValue, type);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            var errorMessage = string.Format("Row No '{0}' has invalid value '{1}' in column '{2}', " +
+                                                             "Please correct it in excel and try again",
+                                                                            rowIndex, cellValue, columns[col]);
+                            MessageBox.Show(errorMessage, "Error Message", MessageBoxButtons.OK);
+
+                            xlApp.Quit();
+                            releaseObject(xlWorkSheet);
+                            releaseObject(xlWorkBook);
+                            releaseObject(xlApp);
+                            return new List<T>();
+                        }
+                    }
+                    propertyInfo.SetValue(obj, value, null);
+                }
+
+                obj.CreatedBy = "Excel Import";
+                obj.CreatedDate = DateTime.Now;
+                obj.IsDeleted = false;
+
+                //if (obj.SrNo == 0)
+                //    continue;
+
+                obj.SrNo = maxSrNo + 1;
+                maxSrNo++;
+
+                dataList.Add(obj);
+            }
+
+
+            xlApp.Quit();
+            releaseObject(xlWorkSheet);
+            releaseObject(xlWorkBook);
+            releaseObject(xlApp);
+
+            return dataList;
+        }
+
+        private static object SetDefaultValue(Type type)
+        {
+            if (type.IsGenericType &&
+                type.GetGenericTypeDefinition() == typeof(Nullable<>))
+            {
+                return null;
+            }
+
+            if (type == typeof(string))
+                return string.Empty;
+
+            if (type == typeof(DateTime))
+                return DateTime.Now;
+
+            return 0;
         }
 
         //public static ResultResponse<T> GetServiceResponse<T>(string servicePath, ReportRequest request) where T : Entity

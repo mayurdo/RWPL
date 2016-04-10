@@ -43,6 +43,7 @@
     <Compile Include="ApplicationDataRequest.cs" />
     <Compile Include="BaseDataService.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="IPageServiceName.cs" />
     <Compile Include="ServiceHelper.cs" />
     <Compile Include="Services\ApplicationDataRequestDataService.cs" />
     <Compile Include="Services\AutoStichingPinDataService.cs" />
@@ -63,15 +64,19 @@
       <DependentUpon>RWPLLinq.dbml</DependentUpon>
     </Compile>
     <Compile Include="Services\CustomerMasterDataService.cs" />
+    <Compile Include="Services\CustomerSummaryDataService.cs" />
     <Compile Include="Services\DeliveryChallanDataService.cs" />
+    <Compile Include="Services\DispatchAnalysiDataService.cs" />
     <Compile Include="Services\DispatchDataService.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\DuplexPrintedPaperDataService.cs" />
     <Compile Include="Services\ItemMasterDataService.cs" />
+    <Compile Include="Services\PaperReelConsumptionAnalysiDataService.cs" />
     <Compile Include="Services\PaperReelConsumptionDataService.cs" />
     <Compile Include="Services\RotaryDataService.cs" />
-    <Compile Include="Services\StockMasterDataService.cs" />
+    <Compile Include="Services\InwardMasterDataService.cs" />
+    <Compile Include="Services\StockMasterReportDataService.cs" />
     <Compile Include="Services\UserDataService.cs" />
   </ItemGroup>
   <ItemGroup>

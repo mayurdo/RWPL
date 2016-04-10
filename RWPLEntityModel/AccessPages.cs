@@ -10,6 +10,7 @@ namespace RWPLEntityModel
         User,
         Dispatch,
         PaperReelConsumption,
+        CarogationProductionAnalysis,
         AutoStichingPin,
         BundlingM1,
         Rotary,
@@ -18,6 +19,7 @@ namespace RWPLEntityModel
         DeliveryChallan,
         DuplexPrintedPaper,
         AppConfig,
-        StockMaster
+        StockMaster,
+        DispatchAnalysis
     }
 }

@@ -31,39 +31,39 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpBindNInTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpBindInTime = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
-            this.dtpBindNDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpBindDate = new System.Windows.Forms.DateTimePicker();
             this.label26 = new System.Windows.Forms.Label();
-            this.txtBindRClient = new System.Windows.Forms.TextBox();
+            this.txtBindClient = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBindNVehicalNo = new System.Windows.Forms.TextBox();
+            this.txtBindVehicalNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtBindNSrNo = new System.Windows.Forms.TextBox();
+            this.txtBindSrNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.grpGridBindRDispatchItems = new System.Windows.Forms.Panel();
-            this.cmbBindRItemType = new System.Windows.Forms.ComboBox();
-            this.txtBindRQtyPerBundle = new System.Windows.Forms.TextBox();
+            this.grpGridBindDispatchItems = new System.Windows.Forms.Panel();
+            this.cmbBindItemType = new System.Windows.Forms.ComboBox();
+            this.txtBindQtyPerBundle = new System.Windows.Forms.TextBox();
             this.btnDeleteItem = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtBindRItemCode = new System.Windows.Forms.TextBox();
+            this.txtBindItemCode = new System.Windows.Forms.TextBox();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtBindRTotalQty = new System.Windows.Forms.TextBox();
+            this.txtBindTotalQty = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtBindRTotalBundles = new System.Windows.Forms.TextBox();
+            this.txtBindTotalBundles = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBindRItemName = new System.Windows.Forms.TextBox();
+            this.txtBindItemName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBindNDriverName = new System.Windows.Forms.TextBox();
+            this.txtBindDriverName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.dtpBindNOutTime = new System.Windows.Forms.DateTimePicker();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.dtpBindOutTime = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
-            this.grpGridBindRDispatchItems.SuspendLayout();
+            this.grpGridBindDispatchItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,16 +91,16 @@
             this.label4.TabIndex = 194;
             this.label4.Text = "*";
             // 
-            // dtpBindNInTime
+            // dtpBindInTime
             // 
-            this.dtpBindNInTime.CustomFormat = "hh:mm tt";
-            this.dtpBindNInTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBindNInTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindNInTime.Location = new System.Drawing.Point(578, 105);
-            this.dtpBindNInTime.Name = "dtpBindNInTime";
-            this.dtpBindNInTime.ShowUpDown = true;
-            this.dtpBindNInTime.Size = new System.Drawing.Size(103, 26);
-            this.dtpBindNInTime.TabIndex = 182;
+            this.dtpBindInTime.CustomFormat = "hh:mm tt";
+            this.dtpBindInTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindInTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindInTime.Location = new System.Drawing.Point(578, 105);
+            this.dtpBindInTime.Name = "dtpBindInTime";
+            this.dtpBindInTime.ShowUpDown = true;
+            this.dtpBindInTime.Size = new System.Drawing.Size(103, 26);
+            this.dtpBindInTime.TabIndex = 182;
             // 
             // label19
             // 
@@ -113,15 +113,16 @@
             this.label19.TabIndex = 193;
             this.label19.Text = "In Time :";
             // 
-            // dtpBindNDate
+            // dtpBindDate
             // 
-            this.dtpBindNDate.CustomFormat = "dd-MMM-yyyy";
-            this.dtpBindNDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBindNDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindNDate.Location = new System.Drawing.Point(578, 64);
-            this.dtpBindNDate.Name = "dtpBindNDate";
-            this.dtpBindNDate.Size = new System.Drawing.Size(144, 26);
-            this.dtpBindNDate.TabIndex = 181;
+            this.dtpBindDate.AccessibleDescription = "";
+            this.dtpBindDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpBindDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindDate.Location = new System.Drawing.Point(578, 64);
+            this.dtpBindDate.Name = "dtpBindDate";
+            this.dtpBindDate.Size = new System.Drawing.Size(144, 26);
+            this.dtpBindDate.TabIndex = 181;
             // 
             // label26
             // 
@@ -134,13 +135,15 @@
             this.label26.TabIndex = 192;
             this.label26.Text = "Date :";
             // 
-            // txtBindRClient
+            // txtBindClient
             // 
-            this.txtBindRClient.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRClient.Location = new System.Drawing.Point(238, 105);
-            this.txtBindRClient.Name = "txtBindRClient";
-            this.txtBindRClient.Size = new System.Drawing.Size(209, 26);
-            this.txtBindRClient.TabIndex = 1;
+            this.txtBindClient.AccessibleDescription = "Req.AppData";
+            this.txtBindClient.AccessibleName = "CustomerName";
+            this.txtBindClient.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindClient.Location = new System.Drawing.Point(238, 105);
+            this.txtBindClient.Name = "txtBindClient";
+            this.txtBindClient.Size = new System.Drawing.Size(209, 26);
+            this.txtBindClient.TabIndex = 1;
             // 
             // label6
             // 
@@ -153,13 +156,14 @@
             this.label6.TabIndex = 187;
             this.label6.Text = "Client :";
             // 
-            // txtBindNVehicalNo
+            // txtBindVehicalNo
             // 
-            this.txtBindNVehicalNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNVehicalNo.Location = new System.Drawing.Point(238, 145);
-            this.txtBindNVehicalNo.Name = "txtBindNVehicalNo";
-            this.txtBindNVehicalNo.Size = new System.Drawing.Size(209, 26);
-            this.txtBindNVehicalNo.TabIndex = 2;
+            this.txtBindVehicalNo.AccessibleDescription = "";
+            this.txtBindVehicalNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindVehicalNo.Location = new System.Drawing.Point(238, 145);
+            this.txtBindVehicalNo.Name = "txtBindVehicalNo";
+            this.txtBindVehicalNo.Size = new System.Drawing.Size(209, 26);
+            this.txtBindVehicalNo.TabIndex = 2;
             // 
             // label5
             // 
@@ -172,14 +176,14 @@
             this.label5.TabIndex = 188;
             this.label5.Text = "Vehical No :";
             // 
-            // txtBindNSrNo
+            // txtBindSrNo
             // 
-            this.txtBindNSrNo.Enabled = false;
-            this.txtBindNSrNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNSrNo.Location = new System.Drawing.Point(238, 64);
-            this.txtBindNSrNo.Name = "txtBindNSrNo";
-            this.txtBindNSrNo.Size = new System.Drawing.Size(209, 26);
-            this.txtBindNSrNo.TabIndex = 0;
+            this.txtBindSrNo.Enabled = false;
+            this.txtBindSrNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindSrNo.Location = new System.Drawing.Point(238, 64);
+            this.txtBindSrNo.Name = "txtBindSrNo";
+            this.txtBindSrNo.Size = new System.Drawing.Size(209, 26);
+            this.txtBindSrNo.TabIndex = 0;
             // 
             // label1
             // 
@@ -192,50 +196,53 @@
             this.label1.TabIndex = 196;
             this.label1.Text = "Sr No :";
             // 
-            // grpGridBindRDispatchItems
+            // grpGridBindDispatchItems
             // 
-            this.grpGridBindRDispatchItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.grpGridBindRDispatchItems.Controls.Add(this.cmbBindRItemType);
-            this.grpGridBindRDispatchItems.Controls.Add(this.txtBindRQtyPerBundle);
-            this.grpGridBindRDispatchItems.Controls.Add(this.btnDeleteItem);
-            this.grpGridBindRDispatchItems.Controls.Add(this.label14);
-            this.grpGridBindRDispatchItems.Controls.Add(this.txtBindRItemCode);
-            this.grpGridBindRDispatchItems.Controls.Add(this.btnAddItem);
-            this.grpGridBindRDispatchItems.Controls.Add(this.dataGridView1);
-            this.grpGridBindRDispatchItems.Controls.Add(this.label10);
-            this.grpGridBindRDispatchItems.Controls.Add(this.txtBindRTotalQty);
-            this.grpGridBindRDispatchItems.Controls.Add(this.label9);
-            this.grpGridBindRDispatchItems.Controls.Add(this.txtBindRTotalBundles);
-            this.grpGridBindRDispatchItems.Controls.Add(this.label7);
-            this.grpGridBindRDispatchItems.Controls.Add(this.label3);
-            this.grpGridBindRDispatchItems.Controls.Add(this.txtBindRItemName);
-            this.grpGridBindRDispatchItems.Controls.Add(this.label2);
-            this.grpGridBindRDispatchItems.Location = new System.Drawing.Point(12, 230);
-            this.grpGridBindRDispatchItems.Name = "grpGridBindRDispatchItems";
-            this.grpGridBindRDispatchItems.Size = new System.Drawing.Size(908, 234);
-            this.grpGridBindRDispatchItems.TabIndex = 4;
+            this.grpGridBindDispatchItems.AccessibleDescription = "Req";
+            this.grpGridBindDispatchItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.grpGridBindDispatchItems.Controls.Add(this.cmbBindItemType);
+            this.grpGridBindDispatchItems.Controls.Add(this.txtBindQtyPerBundle);
+            this.grpGridBindDispatchItems.Controls.Add(this.btnDeleteItem);
+            this.grpGridBindDispatchItems.Controls.Add(this.label14);
+            this.grpGridBindDispatchItems.Controls.Add(this.txtBindItemCode);
+            this.grpGridBindDispatchItems.Controls.Add(this.btnAddItem);
+            this.grpGridBindDispatchItems.Controls.Add(this.dataGridView1);
+            this.grpGridBindDispatchItems.Controls.Add(this.label10);
+            this.grpGridBindDispatchItems.Controls.Add(this.txtBindTotalQty);
+            this.grpGridBindDispatchItems.Controls.Add(this.label9);
+            this.grpGridBindDispatchItems.Controls.Add(this.txtBindTotalBundles);
+            this.grpGridBindDispatchItems.Controls.Add(this.label7);
+            this.grpGridBindDispatchItems.Controls.Add(this.label3);
+            this.grpGridBindDispatchItems.Controls.Add(this.txtBindItemName);
+            this.grpGridBindDispatchItems.Controls.Add(this.label2);
+            this.grpGridBindDispatchItems.Location = new System.Drawing.Point(12, 230);
+            this.grpGridBindDispatchItems.Name = "grpGridBindDispatchItems";
+            this.grpGridBindDispatchItems.Size = new System.Drawing.Size(908, 234);
+            this.grpGridBindDispatchItems.TabIndex = 4;
             // 
-            // cmbBindRItemType
+            // cmbBindItemType
             // 
-            this.cmbBindRItemType.Font = new System.Drawing.Font("Arial", 12F);
-            this.cmbBindRItemType.FormattingEnabled = true;
-            this.cmbBindRItemType.Location = new System.Drawing.Point(8, 29);
-            this.cmbBindRItemType.Name = "cmbBindRItemType";
-            this.cmbBindRItemType.Size = new System.Drawing.Size(128, 26);
-            this.cmbBindRItemType.TabIndex = 0;
+            this.cmbBindItemType.AccessibleName = "Req";
+            this.cmbBindItemType.Font = new System.Drawing.Font("Arial", 12F);
+            this.cmbBindItemType.FormattingEnabled = true;
+            this.cmbBindItemType.Location = new System.Drawing.Point(8, 29);
+            this.cmbBindItemType.Name = "cmbBindItemType";
+            this.cmbBindItemType.Size = new System.Drawing.Size(128, 26);
+            this.cmbBindItemType.TabIndex = 0;
             // 
-            // txtBindRQtyPerBundle
+            // txtBindQtyPerBundle
             // 
-            this.txtBindRQtyPerBundle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRQtyPerBundle.Location = new System.Drawing.Point(467, 29);
-            this.txtBindRQtyPerBundle.Name = "txtBindRQtyPerBundle";
-            this.txtBindRQtyPerBundle.Size = new System.Drawing.Size(152, 26);
-            this.txtBindRQtyPerBundle.TabIndex = 3;
-            this.txtBindRQtyPerBundle.TextChanged += new System.EventHandler(this.txtBindRQtyPerBundle_TextChanged);
-            this.txtBindRQtyPerBundle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtyXBundle_KeyPress);
+            this.txtBindQtyPerBundle.AccessibleDescription = "Req.NumMultComa";
+            this.txtBindQtyPerBundle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindQtyPerBundle.Location = new System.Drawing.Point(467, 29);
+            this.txtBindQtyPerBundle.Name = "txtBindQtyPerBundle";
+            this.txtBindQtyPerBundle.Size = new System.Drawing.Size(152, 26);
+            this.txtBindQtyPerBundle.TabIndex = 3;
+            this.txtBindQtyPerBundle.TextChanged += new System.EventHandler(this.txtBindRQtyPerBundle_TextChanged);
             // 
             // btnDeleteItem
             // 
+            this.btnDeleteItem.AccessibleDescription = "DeleteItem";
             this.btnDeleteItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDeleteItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteItem.ForeColor = System.Drawing.Color.White;
@@ -245,7 +252,6 @@
             this.btnDeleteItem.TabIndex = 7;
             this.btnDeleteItem.Text = "Delete";
             this.btnDeleteItem.UseVisualStyleBackColor = false;
-            this.btnDeleteItem.Click += new System.EventHandler(this.btnDeleteItem_Click);
             // 
             // label14
             // 
@@ -258,16 +264,19 @@
             this.label14.TabIndex = 216;
             this.label14.Text = "Item Code";
             // 
-            // txtBindRItemCode
+            // txtBindItemCode
             // 
-            this.txtBindRItemCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRItemCode.Location = new System.Drawing.Point(154, 29);
-            this.txtBindRItemCode.Name = "txtBindRItemCode";
-            this.txtBindRItemCode.Size = new System.Drawing.Size(101, 26);
-            this.txtBindRItemCode.TabIndex = 1;
+            this.txtBindItemCode.AccessibleDescription = "Req.AppData";
+            this.txtBindItemCode.AccessibleName = "ItemCode";
+            this.txtBindItemCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindItemCode.Location = new System.Drawing.Point(154, 29);
+            this.txtBindItemCode.Name = "txtBindItemCode";
+            this.txtBindItemCode.Size = new System.Drawing.Size(101, 26);
+            this.txtBindItemCode.TabIndex = 1;
             // 
             // btnAddItem
             // 
+            this.btnAddItem.AccessibleDescription = "AddItem";
             this.btnAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAddItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.Color.White;
@@ -277,7 +286,6 @@
             this.btnAddItem.TabIndex = 6;
             this.btnAddItem.Text = "Add";
             this.btnAddItem.UseVisualStyleBackColor = false;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // dataGridView1
             // 
@@ -310,15 +318,15 @@
             this.label10.TabIndex = 208;
             this.label10.Text = "Total Qty";
             // 
-            // txtBindRTotalQty
+            // txtBindTotalQty
             // 
-            this.txtBindRTotalQty.Enabled = false;
-            this.txtBindRTotalQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRTotalQty.Location = new System.Drawing.Point(742, 29);
-            this.txtBindRTotalQty.Name = "txtBindRTotalQty";
-            this.txtBindRTotalQty.Size = new System.Drawing.Size(82, 26);
-            this.txtBindRTotalQty.TabIndex = 5;
-            this.txtBindRTotalQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindRQtyPerBundle1_KeyPress);
+            this.txtBindTotalQty.AccessibleDescription = "Req.Num";
+            this.txtBindTotalQty.Enabled = false;
+            this.txtBindTotalQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindTotalQty.Location = new System.Drawing.Point(742, 29);
+            this.txtBindTotalQty.Name = "txtBindTotalQty";
+            this.txtBindTotalQty.Size = new System.Drawing.Size(82, 26);
+            this.txtBindTotalQty.TabIndex = 5;
             // 
             // label9
             // 
@@ -331,15 +339,15 @@
             this.label9.TabIndex = 206;
             this.label9.Text = "Total Bundles";
             // 
-            // txtBindRTotalBundles
+            // txtBindTotalBundles
             // 
-            this.txtBindRTotalBundles.Enabled = false;
-            this.txtBindRTotalBundles.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRTotalBundles.Location = new System.Drawing.Point(638, 29);
-            this.txtBindRTotalBundles.Name = "txtBindRTotalBundles";
-            this.txtBindRTotalBundles.Size = new System.Drawing.Size(82, 26);
-            this.txtBindRTotalBundles.TabIndex = 4;
-            this.txtBindRTotalBundles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindRQtyPerBundle1_KeyPress);
+            this.txtBindTotalBundles.AccessibleDescription = "Req.Num";
+            this.txtBindTotalBundles.Enabled = false;
+            this.txtBindTotalBundles.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindTotalBundles.Location = new System.Drawing.Point(638, 29);
+            this.txtBindTotalBundles.Name = "txtBindTotalBundles";
+            this.txtBindTotalBundles.Size = new System.Drawing.Size(82, 26);
+            this.txtBindTotalBundles.TabIndex = 4;
             // 
             // label7
             // 
@@ -363,13 +371,15 @@
             this.label3.TabIndex = 200;
             this.label3.Text = "Item Name";
             // 
-            // txtBindRItemName
+            // txtBindItemName
             // 
-            this.txtBindRItemName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRItemName.Location = new System.Drawing.Point(276, 29);
-            this.txtBindRItemName.Name = "txtBindRItemName";
-            this.txtBindRItemName.Size = new System.Drawing.Size(172, 26);
-            this.txtBindRItemName.TabIndex = 2;
+            this.txtBindItemName.AccessibleDescription = "Req.AppData";
+            this.txtBindItemName.AccessibleName = "";
+            this.txtBindItemName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindItemName.Location = new System.Drawing.Point(276, 29);
+            this.txtBindItemName.Name = "txtBindItemName";
+            this.txtBindItemName.Size = new System.Drawing.Size(172, 26);
+            this.txtBindItemName.TabIndex = 2;
             // 
             // label2
             // 
@@ -382,13 +392,14 @@
             this.label2.TabIndex = 198;
             this.label2.Text = "Type";
             // 
-            // txtBindNDriverName
+            // txtBindDriverName
             // 
-            this.txtBindNDriverName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNDriverName.Location = new System.Drawing.Point(238, 184);
-            this.txtBindNDriverName.Name = "txtBindNDriverName";
-            this.txtBindNDriverName.Size = new System.Drawing.Size(209, 26);
-            this.txtBindNDriverName.TabIndex = 3;
+            this.txtBindDriverName.AccessibleDescription = "";
+            this.txtBindDriverName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindDriverName.Location = new System.Drawing.Point(238, 184);
+            this.txtBindDriverName.Name = "txtBindDriverName";
+            this.txtBindDriverName.Size = new System.Drawing.Size(209, 26);
+            this.txtBindDriverName.TabIndex = 3;
             // 
             // label15
             // 
@@ -401,45 +412,45 @@
             this.label15.TabIndex = 199;
             this.label15.Text = "Driver Name :";
             // 
-            // buttonBack
+            // btnBack
             // 
-            this.buttonBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonBack.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBack.BackgroundImage = global::RWPLSoftware.Properties.Resources.exit;
-            this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonBack.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.buttonBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonBack.Location = new System.Drawing.Point(793, 482);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(79, 66);
-            this.buttonBack.TabIndex = 6;
-            this.buttonBack.UseVisualStyleBackColor = false;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.btnBack.AccessibleDescription = "Back";
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::RWPLSoftware.Properties.Resources.exit;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(793, 482);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(79, 66);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.UseVisualStyleBackColor = false;
             // 
-            // buttonSave
+            // btnSave
             // 
-            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonSave.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSave.BackgroundImage = global::RWPLSoftware.Properties.Resources.network_save;
-            this.buttonSave.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.buttonSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSave.Location = new System.Drawing.Point(663, 480);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(70, 70);
-            this.buttonSave.TabIndex = 5;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.btnSave.AccessibleDescription = "Save";
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::RWPLSoftware.Properties.Resources.network_save;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSave.Location = new System.Drawing.Point(663, 480);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(70, 70);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // dtpBindNOutTime
+            // dtpBindOutTime
             // 
-            this.dtpBindNOutTime.CustomFormat = "hh:mm tt";
-            this.dtpBindNOutTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBindNOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindNOutTime.Location = new System.Drawing.Point(578, 145);
-            this.dtpBindNOutTime.Name = "dtpBindNOutTime";
-            this.dtpBindNOutTime.ShowUpDown = true;
-            this.dtpBindNOutTime.Size = new System.Drawing.Size(103, 26);
-            this.dtpBindNOutTime.TabIndex = 200;
+            this.dtpBindOutTime.CustomFormat = "hh:mm tt";
+            this.dtpBindOutTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindOutTime.Location = new System.Drawing.Point(578, 145);
+            this.dtpBindOutTime.Name = "dtpBindOutTime";
+            this.dtpBindOutTime.ShowUpDown = true;
+            this.dtpBindOutTime.Size = new System.Drawing.Size(103, 26);
+            this.dtpBindOutTime.TabIndex = 200;
             // 
             // label16
             // 
@@ -458,31 +469,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(920, 555);
-            this.Controls.Add(this.dtpBindNOutTime);
+            this.Controls.Add(this.dtpBindOutTime);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.buttonBack);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.txtBindNDriverName);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtBindDriverName);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.grpGridBindRDispatchItems);
+            this.Controls.Add(this.grpGridBindDispatchItems);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBindNSrNo);
+            this.Controls.Add(this.txtBindSrNo);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtpBindNInTime);
+            this.Controls.Add(this.dtpBindInTime);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.dtpBindNDate);
+            this.Controls.Add(this.dtpBindDate);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.txtBindRClient);
+            this.Controls.Add(this.txtBindClient);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtBindNVehicalNo);
+            this.Controls.Add(this.txtBindVehicalNo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblHeader);
             this.Name = "FrmDispatchEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dispatch Entry";
             this.Load += new System.EventHandler(this.FrmDispatchEntry_Load);
-            this.grpGridBindRDispatchItems.ResumeLayout(false);
-            this.grpGridBindRDispatchItems.PerformLayout();
+            this.grpGridBindDispatchItems.ResumeLayout(false);
+            this.grpGridBindDispatchItems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -493,37 +504,37 @@
 
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpBindNInTime;
+        private System.Windows.Forms.DateTimePicker dtpBindInTime;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DateTimePicker dtpBindNDate;
+        private System.Windows.Forms.DateTimePicker dtpBindDate;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox txtBindRClient;
+        private System.Windows.Forms.TextBox txtBindClient;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBindNVehicalNo;
+        private System.Windows.Forms.TextBox txtBindVehicalNo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtBindNSrNo;
+        private System.Windows.Forms.TextBox txtBindSrNo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel grpGridBindRDispatchItems;
+        private System.Windows.Forms.Panel grpGridBindDispatchItems;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtBindRTotalQty;
+        private System.Windows.Forms.TextBox txtBindTotalQty;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtBindRTotalBundles;
+        private System.Windows.Forms.TextBox txtBindTotalBundles;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBindRItemName;
+        private System.Windows.Forms.TextBox txtBindItemName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtBindNDriverName;
+        private System.Windows.Forms.TextBox txtBindDriverName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtBindRItemCode;
-        private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.DateTimePicker dtpBindNOutTime;
+        private System.Windows.Forms.TextBox txtBindItemCode;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DateTimePicker dtpBindOutTime;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtBindRQtyPerBundle;
+        private System.Windows.Forms.TextBox txtBindQtyPerBundle;
         private System.Windows.Forms.Button btnDeleteItem;
-        private System.Windows.Forms.ComboBox cmbBindRItemType;
+        private System.Windows.Forms.ComboBox cmbBindItemType;
     }
 }

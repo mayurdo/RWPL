@@ -9,8 +9,8 @@ using RWPLEntityModel.SearchRequest;
 namespace RWPLLinqDataService.Services
 {
     public class CustomerMasterDataService : BaseDataService<CustomerMaster>,
-       IDataService<CustomerMaster, CustomerMaster, CustomerMasterSearchRequest,
-           CustomerMasterReportPageRequest, CustomerMasterEntryPageRequest>
+        IReportService<CustomerMaster, CustomerMasterSearchRequest, CustomerMasterReportPageRequest>,
+        IEntryService<CustomerMaster, CustomerMasterEntryPageRequest>
     {
         public ResultResponse<CustomerMaster> Get(CustomerMasterSearchRequest request)
         {

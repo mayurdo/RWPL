@@ -43,12 +43,12 @@ namespace Base.Software.Helper
             if (paramList.Length > 0)
             {
                 var frm = (TForm)Activator.CreateInstance(typeof(TForm), paramList);;
-                frm.ShowDialog();
+                frm.Show();
             }
             else
             {
                 var frm = new TForm();
-                frm.ShowDialog();
+                frm.Show();
             }
         }
 
@@ -103,8 +103,6 @@ namespace Base.Software.Helper
                     column.DisplayIndex = 0;
             }
         }
-
-
 
         public static void CalculateQtyXAny(string qtyXBundlesValue, TextBox totalQtyTextBox = null, TextBox totalBundlesTextBox = null)
         {

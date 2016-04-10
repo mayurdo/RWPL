@@ -35,43 +35,11 @@ namespace RWPLSoftware.FrmDispatch
         private void FrmDispatchEntry_Load(object sender, EventArgs e)
         {
             _entryForm.FillDropDownAndAutoComplete<DispatchEntryPageRequest>();
+            
         }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            _entryForm.SavePageData();
-        }
-
-        private void btnAddItem_Click(object sender, EventArgs e)
-        {
-            _entryForm.AddGridItem();
-        }
-
-        private void btnDeleteItem_Click(object sender, EventArgs e)
-        {
-            _entryForm.DeleteGridItem();
-        }
-
-        private void txtBindRQtyPerBundle1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            PageHelper.AcceptOnlyNumber(e);
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void txtQtyXBundle_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            PageHelper.AcceptOnlyNumberWithMultiplyAndCommas(e, ((TextBox)sender).Text);
-        }
-
         private void txtBindRQtyPerBundle_TextChanged(object sender, EventArgs e)
         {
-            PageHelper.CalculateQtyXAny(txtBindRQtyPerBundle.Text, txtBindRTotalQty, txtBindRTotalBundles);
+            PageHelper.CalculateQtyXAny(txtBindQtyPerBundle.Text, txtBindTotalQty, txtBindTotalBundles);
         }
-
-
     }
 }

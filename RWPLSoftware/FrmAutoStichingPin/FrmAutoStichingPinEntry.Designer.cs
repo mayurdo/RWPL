@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.lblHeader = new System.Windows.Forms.Label();
-            this.dtpBindNOutTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpBindOutTime = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBindNSrNo = new System.Windows.Forms.TextBox();
+            this.txtBindSrNo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpBindNInTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpBindInTime = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtpBindNDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpBindDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBindRClient = new System.Windows.Forms.TextBox();
+            this.txtBindClient = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBindRBoxCode = new System.Windows.Forms.TextBox();
+            this.txtBindBoxCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtBindRPinsPerBoxDetail = new System.Windows.Forms.TextBox();
+            this.txtBindPinsPerBoxDetail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtBindNPinsPerBoxQty = new System.Windows.Forms.TextBox();
+            this.txtBindPinsPerBoxQty = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtBindRBoxQty = new System.Windows.Forms.TextBox();
+            this.txtBindBoxQty = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtBindRTotalPins = new System.Windows.Forms.TextBox();
+            this.txtBindTotalPins = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtBindNOperator = new System.Windows.Forms.TextBox();
+            this.txtBindOperator = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtBindNBoxName = new System.Windows.Forms.TextBox();
+            this.txtBindBoxName = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -73,16 +73,16 @@
             this.lblHeader.Text = "Auto Stiching (Pin) Entry";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtpBindNOutTime
+            // dtpBindOutTime
             // 
-            this.dtpBindNOutTime.CustomFormat = "hh:mm tt";
-            this.dtpBindNOutTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBindNOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindNOutTime.Location = new System.Drawing.Point(452, 148);
-            this.dtpBindNOutTime.Name = "dtpBindNOutTime";
-            this.dtpBindNOutTime.ShowUpDown = true;
-            this.dtpBindNOutTime.Size = new System.Drawing.Size(103, 26);
-            this.dtpBindNOutTime.TabIndex = 7;
+            this.dtpBindOutTime.CustomFormat = "hh:mm tt";
+            this.dtpBindOutTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindOutTime.Location = new System.Drawing.Point(452, 148);
+            this.dtpBindOutTime.Name = "dtpBindOutTime";
+            this.dtpBindOutTime.ShowUpDown = true;
+            this.dtpBindOutTime.Size = new System.Drawing.Size(103, 26);
+            this.dtpBindOutTime.TabIndex = 7;
             // 
             // label16
             // 
@@ -108,14 +108,14 @@
             this.label1.Text = "Sr No :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindNSrNo
+            // txtBindSrNo
             // 
-            this.txtBindNSrNo.Enabled = false;
-            this.txtBindNSrNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNSrNo.Location = new System.Drawing.Point(112, 67);
-            this.txtBindNSrNo.Name = "txtBindNSrNo";
-            this.txtBindNSrNo.Size = new System.Drawing.Size(209, 26);
-            this.txtBindNSrNo.TabIndex = 202;
+            this.txtBindSrNo.Enabled = false;
+            this.txtBindSrNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindSrNo.Location = new System.Drawing.Point(112, 67);
+            this.txtBindSrNo.Name = "txtBindSrNo";
+            this.txtBindSrNo.Size = new System.Drawing.Size(209, 26);
+            this.txtBindSrNo.TabIndex = 202;
             // 
             // label4
             // 
@@ -129,16 +129,16 @@
             this.label4.TabIndex = 211;
             this.label4.Text = "*";
             // 
-            // dtpBindNInTime
+            // dtpBindInTime
             // 
-            this.dtpBindNInTime.CustomFormat = "hh:mm tt";
-            this.dtpBindNInTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBindNInTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindNInTime.Location = new System.Drawing.Point(452, 108);
-            this.dtpBindNInTime.Name = "dtpBindNInTime";
-            this.dtpBindNInTime.ShowUpDown = true;
-            this.dtpBindNInTime.Size = new System.Drawing.Size(103, 26);
-            this.dtpBindNInTime.TabIndex = 6;
+            this.dtpBindInTime.CustomFormat = "hh:mm tt";
+            this.dtpBindInTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindInTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindInTime.Location = new System.Drawing.Point(452, 108);
+            this.dtpBindInTime.Name = "dtpBindInTime";
+            this.dtpBindInTime.ShowUpDown = true;
+            this.dtpBindInTime.Size = new System.Drawing.Size(103, 26);
+            this.dtpBindInTime.TabIndex = 6;
             // 
             // label2
             // 
@@ -152,15 +152,15 @@
             this.label2.Text = "In Time :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // dtpBindNDate
+            // dtpBindDate
             // 
-            this.dtpBindNDate.CustomFormat = "dd-MMM-yyyy";
-            this.dtpBindNDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBindNDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBindNDate.Location = new System.Drawing.Point(452, 67);
-            this.dtpBindNDate.Name = "dtpBindNDate";
-            this.dtpBindNDate.Size = new System.Drawing.Size(144, 26);
-            this.dtpBindNDate.TabIndex = 5;
+            this.dtpBindDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpBindDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBindDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBindDate.Location = new System.Drawing.Point(452, 67);
+            this.dtpBindDate.Name = "dtpBindDate";
+            this.dtpBindDate.Size = new System.Drawing.Size(144, 26);
+            this.dtpBindDate.TabIndex = 5;
             // 
             // label3
             // 
@@ -174,14 +174,15 @@
             this.label3.Text = "Date :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindRClient
+            // txtBindClient
             // 
-            this.txtBindRClient.AccessibleName = "CustomerName";
-            this.txtBindRClient.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRClient.Location = new System.Drawing.Point(112, 108);
-            this.txtBindRClient.Name = "txtBindRClient";
-            this.txtBindRClient.Size = new System.Drawing.Size(209, 26);
-            this.txtBindRClient.TabIndex = 0;
+            this.txtBindClient.AccessibleDescription = "Req";
+            this.txtBindClient.AccessibleName = "CustomerName";
+            this.txtBindClient.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindClient.Location = new System.Drawing.Point(112, 108);
+            this.txtBindClient.Name = "txtBindClient";
+            this.txtBindClient.Size = new System.Drawing.Size(209, 26);
+            this.txtBindClient.TabIndex = 0;
             // 
             // label6
             // 
@@ -195,14 +196,15 @@
             this.label6.Text = "Client :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindRBoxCode
+            // txtBindBoxCode
             // 
-            this.txtBindRBoxCode.AccessibleName = "ItemCode";
-            this.txtBindRBoxCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRBoxCode.Location = new System.Drawing.Point(112, 148);
-            this.txtBindRBoxCode.Name = "txtBindRBoxCode";
-            this.txtBindRBoxCode.Size = new System.Drawing.Size(209, 26);
-            this.txtBindRBoxCode.TabIndex = 1;
+            this.txtBindBoxCode.AccessibleDescription = "Req";
+            this.txtBindBoxCode.AccessibleName = "ItemCode";
+            this.txtBindBoxCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindBoxCode.Location = new System.Drawing.Point(112, 148);
+            this.txtBindBoxCode.Name = "txtBindBoxCode";
+            this.txtBindBoxCode.Size = new System.Drawing.Size(209, 26);
+            this.txtBindBoxCode.TabIndex = 1;
             // 
             // label5
             // 
@@ -216,15 +218,15 @@
             this.label5.Text = "Box Code :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindRPinsPerBoxDetail
+            // txtBindPinsPerBoxDetail
             // 
-            this.txtBindRPinsPerBoxDetail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRPinsPerBoxDetail.Location = new System.Drawing.Point(112, 228);
-            this.txtBindRPinsPerBoxDetail.Name = "txtBindRPinsPerBoxDetail";
-            this.txtBindRPinsPerBoxDetail.Size = new System.Drawing.Size(117, 26);
-            this.txtBindRPinsPerBoxDetail.TabIndex = 3;
-            this.txtBindRPinsPerBoxDetail.TextChanged += new System.EventHandler(this.txtBindNPinsPerBoxDetail_TextChanged);
-            this.txtBindRPinsPerBoxDetail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindNPinsPerBoxDetail_KeyPress);
+            this.txtBindPinsPerBoxDetail.AccessibleDescription = "Req.NumMultComa";
+            this.txtBindPinsPerBoxDetail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindPinsPerBoxDetail.Location = new System.Drawing.Point(112, 228);
+            this.txtBindPinsPerBoxDetail.Name = "txtBindPinsPerBoxDetail";
+            this.txtBindPinsPerBoxDetail.Size = new System.Drawing.Size(117, 26);
+            this.txtBindPinsPerBoxDetail.TabIndex = 3;
+            this.txtBindPinsPerBoxDetail.TextChanged += new System.EventHandler(this.txtBindNPinsPerBoxDetail_TextChanged);
             // 
             // label7
             // 
@@ -238,15 +240,16 @@
             this.label7.Text = "Pins Per Box :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindNPinsPerBoxQty
+            // txtBindPinsPerBoxQty
             // 
-            this.txtBindNPinsPerBoxQty.Enabled = false;
-            this.txtBindNPinsPerBoxQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNPinsPerBoxQty.Location = new System.Drawing.Point(256, 228);
-            this.txtBindNPinsPerBoxQty.Name = "txtBindNPinsPerBoxQty";
-            this.txtBindNPinsPerBoxQty.Size = new System.Drawing.Size(65, 26);
-            this.txtBindNPinsPerBoxQty.TabIndex = 217;
-            this.txtBindNPinsPerBoxQty.TextChanged += new System.EventHandler(this.txtBindRBoxQty_TextChanged);
+            this.txtBindPinsPerBoxQty.AccessibleDescription = "Num";
+            this.txtBindPinsPerBoxQty.Enabled = false;
+            this.txtBindPinsPerBoxQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindPinsPerBoxQty.Location = new System.Drawing.Point(256, 228);
+            this.txtBindPinsPerBoxQty.Name = "txtBindPinsPerBoxQty";
+            this.txtBindPinsPerBoxQty.Size = new System.Drawing.Size(65, 26);
+            this.txtBindPinsPerBoxQty.TabIndex = 217;
+            this.txtBindPinsPerBoxQty.TextChanged += new System.EventHandler(this.txtBindRBoxQty_TextChanged);
             // 
             // label8
             // 
@@ -260,15 +263,15 @@
             this.label8.Text = "=";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindRBoxQty
+            // txtBindBoxQty
             // 
-            this.txtBindRBoxQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRBoxQty.Location = new System.Drawing.Point(112, 269);
-            this.txtBindRBoxQty.Name = "txtBindRBoxQty";
-            this.txtBindRBoxQty.Size = new System.Drawing.Size(209, 26);
-            this.txtBindRBoxQty.TabIndex = 4;
-            this.txtBindRBoxQty.TextChanged += new System.EventHandler(this.txtBindRBoxQty_TextChanged);
-            this.txtBindRBoxQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBindRBoxQty_KeyPress);
+            this.txtBindBoxQty.AccessibleDescription = "Req.Num";
+            this.txtBindBoxQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindBoxQty.Location = new System.Drawing.Point(112, 269);
+            this.txtBindBoxQty.Name = "txtBindBoxQty";
+            this.txtBindBoxQty.Size = new System.Drawing.Size(209, 26);
+            this.txtBindBoxQty.TabIndex = 4;
+            this.txtBindBoxQty.TextChanged += new System.EventHandler(this.txtBindRBoxQty_TextChanged);
             // 
             // label9
             // 
@@ -282,14 +285,15 @@
             this.label9.Text = "Box Qty :";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindRTotalPins
+            // txtBindTotalPins
             // 
-            this.txtBindRTotalPins.Enabled = false;
-            this.txtBindRTotalPins.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindRTotalPins.Location = new System.Drawing.Point(112, 311);
-            this.txtBindRTotalPins.Name = "txtBindRTotalPins";
-            this.txtBindRTotalPins.Size = new System.Drawing.Size(209, 26);
-            this.txtBindRTotalPins.TabIndex = 221;
+            this.txtBindTotalPins.AccessibleDescription = "Req";
+            this.txtBindTotalPins.Enabled = false;
+            this.txtBindTotalPins.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindTotalPins.Location = new System.Drawing.Point(112, 311);
+            this.txtBindTotalPins.Name = "txtBindTotalPins";
+            this.txtBindTotalPins.Size = new System.Drawing.Size(209, 26);
+            this.txtBindTotalPins.TabIndex = 221;
             // 
             // label10
             // 
@@ -303,13 +307,13 @@
             this.label10.Text = "Total Pins :";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtBindNOperator
+            // txtBindOperator
             // 
-            this.txtBindNOperator.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNOperator.Location = new System.Drawing.Point(452, 191);
-            this.txtBindNOperator.Name = "txtBindNOperator";
-            this.txtBindNOperator.Size = new System.Drawing.Size(144, 26);
-            this.txtBindNOperator.TabIndex = 8;
+            this.txtBindOperator.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindOperator.Location = new System.Drawing.Point(452, 191);
+            this.txtBindOperator.Name = "txtBindOperator";
+            this.txtBindOperator.Size = new System.Drawing.Size(144, 26);
+            this.txtBindOperator.TabIndex = 8;
             // 
             // label11
             // 
@@ -322,35 +326,6 @@
             this.label11.TabIndex = 224;
             this.label11.Text = "Operator :";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonBack.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBack.BackgroundImage = global::RWPLSoftware.Properties.Resources.exit;
-            this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonBack.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.buttonBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonBack.Location = new System.Drawing.Point(517, 311);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(79, 66);
-            this.buttonBack.TabIndex = 10;
-            this.buttonBack.UseVisualStyleBackColor = false;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonSave.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSave.BackgroundImage = global::RWPLSoftware.Properties.Resources.network_save;
-            this.buttonSave.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.buttonSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSave.Location = new System.Drawing.Point(410, 309);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(70, 70);
-            this.buttonSave.TabIndex = 9;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // label12
             // 
@@ -388,14 +363,14 @@
             this.label14.TabIndex = 227;
             this.label14.Text = "*";
             // 
-            // txtBindNBoxName
+            // txtBindBoxName
             // 
-            this.txtBindNBoxName.AccessibleName = "ItemName";
-            this.txtBindNBoxName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBindNBoxName.Location = new System.Drawing.Point(112, 188);
-            this.txtBindNBoxName.Name = "txtBindNBoxName";
-            this.txtBindNBoxName.Size = new System.Drawing.Size(209, 26);
-            this.txtBindNBoxName.TabIndex = 2;
+            this.txtBindBoxName.AccessibleName = "ItemName";
+            this.txtBindBoxName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBindBoxName.Location = new System.Drawing.Point(112, 188);
+            this.txtBindBoxName.Name = "txtBindBoxName";
+            this.txtBindBoxName.Size = new System.Drawing.Size(209, 26);
+            this.txtBindBoxName.TabIndex = 2;
             // 
             // label17
             // 
@@ -409,41 +384,70 @@
             this.label17.Text = "Box Name :";
             this.label17.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // btnBack
+            // 
+            this.btnBack.AccessibleDescription = "Back";
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::RWPLSoftware.Properties.Resources.exit;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(517, 311);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(79, 66);
+            this.btnBack.TabIndex = 10;
+            this.btnBack.UseVisualStyleBackColor = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.AccessibleDescription = "Save";
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::RWPLSoftware.Properties.Resources.network_save;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSave.Location = new System.Drawing.Point(410, 309);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(70, 70);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
             // FrmAutoStichingPinEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(664, 393);
-            this.Controls.Add(this.txtBindNBoxName);
+            this.Controls.Add(this.txtBindBoxName);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.buttonBack);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.txtBindNOperator);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtBindOperator);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtBindRTotalPins);
+            this.Controls.Add(this.txtBindTotalPins);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtBindRBoxQty);
+            this.Controls.Add(this.txtBindBoxQty);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtBindNPinsPerBoxQty);
-            this.Controls.Add(this.txtBindRPinsPerBoxDetail);
+            this.Controls.Add(this.txtBindPinsPerBoxQty);
+            this.Controls.Add(this.txtBindPinsPerBoxDetail);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dtpBindNOutTime);
+            this.Controls.Add(this.dtpBindOutTime);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBindNSrNo);
+            this.Controls.Add(this.txtBindSrNo);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtpBindNInTime);
+            this.Controls.Add(this.dtpBindInTime);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dtpBindNDate);
+            this.Controls.Add(this.dtpBindDate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtBindRClient);
+            this.Controls.Add(this.txtBindClient);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtBindRBoxCode);
+            this.Controls.Add(this.txtBindBoxCode);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblHeader);
             this.Name = "FrmAutoStichingPinEntry";
@@ -458,35 +462,35 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.DateTimePicker dtpBindNOutTime;
+        private System.Windows.Forms.DateTimePicker dtpBindOutTime;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBindNSrNo;
+        private System.Windows.Forms.TextBox txtBindSrNo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpBindNInTime;
+        private System.Windows.Forms.DateTimePicker dtpBindInTime;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpBindNDate;
+        private System.Windows.Forms.DateTimePicker dtpBindDate;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBindRClient;
+        private System.Windows.Forms.TextBox txtBindClient;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBindRBoxCode;
+        private System.Windows.Forms.TextBox txtBindBoxCode;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtBindRPinsPerBoxDetail;
+        private System.Windows.Forms.TextBox txtBindPinsPerBoxDetail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtBindNPinsPerBoxQty;
+        private System.Windows.Forms.TextBox txtBindPinsPerBoxQty;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtBindRBoxQty;
+        private System.Windows.Forms.TextBox txtBindBoxQty;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtBindRTotalPins;
+        private System.Windows.Forms.TextBox txtBindTotalPins;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtBindNOperator;
+        private System.Windows.Forms.TextBox txtBindOperator;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtBindNBoxName;
+        private System.Windows.Forms.TextBox txtBindBoxName;
         private System.Windows.Forms.Label label17;
     }
 }

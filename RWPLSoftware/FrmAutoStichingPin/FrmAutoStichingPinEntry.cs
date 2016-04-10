@@ -33,50 +33,26 @@ namespace RWPLSoftware.FrmAutoStichingPin
 
         private void FrmAutoStichingPinEntry_Load(object sender, EventArgs e)
         {
-            //Auto Stiching (Pin) Entry
-            //_entryForm.FillDropDownAndAutoComplete<AutoStichingPinEntryPageRequest>();
-            
-            _entryForm.FillDropDownAndAutoCompleteByApplicationData();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            _entryForm.SavePageData();
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void txtBindRBoxQty_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            PageHelper.AcceptOnlyNumber(e);
-        }
-
-        private void txtBindNPinsPerBoxDetail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            PageHelper.AcceptOnlyNumberWithMultiplyAndCommas(e,((TextBox)sender).Text);
         }
 
         private void txtBindNPinsPerBoxDetail_TextChanged(object sender, EventArgs e)
         {
-            PageHelper.CalculateQtyXAny(txtBindRPinsPerBoxDetail.Text, txtBindNPinsPerBoxQty);
+            PageHelper.CalculateQtyXAny(txtBindPinsPerBoxDetail.Text, txtBindPinsPerBoxQty);
         }
 
         private void txtBindRBoxQty_TextChanged(object sender, EventArgs e)
         {
-            var pinPerBox = string.IsNullOrEmpty(txtBindNPinsPerBoxQty.Text)
+            var pinPerBox = string.IsNullOrEmpty(txtBindPinsPerBoxQty.Text)
                                                                 ? 0
-                                                                : Convert.ToInt32(txtBindNPinsPerBoxQty.Text);
+                                                                : Convert.ToInt32(txtBindPinsPerBoxQty.Text);
 
-            var boxQty = string.IsNullOrEmpty(txtBindRBoxQty.Text)
+            var boxQty = string.IsNullOrEmpty(txtBindBoxQty.Text)
                                                                 ? 0
-                                                                : Convert.ToInt32(txtBindRBoxQty.Text);
+                                                                : Convert.ToInt32(txtBindBoxQty.Text);
 
             var totalPins = pinPerBox*boxQty;
 
-            txtBindRTotalPins.Text = totalPins.ToString(CultureInfo.InvariantCulture);
+            txtBindTotalPins.Text = totalPins.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

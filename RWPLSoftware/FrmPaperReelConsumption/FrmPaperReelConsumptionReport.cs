@@ -15,6 +15,7 @@ namespace RWPLSoftware.FrmPaperReelConsumption
 {
     public partial class FrmPaperReelConsumptionReport : Form
     {
+        private readonly string _reelNo = string.Empty;
         private readonly ReportForm<PaperReelConsumption, PaperReelConsumptionSearchRequest, PaperReelConsumption> _reportForm;
 
         public FrmPaperReelConsumptionReport()
@@ -22,7 +23,16 @@ namespace RWPLSoftware.FrmPaperReelConsumption
             InitializeComponent();
 
             _reportForm = new ReportForm<PaperReelConsumption, PaperReelConsumptionSearchRequest, PaperReelConsumption>(groupBox1, bindingNavigator1, dataGridView1,
-                                                                                           bindingNavigatorPositionItem.TextBox, lblReportStatus,lblReportSummary);
+                                                                                           bindingNavigatorPositionItem.TextBox, lblReportStatus, lblReportSummary);
+        }
+
+        public FrmPaperReelConsumptionReport(string realNo = "")
+        {
+            InitializeComponent();
+
+            _reelNo = realNo;
+            _reportForm = new ReportForm<PaperReelConsumption, PaperReelConsumptionSearchRequest, PaperReelConsumption>(groupBox1, bindingNavigator1, dataGridView1,
+                                                                                           bindingNavigatorPositionItem.TextBox, lblReportStatus, lblReportSummary);
         }
 
         private void PaperReelConsumptionReport_Load(object sender, EventArgs e)
@@ -32,13 +42,16 @@ namespace RWPLSoftware.FrmPaperReelConsumption
             panel1.Width = this.Width - 40;
             dataGridView1.Width = panel1.Width;
             bindingNavigatorPositionItem.Text = @"1";
-            
+            txtBindReelNo.Text = _reelNo;
+
             _reportForm.FillDropDownAndAutoComplete<PaperReelConsumptionReportPageRequest>();
             _reportForm.BindGridViewWithFilter();
 
             dataGridView1.Columns[@"Weight"].DefaultCellStyle.Format = "0.000##";
             dataGridView1.Columns[@"Consumption"].DefaultCellStyle.Format = "0.000##";
             dataGridView1.Columns[@"Balance"].DefaultCellStyle.Format = "0.000##";
+            dataGridView1.Columns[@"SrNo"].Visible = false;
+            //dataGridView1.Columns[@"TIMEConsume"].DefaultCellStyle.Format = "0##";
         }
 
         private void txtBindReelNo_TextChanged(object sender, EventArgs e)
@@ -59,6 +72,11 @@ namespace RWPLSoftware.FrmPaperReelConsumption
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             _reportForm.DeleteSelectedData();
+        }
+
+        private void toolStripButtonExportToExcel_Click(object sender, EventArgs e)
+        {
+            _reportForm.ExportToExcel();
         }
     }
 }

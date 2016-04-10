@@ -7,5 +7,14 @@ namespace RWPLEntityModel.SearchRequest
         public string ItemCode { get; set; }
 
         public string ItemName { get; set; }
+
+        public string CustomerName { get; set; }
+
+        public string DrawingNo { get; set; }
+
+        public string NoofPly { get; set; }
+
+        public string SheetSizeDeckle { get; set; }
+
     }
 }
